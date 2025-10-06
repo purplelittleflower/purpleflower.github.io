@@ -191,21 +191,22 @@
     animation: textGlow 3s ease-in-out infinite;
 }
 
-/* ========== LIQUID BLOB BACKGROUNDS ========== */
-@keyframes blobMorph {
-    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+/* ========== 3D CARD EFFECTS ========== */
+@keyframes cardFloat {
+    0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+    50% { transform: translateY(-10px) rotateX(2deg) rotateY(1deg); }
 }
 
-.liquid-bg {
-    background: linear-gradient(45deg, rgba(102, 102, 102, 0.1), rgba(136, 136, 136, 0.1));
-    animation: blobMorph 10s ease-in-out infinite;
+.card-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: cardFloat 6s ease-in-out infinite;
     transition: all 0.3s ease;
 }
 
-.liquid-bg:hover {
-    animation-duration: 3s;
-    background: linear-gradient(45deg, rgba(102, 102, 102, 0.2), rgba(136, 136, 136, 0.2));
+.card-3d:hover {
+    animation-duration: 2s;
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateZ(20px);
 }
 
 /* Reset and base styles */
@@ -2791,8 +2792,10 @@ section {
 .research-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 2rem;
+    perspective: 1200px;
+    transform-style: preserve-3d;
 }
 
 .research-card {
@@ -2804,7 +2807,13 @@ section {
     position: relative;
     overflow: hidden;
     transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: cardFloat 8s ease-in-out infinite;
 }
+
+.research-card:nth-child(1) { animation-delay: 0s; }
+.research-card:nth-child(2) { animation-delay: -2.7s; }
+.research-card:nth-child(3) { animation-delay: -5.3s; }
 
 .research-card::before {
     content: '';
@@ -2816,6 +2825,7 @@ section {
     background: var(--card-gradient);
     opacity: 0;
     transition: all 0.4s ease;
+    transform: translateZ(5px);
 }
 
 .research-card::after {
@@ -2832,15 +2842,18 @@ section {
     opacity: 0;
     transition: all 0.6s ease;
     pointer-events: none;
+    transform: translateZ(-10px);
 }
 
 .research-card:hover {
-    transform: translateY(-15px) scale(1.02) perspective(1000px) rotateX(3deg) rotateY(2deg);
+    animation-play-state: paused;
+    transform: perspective(1000px) rotateX(8deg) rotateY(5deg) translateZ(30px) scale(1.05);
     box-shadow: 
-        0 40px 80px rgba(102, 102, 102, 0.25),
-        0 0 60px rgba(136, 136, 136, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.7);
-    border-color: rgba(136, 136, 136, 0.3);
+        0 50px 100px rgba(102, 102, 102, 0.3),
+        0 0 80px rgba(136, 136, 136, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.8);
+    border-color: rgba(136, 136, 136, 0.4);
+    z-index: 10;
 }
 
 .research-card:hover::before {
@@ -2854,24 +2867,24 @@ section {
 }
 
 .research-card:hover .research-icon {
-    transform: translateZ(15px) scale(1.2) rotate(10deg);
-    filter: drop-shadow(0 5px 15px rgba(136, 136, 136, 0.4));
+    transform: translateZ(25px) scale(1.3) rotate(15deg);
+    filter: drop-shadow(0 8px 20px rgba(136, 136, 136, 0.5));
 }
 
 .research-card:hover h4 {
-    transform: translateZ(10px);
+    transform: translateZ(20px);
     color: #888888;
-    text-shadow: 0 0 15px rgba(136, 136, 136, 0.6);
+    text-shadow: 0 0 20px rgba(136, 136, 136, 0.8);
 }
 
 .research-card:hover p {
-    transform: translateZ(5px);
+    transform: translateZ(15px);
     color: #666666;
 }
 
 .research-card:hover .status-badge {
-    transform: translateZ(12px) scale(1.1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateZ(18px) scale(1.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .research-card:hover .research-tags span {
