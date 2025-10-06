@@ -430,7 +430,7 @@ nav {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
-    color: #333;
+    color: #000;
     position: relative;
 }
 
@@ -453,7 +453,7 @@ nav {
 
 .about-text p {
     font-size: 1.1rem;
-    color: #666;
+    color: #000;
     line-height: 1.7;
     margin-bottom: 1.2rem;
 }
@@ -497,7 +497,7 @@ nav {
 
 .stat .label {
     font-size: 0.9rem;
-    color: #666;
+    color: #000;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -512,13 +512,13 @@ nav {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 2.5rem;
-    color: #333;
+    color: #000;
 }
 
 .section-subtitle {
     text-align: center;
     font-size: 1.2rem;
-    color: #666;
+    color: #000;
     margin-bottom: 3rem;
     font-style: italic;
 }
@@ -595,13 +595,13 @@ nav {
 }
 
 .portfolio-card h3 {
-    color: #333;
+    color: #000;
     margin-bottom: 1rem;
     font-size: 1.4rem;
 }
 
 .portfolio-card p {
-    color: #666;
+    color: #000;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -618,7 +618,7 @@ nav {
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
-    color: #666;
+    color: #000;
     font-weight: 500;
 }
 
@@ -632,11 +632,11 @@ nav {
     text-align: center;
     margin-bottom: 1rem;
     font-size: 2.5rem;
-    color: #333;
+    color: #000;
 }
 
 .contact .section-subtitle {
-    color: #666;
+    color: #000;
 }
 
 .contact-content {
@@ -659,7 +659,7 @@ nav {
 
 .contact-list li {
     padding: 0.8rem 0;
-    color: #666;
+    color: #000;
     font-size: 1.1rem;
     border-bottom: 1px solid #eee;
 }
@@ -796,7 +796,7 @@ nav {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
-    color: #333;
+    color: #000;
 }
 
 .timeline {
@@ -862,13 +862,13 @@ nav {
 }
 
 .content h3 {
-    color: #333;
+    color: #000;
     margin-bottom: 0.8rem;
     font-size: 1.3rem;
 }
 
 .content p {
-    color: #666;
+    color: #000;
     line-height: 1.6;
 }
 
