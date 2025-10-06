@@ -759,11 +759,11 @@ nav {
     box-shadow: 0 8px 25px rgba(205, 133, 63, 0.4);
 }
 
-/* Academic Section */
+/* Academic Section - Sophisticated Design */
 .academic {
-    padding: 80px 0;
+    padding: 100px 0;
     background: transparent;
-    color: white;
+    color: #2c2c2c;
 }
 
 .academic h2 {
@@ -776,61 +776,225 @@ nav {
 
 .academic .section-subtitle {
     color: #000;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 1.6rem;
+    font-style: italic;
 }
 
-.academic-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    margin-top: 2rem;
+/* Featured Current Studies Section */
+.academic-hero {
+    margin-bottom: 5rem;
 }
 
-.current-studies, .articles-research {
-    background: rgba(255,255,255,0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
+.current-studies-featured {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,248,240,0.9) 100%);
+    border-radius: 25px;
+    padding: 3.5rem;
+    box-shadow: 0 20px 60px rgba(139, 69, 19, 0.15);
+    border: 1px solid rgba(139, 69, 19, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
-.current-studies h3, .articles-research h3 {
+.current-studies-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #CD853F, #D2B48C, #F4A460);
+}
+
+.degree-badge {
+    display: inline-block;
+    background: linear-gradient(45deg, #8B4513, #CD853F);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     margin-bottom: 1.5rem;
-    font-size: 1.4rem;
+    text-transform: uppercase;
 }
 
-.study-item h4 {
-    color: #fff3e0;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+.current-studies-featured h3 {
+    font-family: 'Didot LP Display', serif;
+    font-size: 2.2rem;
+    color: #8B4513;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
 }
 
-.academic-grid {
-    display: grid;
+.degree-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.study-highlights {
+    display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.academic-item {
-    background: rgba(255,255,255,0.1);
-    padding: 1.5rem;
-    border-radius: 10px;
+.highlight-item {
+    background: rgba(139, 69, 19, 0.1);
+    color: #8B4513;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+/* Academic Portfolio Section */
+.academic-portfolio {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.portfolio-title {
+    font-family: 'Didot LP Display', serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #8B4513;
+    margin-bottom: 3rem;
     position: relative;
 }
 
-.academic-item h4 {
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
+.portfolio-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #CD853F, #D2B48C);
 }
 
-.academic-item .status {
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.research-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,248,240,0.8) 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(139, 69, 19, 0.15);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.research-card::before {
+    content: '';
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: linear-gradient(45deg, #CD853F, #D2B48C);
-    color: white;
-    padding: 0.3rem 0.8rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--card-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.research-card:hover::before {
+    opacity: 1;
+}
+
+.research-card.primary {
+    --card-gradient: linear-gradient(90deg, #CD853F, #D2B48C);
+}
+
+.research-card.secondary {
+    --card-gradient: linear-gradient(90deg, #8B4513, #A0522D);
+}
+
+.research-card.tertiary {
+    --card-gradient: linear-gradient(90deg, #DEB887, #F4A460);
+}
+
+.research-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(139, 69, 19, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.research-icon {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+.status-badge {
+    padding: 0.4rem 1rem;
     border-radius: 15px;
     font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.in-progress {
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    color: white;
+}
+
+.status-badge.planning {
+    background: linear-gradient(45deg, #FF9800, #FFB74D);
+    color: white;
+}
+
+.status-badge.coming-soon {
+    background: linear-gradient(45deg, #9C27B0, #BA68C8);
+    color: white;
+}
+
+.research-card h4 {
+    font-family: 'Didot LP Display', serif;
+    font-size: 1.4rem;
+    color: #8B4513;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.research-card p {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.research-tags {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.research-tags span {
+    background: rgba(139, 69, 19, 0.08);
+    color: #8B4513;
+    padding: 0.4rem 0.9rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
     font-weight: 500;
-    box-shadow: 0 2px 8px rgba(205, 133, 63, 0.3);
+    border: 1px solid rgba(139, 69, 19, 0.15);
 }
 
 /* Experience Section */
@@ -964,6 +1128,33 @@ footer {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 1.5rem;
+    }
+    
+    /* Academic Section Responsive */
+    .current-studies-featured {
+        padding: 2.5rem 2rem;
+    }
+    
+    .current-studies-featured h3 {
+        font-size: 1.8rem;
+    }
+    
+    .degree-description {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .research-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .research-card {
+        padding: 2rem;
+    }
+    
+    .study-highlights {
+        justify-content: center;
     }
     
     .academic-content {
