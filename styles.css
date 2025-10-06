@@ -198,14 +198,14 @@
 }
 
 .liquid-bg {
-    background: linear-gradient(45deg, rgba(139, 69, 19, 0.1), rgba(205, 133, 63, 0.1));
+    background: linear-gradient(45deg, rgba(102, 102, 102, 0.1), rgba(136, 136, 136, 0.1));
     animation: blobMorph 10s ease-in-out infinite;
     transition: all 0.3s ease;
 }
 
 .liquid-bg:hover {
     animation-duration: 3s;
-    background: linear-gradient(45deg, rgba(139, 69, 19, 0.2), rgba(205, 133, 63, 0.2));
+    background: linear-gradient(45deg, rgba(102, 102, 102, 0.2), rgba(136, 136, 136, 0.2));
 }
 
 /* Reset and base styles */
@@ -2796,10 +2796,10 @@ section {
 }
 
 .research-card {
-    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,248,240,0.8) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,248,248,0.8) 100%);
     border-radius: 20px;
     padding: 2.5rem;
-    border: 1px solid rgba(139, 69, 19, 0.15);
+    border: 1px solid rgba(102, 102, 102, 0.15);
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     overflow: hidden;
@@ -2826,8 +2826,8 @@ section {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 20%, rgba(205, 133, 63, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 20% 20%, rgba(136, 136, 136, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(102, 102, 102, 0.1) 0%, transparent 50%),
         linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     opacity: 0;
     transition: all 0.6s ease;
@@ -2837,10 +2837,10 @@ section {
 .research-card:hover {
     transform: translateY(-15px) scale(1.02) perspective(1000px) rotateX(3deg) rotateY(2deg);
     box-shadow: 
-        0 40px 80px rgba(139, 69, 19, 0.25),
-        0 0 60px rgba(205, 133, 63, 0.3),
+        0 40px 80px rgba(102, 102, 102, 0.25),
+        0 0 60px rgba(136, 136, 136, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.7);
-    border-color: rgba(205, 133, 63, 0.3);
+    border-color: rgba(136, 136, 136, 0.3);
 }
 
 .research-card:hover::before {
@@ -2855,7 +2855,7 @@ section {
 
 .research-card:hover .research-icon {
     transform: translateZ(15px) scale(1.2) rotate(10deg);
-    filter: drop-shadow(0 5px 15px rgba(205, 133, 63, 0.4));
+    filter: drop-shadow(0 5px 15px rgba(136, 136, 136, 0.4));
 }
 
 .research-card:hover h4 {
@@ -2909,7 +2909,7 @@ section {
 
 .research-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 25px 50px rgba(139, 69, 19, 0.2);
+    box-shadow: 0 25px 50px rgba(102, 102, 102, 0.2);
 }
 
 .card-header {
