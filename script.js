@@ -258,11 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
             backToTopButton.classList.remove('visible');
         }
         
-        // Parallax effect for hero section
-        const hero = document.querySelector('.hero');
-        if (hero && scrolled < window.innerHeight) {
-            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        }
+        // Keep hero section stable (removed parallax that was causing text to fall)
     });
     
     // Back to top button click handler
