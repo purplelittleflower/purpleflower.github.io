@@ -594,10 +594,10 @@ header {
         width: 100%;
         height: 100vh;
         background: linear-gradient(135deg, 
-            rgba(139, 69, 19, 0.98) 0%, 
-            rgba(160, 82, 45, 0.95) 30%, 
-            rgba(205, 133, 63, 0.92) 70%, 
-            rgba(222, 184, 135, 0.9) 100%);
+            rgba(64, 64, 64, 0.98) 0%, 
+            rgba(96, 96, 96, 0.95) 30%, 
+            rgba(128, 128, 128, 0.92) 70%, 
+            rgba(160, 160, 160, 0.9) 100%);
         backdrop-filter: blur(20px);
         transform: translateX(-100%);
         transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1886,7 +1886,7 @@ section {
     background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,248,240,0.8) 100%);
     border-radius: 20px;
     padding: 2.5rem;
-    border-left: 4px solid #CD853F;
+    border-left: 4px solid #666666;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -1908,14 +1908,14 @@ section {
     font-family: 'Didot LP Display', serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #CD853F;
+    color: #666666;
     opacity: 0.7;
 }
 
 .chapter-header h3 {
     font-family: 'Didot LP Display', serif;
     font-size: 1.8rem;
-    color: #8B4513;
+    color: #555555;
     margin: 0;
 }
 
@@ -2534,7 +2534,7 @@ section {
 }
 
 .contact-form button {
-    background: linear-gradient(45deg, #CD853F, #D2B48C);
+    background: linear-gradient(45deg, #666666, #888888);
     color: white;
     padding: 15px;
     border: none;
@@ -2547,7 +2547,7 @@ section {
 
 .contact-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(205, 133, 63, 0.4);
+    box-shadow: 0 8px 25px rgba(102, 102, 102, 0.4);
 }
 
 /* Academic Section - Sophisticated Design */
@@ -2602,7 +2602,7 @@ section {
 
 .degree-badge {
     display: inline-block;
-    background: linear-gradient(45deg, #8B4513, #CD853F);
+    background: linear-gradient(45deg, #404040, #666666);
     color: white;
     padding: 0.8rem 2rem;
     border-radius: 25px;
@@ -2636,13 +2636,13 @@ section {
 }
 
 .highlight-item {
-    background: rgba(139, 69, 19, 0.1);
-    color: #8B4513;
+    background: rgba(102, 102, 102, 0.1);
+    color: #666666;
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid rgba(139, 69, 19, 0.2);
+    border: 1px solid rgba(102, 102, 102, 0.2);
 }
 
 /* Academic Portfolio Section */
@@ -2817,17 +2817,17 @@ section {
 }
 
 .status-badge.in-progress {
-    background: linear-gradient(45deg, #4CAF50, #81C784);
+    background: linear-gradient(45deg, #666666, #888888);
     color: white;
 }
 
 .status-badge.planning {
-    background: linear-gradient(45deg, #FF9800, #FFB74D);
+    background: linear-gradient(45deg, #555555, #777777);
     color: white;
 }
 
 .status-badge.coming-soon {
-    background: linear-gradient(45deg, #9C27B0, #BA68C8);
+    background: linear-gradient(45deg, #444444, #666666);
     color: white;
 }
 
@@ -2853,13 +2853,13 @@ section {
 }
 
 .research-tags span {
-    background: rgba(139, 69, 19, 0.08);
-    color: #8B4513;
+    background: rgba(102, 102, 102, 0.08);
+    color: #666666;
     padding: 0.4rem 0.9rem;
     border-radius: 15px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid rgba(139, 69, 19, 0.15);
+    border: 1px solid rgba(102, 102, 102, 0.15);
 }
 
 /* Experience Section */
