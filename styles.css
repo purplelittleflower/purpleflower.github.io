@@ -779,11 +779,13 @@ nav {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: #ff6b6b;
+    background: linear-gradient(45deg, #CD853F, #D2B48C);
+    color: white;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 500;
+    box-shadow: 0 2px 8px rgba(205, 133, 63, 0.3);
 }
 
 /* Experience Section */
