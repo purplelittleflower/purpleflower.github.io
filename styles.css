@@ -22,29 +22,46 @@ body {
     padding: 0 20px;
 }
 
-/* Luxury Typography */
-h1, h2, h3 {
+/* Luxury Typography Hierarchy */
+h1, h2, h3, h4 {
     font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
     font-weight: 400;
     letter-spacing: 0.5px;
+    margin-bottom: 1rem;
 }
 
-h1 {
-    font-size: 2.5rem;
+/* Main logo/brand title */
+.logo h1 {
+    font-size: 2rem;
     color: #8B4513;
     text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.1);
+    margin: 0;
 }
 
+/* Section titles */
 h2 {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
+    color: #8B4513;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    line-height: 1.2;
+}
+
+/* Subsection titles */
+h3 {
+    font-size: 1.8rem;
     color: #A0522D;
     margin-bottom: 1.5rem;
+    line-height: 1.3;
 }
 
-h3 {
-    font-size: 1.6rem;
+/* Card titles */
+h4 {
+    font-size: 1.4rem;
     color: #8B4513;
     margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
 /* Header and Navigation */
@@ -150,14 +167,17 @@ nav {
     z-index: 2;
 }
 
-.hero-content h2 {
+.hero-content h1 {
     font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
-    line-height: 1.4;
+    line-height: 1.3;
     font-weight: 400;
     text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-subtitle {
