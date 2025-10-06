@@ -1,4 +1,4 @@
-/* Import luxury fonts */
+/* Import luxury fonts - Tan Meringue for elegant titles */
 @import url('https://fonts.googleapis.com/css2?family=Tan+Meringue&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600&display=swap');
 
 /* Reset and base styles */
@@ -22,12 +22,13 @@ body {
     padding: 0 20px;
 }
 
-/* Luxury Typography Hierarchy */
+/* Luxury Typography Hierarchy - Tan Meringue Focus */
 h1, h2, h3, h4 {
-    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
+    font-family: 'Tan Meringue', Georgia, serif;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     margin-bottom: 1rem;
+    color: #8B4513;
 }
 
 /* Main logo/brand title */
@@ -168,26 +169,28 @@ nav {
 }
 
 .hero-content h1 {
-    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
-    font-size: 2.8rem;
+    font-family: 'Tan Meringue', Georgia, serif;
+    font-size: 3rem;
     margin-bottom: 1.5rem;
-    line-height: 1.3;
+    line-height: 1.2;
     font-weight: 400;
     text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    color: #FFF8DC;
 }
 
 .hero-subtitle {
-    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
-    font-size: 1.6rem;
+    font-family: 'Tan Meringue', Georgia, serif;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     opacity: 0.95;
     font-style: italic;
     color: #FFF8DC;
     text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
+    letter-spacing: 0.2px;
 }
 
 .hero-description {
