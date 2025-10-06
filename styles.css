@@ -308,11 +308,13 @@ nav {
 .hero {
     background: transparent;
     color: #fff;
-    padding: 140px 0 100px;
+    padding: 120px 2% 80px 2%;
     text-align: center;
     margin-top: 90px;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: none;
 }
 
 .hero::before {
@@ -329,17 +331,24 @@ nav {
 .hero-content {
     position: relative;
     z-index: 2;
+    max-width: 100%;
+    width: 100%;
+}
+
+.hero .container {
+    max-width: 100%;
+    padding: 0;
 }
 
 .hero-content h1 {
     font-family: 'Tan Meringue', Georgia, serif;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
     font-weight: 400;
     text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
-    letter-spacing: 0.3px;
-    max-width: 1000px;
+    letter-spacing: 1px;
+    max-width: 95%;
     margin-left: auto;
     margin-right: auto;
     color: #FFF8DC;
@@ -347,25 +356,27 @@ nav {
 
 .hero-subtitle {
     font-family: 'Tan Meringue', Georgia, serif;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
     opacity: 0.95;
     font-style: italic;
     color: #FFF8DC;
     text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
-    letter-spacing: 0.2px;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
     opacity: 0.92;
-    max-width: 850px;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.7;
+    line-height: 1.8;
     font-weight: 300;
     color: #FFF8DC;
+    letter-spacing: 0.3px;
 }
 
 .hero-buttons {
