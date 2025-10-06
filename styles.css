@@ -1,3 +1,6 @@
+/* Import luxury fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tan+Meringue&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600&display=swap');
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -6,9 +9,11 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: #2c2c2c;
+    background: linear-gradient(135deg, #f8f6f0 0%, #faf8f2 100%);
+    font-weight: 400;
 }
 
 .container {
@@ -17,63 +22,116 @@ body {
     padding: 0 20px;
 }
 
+/* Luxury Typography */
+h1, h2, h3 {
+    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #8B4513;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.1);
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #A0522D;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+    color: #8B4513;
+    margin-bottom: 1rem;
+}
+
 /* Header and Navigation */
 header {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,246,240,0.95) 100%);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(139, 69, 19, 0.1);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2rem;
 }
 
 .logo h1 {
-    color: #6c63ff;
-    font-size: 1.8rem;
+    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
+    color: #8B4513;
+    font-size: 2rem;
     margin: 0;
-    font-weight: bold;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.1);
 }
 
 .logo .tagline {
     font-size: 0.9rem;
-    color: #ff6b6b;
-    margin-left: 10px;
-    font-weight: normal;
+    color: #CD853F;
+    margin-left: 15px;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #8B4513;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #CD853F, #DEB887);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #6c63ff;
+    color: #CD853F;
+    transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    color: white;
-    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #DEB887 0%, #D2B48C 30%, #CD853F 70%, #8B4513 100%);
+    color: #fff;
+    padding: 140px 0 100px;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 90px;
     position: relative;
     overflow: hidden;
+    box-shadow: inset 0 0 100px rgba(139, 69, 19, 0.1);
 }
 
 .hero::before {
@@ -93,28 +151,35 @@ nav {
 }
 
 .hero-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-    font-weight: 600;
+    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+    letter-spacing: 1px;
 }
 
 .hero-subtitle {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
     opacity: 0.95;
     font-style: italic;
-    color: #fff3e0;
+    color: #FFF8DC;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
 }
 
 .hero-description {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    max-width: 800px;
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.92;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-weight: 300;
+    color: #FFF8DC;
 }
 
 .hero-buttons {
