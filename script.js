@@ -1,6 +1,182 @@
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     
+    // ========== MAGICAL CURSOR EFFECTS ========== 
+    const cursorGlow = document.querySelector('.cursor-glow');
+    const cursorTrail = document.querySelector('.cursor-trail');
+    const floatingElements = document.querySelectorAll('.floating-note, .floating-academia');
+    
+    let mouseX = 0, mouseY = 0;
+    let trailX = 0, trailY = 0;
+    
+    // Cursor tracking
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Update cursor glow position
+        cursorGlow.style.left = mouseX - 10 + 'px';
+        cursorGlow.style.top = mouseY - 10 + 'px';
+        
+        // Smooth trail following
+        trailX += (mouseX - trailX) * 0.1;
+        trailY += (mouseY - trailY) * 0.1;
+        cursorTrail.style.left = trailX - 4 + 'px';
+        cursorTrail.style.top = trailY - 4 + 'px';
+        
+        // Floating elements attraction
+        floatingElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const elementX = rect.left + rect.width / 2;
+            const elementY = rect.top + rect.height / 2;
+            const distance = Math.sqrt(Math.pow(mouseX - elementX, 2) + Math.pow(mouseY - elementY, 2));
+            
+            if (distance < 100) {
+                const pullStrength = (100 - distance) / 100;
+                const pullX = (mouseX - elementX) * pullStrength * 0.3;
+                const pullY = (mouseY - elementY) * pullStrength * 0.3;
+                element.style.transform = `translate(${pullX}px, ${pullY}px) scale(${1 + pullStrength * 0.2})`;
+                element.style.opacity = 0.7 + pullStrength * 0.3;
+            } else {
+                element.style.transform = '';
+                element.style.opacity = '';
+            }
+        });
+    });
+    
+    // ========== 3D TILT EFFECTS ========== 
+    const tiltElements = document.querySelectorAll('.tilt-3d');
+    
+    tiltElements.forEach(element => {
+        element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / centerY * -15;
+            const rotateY = (x - centerX) / centerX * 15;
+            
+            element.style.setProperty('--tilt-x', rotateX + 'deg');
+            element.style.setProperty('--tilt-y', rotateY + 'deg');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            element.style.setProperty('--tilt-x', '0deg');
+            element.style.setProperty('--tilt-y', '0deg');
+        });
+    });
+    
+    // ========== MAGNETIC HOVER EFFECTS ========== 
+    const magneticElements = document.querySelectorAll('.magnetic, .cta-button');
+    
+    magneticElements.forEach(element => {
+        element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            element.style.setProperty('--magnetic-x', x * 0.3 + 'px');
+            element.style.setProperty('--magnetic-y', y * 0.3 + 'px');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            element.style.setProperty('--magnetic-x', '0px');
+            element.style.setProperty('--magnetic-y', '0px');
+        });
+    });
+    
+    // ========== SCROLL PROGRESS INDICATOR ========== 
+    const scrollProgressBar = document.querySelector('.scroll-progress-bar');
+    
+    const updateScrollProgress = () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgressBar.style.width = scrollPercent + '%';
+    };
+    
+    window.addEventListener('scroll', updateScrollProgress);
+    
+    // ========== SCROLL REVEAL ANIMATIONS ========== 
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+    
+    // ========== PARALLAX SCROLLING ========== 
+    const parallaxElements = document.querySelectorAll('.parallax-section');
+    
+    const updateParallax = () => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach((element, index) => {
+            const rate = scrolled * -0.5 * (index + 1);
+            element.style.transform = `translateY(${rate}px)`;
+        });
+    };
+    
+    window.addEventListener('scroll', updateParallax);
+    
+    // ========== FLOATING ELEMENTS ENHANCED MOVEMENT ========== 
+    const enhanceFloatingMovement = () => {
+        floatingElements.forEach((element, index) => {
+            const time = Date.now() * 0.001;
+            const x = Math.sin(time + index) * 20;
+            const y = Math.cos(time + index * 0.5) * 30;
+            
+            if (!element.style.transform.includes('translate(')) {
+                element.style.transform += ` translate(${x}px, ${y}px)`;
+            }
+        });
+        
+        requestAnimationFrame(enhanceFloatingMovement);
+    };
+    
+    enhanceFloatingMovement();
+    
+    // ========== GLOW TEXT EFFECTS ON SCROLL ========== 
+    const addGlowToVisibleElements = () => {
+        const elements = document.querySelectorAll('h1, h2, h3');
+        
+        elements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+                element.classList.add('glow-text');
+            } else {
+                element.classList.remove('glow-text');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', addGlowToVisibleElements);
+    
+    // ========== LIQUID BACKGROUND EFFECTS ========== 
+    const addLiquidEffects = () => {
+        const cards = document.querySelectorAll('.portfolio-card, .research-card, .journey-chapter');
+        
+        cards.forEach(card => {
+            card.classList.add('liquid-bg');
+        });
+    };
+    
+    addLiquidEffects();
+    
     // ========== SOPHISTICATED HAMBURGER MENU ========== 
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const navMenuOverlay = document.querySelector('.nav-menu-overlay');
