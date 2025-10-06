@@ -755,6 +755,237 @@ header {
     flex-wrap: wrap;
 }
 
+/* ========== SOMEFOLK-INSPIRED HERO ENHANCEMENTS ========== */
+
+/* Scattered Typography Elements */
+.scattered-text {
+    position: absolute;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.scattered-text.top-left {
+    top: -50px;
+    left: 10%;
+    transform: rotate(-15deg);
+}
+
+.scattered-text.top-right {
+    top: -30px;
+    right: 15%;
+    transform: rotate(10deg);
+}
+
+.scattered-text.bottom-left {
+    bottom: -40px;
+    left: 5%;
+    transform: rotate(8deg);
+}
+
+.scattered-text.bottom-right {
+    bottom: -60px;
+    right: 10%;
+    transform: rotate(-12deg);
+}
+
+.scattered-text:hover {
+    color: #CD853F;
+    transform: scale(1.2) rotate(0deg);
+}
+
+/* Enhanced Hero Typography */
+.hero-main-title {
+    font-family: 'Tan Meringue', Georgia, serif;
+    margin-bottom: 2rem;
+    line-height: 0.9;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title-line-1 {
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    animation: titleFloat 6s ease-in-out infinite;
+}
+
+.title-line-2 {
+    font-size: 6rem;
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 0 0 30px rgba(205, 133, 63, 0.6);
+    animation: titleFloat 6s ease-in-out infinite 2s;
+}
+
+.title-line-3 {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.9);
+    animation: titleFloat 6s ease-in-out infinite 4s;
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero-subtitle-enhanced {
+    font-family: 'Didot LP Display', serif;
+    font-size: 2rem;
+    color: #CD853F;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    animation: textGlow 4s ease-in-out infinite;
+}
+
+.hero-subtitle-secondary {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+/* Enhanced Description Block */
+.hero-description-block {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    position: relative;
+}
+
+.description-label {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    color: #CD853F;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: left;
+}
+
+.hero-description-enhanced {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    background: rgba(139, 69, 19, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid #CD853F;
+    backdrop-filter: blur(10px);
+}
+
+/* Enhanced Buttons */
+.hero-buttons-enhanced {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+.primary-enhanced, .secondary-enhanced {
+    position: relative;
+    padding: 1.2rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.primary-enhanced {
+    background: linear-gradient(45deg, #8B4513, #CD853F);
+    color: white;
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+}
+
+.secondary-enhanced {
+    background: transparent;
+    color: white;
+    border: 2px solid #CD853F;
+}
+
+.button-bg {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.primary-enhanced:hover .button-bg,
+.secondary-enhanced:hover .button-bg {
+    left: 100%;
+}
+
+.primary-enhanced:hover,
+.secondary-enhanced:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.4);
+}
+
+/* Credentials Showcase */
+.credentials-floating {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credential-item {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.8rem 1.5rem;
+    background: rgba(139, 69, 19, 0.2);
+    border-radius: 25px;
+    border: 1px solid rgba(205, 133, 63, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.credential-item:hover {
+    color: #CD853F;
+    background: rgba(205, 133, 63, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(139, 69, 19, 0.3);
+}
+
+/* ========== END SOMEFOLK-INSPIRED HERO ENHANCEMENTS ========== */
+
 .cta-button {
     padding: 15px 30px;
     border: none;
@@ -826,6 +1057,283 @@ header {
     font-weight: 600;
     position: relative;
 }
+
+/* ========== SOMEFOLK-INSPIRED ABOUT ENHANCEMENTS ========== */
+
+/* About Section Labels */
+.about-section-label {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #8B4513;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+    opacity: 0.7;
+}
+
+/* Enhanced About Headers */
+.about-header-enhanced {
+    font-family: 'Tan Meringue', Georgia, serif;
+    font-size: 3.5rem;
+    color: #000;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.1);
+}
+
+.about-subtitle-dramatic {
+    font-family: 'Didot LP Display', serif;
+    font-size: 1.8rem;
+    color: #CD853F;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
+}
+
+/* Chapter Indicators */
+.chapter-indicator {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8B4513;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.chapter-indicator::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 1rem;
+    height: 2px;
+    background: linear-gradient(90deg, #CD853F, #8B4513);
+    transform: translateY(-50%);
+}
+
+/* Enhanced About Cards */
+.about-card-enhanced {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,248,240,0.9) 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.08);
+    border: 1px solid rgba(205, 133, 63, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #CD853F, #DEB887, #8B4513);
+}
+
+.about-card-enhanced:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(139, 69, 19, 0.12);
+}
+
+.about-card-enhanced h3 {
+    font-family: 'Didot LP Display', serif;
+    font-size: 2.2rem;
+    color: #8B4513;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.about-card-enhanced p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.about-card-enhanced p:last-child {
+    margin-bottom: 0;
+}
+
+/* Subtitle Blocks */
+.subtitle-block {
+    background: rgba(205, 133, 63, 0.1);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #CD853F;
+    margin: 2rem 0;
+}
+
+.subtitle-block p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #444;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Typography Enhancements */
+.emphasized-text {
+    font-weight: 600;
+    color: #8B4513;
+    position: relative;
+}
+
+.highlighted-quote {
+    font-family: 'Didot LP Display', serif;
+    font-size: 1.4rem;
+    color: #CD853F;
+    font-style: italic;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 248, 240, 0.8);
+    border-radius: 15px;
+    position: relative;
+}
+
+.highlighted-quote::before,
+.highlighted-quote::after {
+    content: '"';
+    font-size: 2rem;
+    color: rgba(139, 69, 19, 0.3);
+    position: absolute;
+}
+
+.highlighted-quote::before {
+    top: 0;
+    left: 1rem;
+}
+
+.highlighted-quote::after {
+    bottom: 0;
+    right: 1rem;
+}
+
+/* ========== END SOMEFOLK-INSPIRED ABOUT ENHANCEMENTS ========== */
+
+/* ========== GLOBAL SOMEFOLK-INSPIRED ELEMENTS ========== */
+
+/* Section Labels - Scattered Typography */
+.section-label-scattered {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(139, 69, 19, 0.6);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    z-index: 2;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.section-label-scattered:hover {
+    color: #CD853F;
+    transform: translateX(-50%) rotate(0deg) scale(1.1);
+}
+
+/* Section Numbers - Scattered */
+.section-number-scattered {
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+    font-family: 'Didot LP Display', serif;
+    font-size: 4rem;
+    color: rgba(205, 133, 63, 0.15);
+    font-weight: 300;
+    line-height: 1;
+    z-index: 1;
+    transform: rotate(10deg);
+    transition: all 0.3s ease;
+}
+
+.section-number-scattered:hover {
+    color: rgba(205, 133, 63, 0.3);
+    transform: rotate(0deg) scale(1.1);
+}
+
+/* Enhanced Section Titles */
+.section-title-enhanced {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title-word {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.title-word-large {
+    font-family: 'Tan Meringue', Georgia, serif;
+    font-size: 4rem;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.1);
+}
+
+/* Enhanced Subtitle Blocks */
+.enhanced-subtitle-block {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.subtitle-line {
+    display: block;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2rem;
+    color: #8B4513;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.subtitle-line-large {
+    display: block;
+    font-family: 'Didot LP Display', serif;
+    font-size: 2.2rem;
+    color: #CD853F;
+    font-weight: 300;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+/* Section Positioning */
+section {
+    position: relative;
+}
+
+/* ========== END GLOBAL SOMEFOLK-INSPIRED ELEMENTS ========== */
 
 /* Hero Quote Section */
 .journey-hero {
@@ -1080,6 +1588,187 @@ header {
     font-weight: 600;
     line-height: 1.2;
 }
+
+/* ========== SOMEFOLK-INSPIRED PORTFOLIO ENHANCEMENTS ========== */
+
+/* Portfolio Section Labels */
+.portfolio-label {
+    color: #8B4513 !important;
+}
+
+.portfolio-title-enhanced {
+    margin-bottom: 3rem;
+}
+
+.portfolio-subtitle {
+    margin-bottom: 4rem;
+}
+
+/* Portfolio Showcase Header */
+.portfolio-showcase-enhanced {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.showcase-header {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,248,240,0.9) 100%);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.08);
+    border-top: 4px solid #CD853F;
+}
+
+.showcase-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.showcase-year, .showcase-count {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #8B4513;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem;
+    background: rgba(205, 133, 63, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(205, 133, 63, 0.2);
+}
+
+.showcase-description {
+    font-family: 'Didot LP Display', serif;
+    font-size: 1.4rem;
+    color: #333;
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Enhanced Portfolio Cards */
+.portfolio-card-enhanced {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,248,240,0.9) 100%);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.08);
+    border: 1px solid rgba(205, 133, 63, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.portfolio-card-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #CD853F, #DEB887, #8B4513);
+}
+
+.portfolio-card-enhanced:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 60px rgba(139, 69, 19, 0.15);
+}
+
+/* Card Labels and Numbers */
+.card-label-scattered {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(139, 69, 19, 0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transform: rotate(15deg);
+    opacity: 0.8;
+}
+
+.card-number {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-family: 'Didot LP Display', serif;
+    font-size: 3rem;
+    color: rgba(205, 133, 63, 0.2);
+    font-weight: 300;
+    line-height: 1;
+}
+
+/* Enhanced Card Typography */
+.card-title-enhanced {
+    font-family: 'Didot LP Display', serif;
+    font-size: 2rem;
+    color: #8B4513;
+    margin: 2rem 0 1rem 0;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.card-subtitle-enhanced {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    color: #CD853F;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.portfolio-card-enhanced p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+/* Enhanced Skills Tags */
+.enhanced-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.enhanced-tags span {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #8B4513;
+    background: rgba(205, 133, 63, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(205, 133, 63, 0.2);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.enhanced-tags span:hover {
+    background: rgba(205, 133, 63, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+}
+
+/* Responsive Portfolio Grid */
+.portfolio .portfolio-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 2.5rem !important;
+    margin-top: 3rem;
+}
+
+/* ========== END SOMEFOLK-INSPIRED PORTFOLIO ENHANCEMENTS ========== */
 
 .section-subtitle {
     text-align: center;
