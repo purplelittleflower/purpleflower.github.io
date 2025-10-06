@@ -1,6 +1,74 @@
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
     
+    // ========== SOPHISTICATED HAMBURGER MENU ========== 
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navMenuOverlay = document.querySelector('.nav-menu-overlay');
+    const mobileNavLinks = document.querySelectorAll('.nav-link');
+    const body = document.body;
+    
+    // Toggle menu function
+    const toggleMenu = () => {
+        const isActive = hamburgerMenu.classList.contains('active');
+        
+        if (isActive) {
+            // Close menu
+            hamburgerMenu.classList.remove('active');
+            navMenuOverlay.classList.remove('active');
+            hamburgerMenu.setAttribute('aria-expanded', 'false');
+            body.style.overflow = '';
+            
+            // Add closing animation to menu items
+            mobileNavLinks.forEach((link, index) => {
+                link.style.transitionDelay = `${(mobileNavLinks.length - index - 1) * 0.1}s`;
+            });
+        } else {
+            // Open menu
+            hamburgerMenu.classList.add('active');
+            navMenuOverlay.classList.add('active');
+            hamburgerMenu.setAttribute('aria-expanded', 'true');
+            body.style.overflow = 'hidden';
+            
+            // Reset animation delays for opening
+            mobileNavLinks.forEach((link, index) => {
+                link.style.transitionDelay = `${(index + 1) * 0.1}s`;
+            });
+        }
+    };
+    
+    // Hamburger menu click event
+    hamburgerMenu.addEventListener('click', toggleMenu);
+    
+    // Close menu when clicking on nav links
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                toggleMenu();
+            }
+        });
+    });
+    
+    // Close menu when clicking outside (on overlay)
+    navMenuOverlay.addEventListener('click', (e) => {
+        if (e.target === navMenuOverlay) {
+            toggleMenu();
+        }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && hamburgerMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && hamburgerMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+    
     // ========== LOADING ANIMATION ========== 
     // Add page entrance animation
     document.body.style.opacity = '0';
