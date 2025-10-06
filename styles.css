@@ -535,12 +535,16 @@ nav {
 
 .portfolio-card {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     border-radius: 20px;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .portfolio-card::before {
@@ -596,14 +600,18 @@ nav {
 
 .portfolio-card h3 {
     color: #000;
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 .portfolio-card p {
     color: #000;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    flex-grow: 1;
 }
 
 .skills-tags {
@@ -616,9 +624,9 @@ nav {
 
 .skills-tags span {
     background: #f0f0f0;
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 22px;
+    font-size: 1rem;
     color: #000;
     font-weight: 500;
     transition: all 0.3s ease;
