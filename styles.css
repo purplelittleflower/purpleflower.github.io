@@ -336,7 +336,7 @@ nav {
     letter-spacing: 1px;
 }
 
-/* Portfolio Section */
+/* Portfolio Section - 2x2 Grid Layout */
 .portfolio {
     padding: 80px 0;
     background: #fff;
@@ -357,13 +357,14 @@ nav {
     font-style: italic;
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 2.5rem;
+.portfolio .portfolio-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 2.5rem !important;
     max-width: 1000px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .portfolio-card {
