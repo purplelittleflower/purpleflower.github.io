@@ -8,7 +8,7 @@
     position: fixed;
     width: 20px;
     height: 20px;
-    background: radial-gradient(circle, rgba(205, 133, 63, 0.6) 0%, rgba(205, 133, 63, 0.3) 30%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(200, 200, 200, 0.3) 30%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
@@ -20,7 +20,7 @@
     position: fixed;
     width: 8px;
     height: 8px;
-    background: linear-gradient(45deg, #CD853F, #DEB887);
+    background: linear-gradient(45deg, #ffffff, #cccccc);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
@@ -47,15 +47,15 @@
     transition: all 0.3s ease;
 }
 
-.note-1 { top: 10%; left: 10%; animation-delay: 0s; color: #CD853F; }
-.note-2 { top: 20%; left: 80%; animation-delay: -5s; color: #DEB887; }
-.note-3 { top: 60%; left: 15%; animation-delay: -10s; color: #8B4513; }
-.note-4 { top: 80%; left: 70%; animation-delay: -15s; color: #A0522D; }
-.note-5 { top: 40%; left: 85%; animation-delay: -3s; color: #D2B48C; }
+.note-1 { top: 10%; left: 10%; animation-delay: 0s; color: #ffffff; }
+.note-2 { top: 20%; left: 80%; animation-delay: -5s; color: #cccccc; }
+.note-3 { top: 60%; left: 15%; animation-delay: -10s; color: #999999; }
+.note-4 { top: 80%; left: 70%; animation-delay: -15s; color: #666666; }
+.note-5 { top: 40%; left: 85%; animation-delay: -3s; color: #dddddd; }
 
-.academia-1 { top: 30%; left: 5%; animation-delay: -7s; color: #8B4513; }
-.academia-2 { top: 70%; left: 90%; animation-delay: -12s; color: #CD853F; }
-.academia-3 { top: 50%; left: 50%; animation-delay: -18s; color: #DEB887; }
+.academia-1 { top: 30%; left: 5%; animation-delay: -7s; color: #888888; }
+.academia-2 { top: 70%; left: 90%; animation-delay: -12s; color: #ffffff; }
+.academia-3 { top: 50%; left: 50%; animation-delay: -18s; color: #bbbbbb; }
 
 @keyframes floatDance {
     0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
@@ -78,16 +78,16 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: rgba(139, 69, 19, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     z-index: 1001;
 }
 
 .scroll-progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #8B4513, #CD853F, #DEB887, #F4A460);
+    background: linear-gradient(90deg, #000000, #666666, #cccccc, #ffffff);
     width: 0%;
     transition: width 0.3s ease;
-    box-shadow: 0 0 10px rgba(205, 133, 63, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* ========== 3D TILT EFFECTS ========== */
@@ -104,7 +104,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(205,133,63,0.1) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -118,8 +118,8 @@
 .tilt-3d:hover {
     transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateZ(20px);
     box-shadow: 
-        0 25px 50px rgba(139, 69, 19, 0.3),
-        0 0 30px rgba(205, 133, 63, 0.2);
+        0 25px 50px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(255, 255, 255, 0.2);
 }
 
 /* ========== SCROLL REVEAL ANIMATIONS ========== */
@@ -168,7 +168,7 @@
 
 .cta-button:hover {
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(139, 69, 19, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 .cta-button:active {
@@ -183,8 +183,8 @@
 
 /* ========== MORPHING TEXT EFFECTS ========== */
 @keyframes textGlow {
-    0%, 100% { text-shadow: 0 0 5px rgba(205, 133, 63, 0.5); }
-    50% { text-shadow: 0 0 20px rgba(205, 133, 63, 0.8), 0 0 30px rgba(205, 133, 63, 0.6); }
+    0%, 100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); }
 }
 
 .glow-text {
@@ -796,7 +796,7 @@ header {
 }
 
 .scattered-text:hover {
-    color: #CD853F;
+    color: #ffffff;
     transform: scale(1.2) rotate(0deg);
 }
 
@@ -824,7 +824,7 @@ header {
     font-size: 6rem;
     color: #fff;
     font-weight: 600;
-    text-shadow: 0 0 30px rgba(205, 133, 63, 0.6);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
     animation: titleFloat 6s ease-in-out infinite 2s;
 }
 
@@ -842,7 +842,7 @@ header {
 .hero-subtitle-enhanced {
     font-family: 'Didot LP Display', serif;
     font-size: 2rem;
-    color: #CD853F;
+    color: #ffffff;
     font-weight: 300;
     letter-spacing: 3px;
     margin-bottom: 0.5rem;
@@ -870,7 +870,7 @@ header {
 .description-label {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.9rem;
-    color: #CD853F;
+    color: #ffffff;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -884,10 +884,10 @@ header {
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.9);
     text-align: left;
-    background: rgba(139, 69, 19, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     padding: 2rem;
     border-radius: 15px;
-    border-left: 4px solid #CD853F;
+    border-left: 4px solid #ffffff;
     backdrop-filter: blur(10px);
 }
 
@@ -918,15 +918,15 @@ header {
 }
 
 .primary-enhanced {
-    background: linear-gradient(45deg, #8B4513, #CD853F);
+    background: linear-gradient(45deg, #000000, #666666);
     color: white;
-    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .secondary-enhanced {
     background: transparent;
     color: white;
-    border: 2px solid #CD853F;
+    border: 2px solid #ffffff;
 }
 
 .button-bg {
@@ -947,7 +947,7 @@ header {
 .primary-enhanced:hover,
 .secondary-enhanced:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Credentials Showcase */
@@ -970,18 +970,18 @@ header {
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 0.8rem 1.5rem;
-    background: rgba(139, 69, 19, 0.2);
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 25px;
-    border: 1px solid rgba(205, 133, 63, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
 }
 
 .credential-item:hover {
-    color: #CD853F;
-    background: rgba(205, 133, 63, 0.2);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(139, 69, 19, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ========== END SOMEFOLK-INSPIRED HERO ENHANCEMENTS ========== */
@@ -1065,7 +1065,7 @@ header {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
-    color: #8B4513;
+    color: #666666;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -1087,7 +1087,7 @@ header {
 .about-subtitle-dramatic {
     font-family: 'Didot LP Display', serif;
     font-size: 1.8rem;
-    color: #CD853F;
+    color: #ffffff;
     font-weight: 300;
     font-style: italic;
     line-height: 1.4;
@@ -1100,7 +1100,7 @@ header {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1rem;
     font-weight: 600;
-    color: #8B4513;
+    color: #666666;
     letter-spacing: 3px;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -1115,18 +1115,18 @@ header {
     top: 50%;
     width: 1rem;
     height: 2px;
-    background: linear-gradient(90deg, #CD853F, #8B4513);
+    background: linear-gradient(90deg, #ffffff, #666666);
     transform: translateY(-50%);
 }
 
 /* Enhanced About Cards */
 .about-card-enhanced {
-    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,248,240,0.9) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,240,0.9) 100%);
     border-radius: 20px;
     padding: 3rem;
     margin-bottom: 2rem;
-    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.08);
-    border: 1px solid rgba(205, 133, 63, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -1139,18 +1139,18 @@ header {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #CD853F, #DEB887, #8B4513);
+    background: linear-gradient(90deg, #ffffff, #cccccc, #666666);
 }
 
 .about-card-enhanced:hover {
     transform: translateY(-5px);
-    box-shadow: 0 25px 60px rgba(139, 69, 19, 0.12);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
 .about-card-enhanced h3 {
     font-family: 'Didot LP Display', serif;
     font-size: 2.2rem;
-    color: #8B4513;
+    color: #333333;
     margin-bottom: 1.5rem;
     font-weight: 500;
     line-height: 1.3;
@@ -1170,10 +1170,10 @@ header {
 
 /* Subtitle Blocks */
 .subtitle-block {
-    background: rgba(205, 133, 63, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     padding: 1.5rem 2rem;
     border-radius: 10px;
-    border-left: 4px solid #CD853F;
+    border-left: 4px solid #ffffff;
     margin: 2rem 0;
 }
 
@@ -1189,19 +1189,19 @@ header {
 /* Typography Enhancements */
 .emphasized-text {
     font-weight: 600;
-    color: #8B4513;
+    color: #666666;
     position: relative;
 }
 
 .highlighted-quote {
     font-family: 'Didot LP Display', serif;
     font-size: 1.4rem;
-    color: #CD853F;
+    color: #ffffff;
     font-style: italic;
     text-align: center;
     margin: 2rem 0;
     padding: 1.5rem;
-    background: rgba(255, 248, 240, 0.8);
+    background: rgba(240, 240, 240, 0.8);
     border-radius: 15px;
     position: relative;
 }
@@ -1210,7 +1210,7 @@ header {
 .highlighted-quote::after {
     content: '"';
     font-size: 2rem;
-    color: rgba(139, 69, 19, 0.3);
+    color: rgba(0, 0, 0, 0.3);
     position: absolute;
 }
 
@@ -1237,7 +1237,7 @@ header {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
-    color: rgba(139, 69, 19, 0.6);
+    color: rgba(120, 120, 120, 0.6);
     letter-spacing: 3px;
     text-transform: uppercase;
     z-index: 2;
@@ -1246,7 +1246,7 @@ header {
 }
 
 .section-label-scattered:hover {
-    color: #CD853F;
+    color: #ffffff;
     transform: translateX(-50%) rotate(0deg) scale(1.1);
 }
 
@@ -1257,7 +1257,7 @@ header {
     right: 2rem;
     font-family: 'Didot LP Display', serif;
     font-size: 4rem;
-    color: rgba(205, 133, 63, 0.15);
+    color: rgba(255, 255, 255, 0.15);
     font-weight: 300;
     line-height: 1;
     z-index: 1;
@@ -1266,7 +1266,7 @@ header {
 }
 
 .section-number-scattered:hover {
-    color: rgba(205, 133, 63, 0.3);
+    color: rgba(255, 255, 255, 0.3);
     transform: rotate(0deg) scale(1.1);
 }
 
@@ -1310,7 +1310,7 @@ header {
     display: block;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2rem;
-    color: #8B4513;
+    color: #666666;
     font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1321,7 +1321,7 @@ header {
     display: block;
     font-family: 'Didot LP Display', serif;
     font-size: 2.2rem;
-    color: #CD853F;
+    color: #ffffff;
     font-weight: 300;
     font-style: italic;
     letter-spacing: 1px;
@@ -1593,7 +1593,7 @@ section {
 
 /* Portfolio Section Labels */
 .portfolio-label {
-    color: #8B4513 !important;
+    color: #666666 !important;
 }
 
 .portfolio-title-enhanced {
@@ -1613,11 +1613,11 @@ section {
 .showcase-header {
     max-width: 800px;
     margin: 0 auto;
-    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,248,240,0.9) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,240,0.9) 100%);
     padding: 3rem;
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.08);
-    border-top: 4px solid #CD853F;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #ffffff;
 }
 
 .showcase-meta {
@@ -1632,13 +1632,13 @@ section {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #8B4513;
+    color: #666666;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 0.5rem 1.5rem;
-    background: rgba(205, 133, 63, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
-    border: 1px solid rgba(205, 133, 63, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .showcase-description {
@@ -1653,11 +1653,11 @@ section {
 /* Enhanced Portfolio Cards */
 .portfolio-card-enhanced {
     position: relative;
-    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,248,240,0.9) 100%);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,240,0.9) 100%);
     border-radius: 20px;
     padding: 3rem 2.5rem;
-    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.08);
-    border: 1px solid rgba(205, 133, 63, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     overflow: hidden;
 }
@@ -1669,12 +1669,12 @@ section {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #CD853F, #DEB887, #8B4513);
+    background: linear-gradient(90deg, #ffffff, #cccccc, #666666);
 }
 
 .portfolio-card-enhanced:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 60px rgba(139, 69, 19, 0.15);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
 /* Card Labels and Numbers */
@@ -1685,7 +1685,7 @@ section {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.7rem;
     font-weight: 600;
-    color: rgba(139, 69, 19, 0.6);
+    color: rgba(120, 120, 120, 0.6);
     letter-spacing: 2px;
     text-transform: uppercase;
     transform: rotate(15deg);
@@ -1698,7 +1698,7 @@ section {
     left: 1rem;
     font-family: 'Didot LP Display', serif;
     font-size: 3rem;
-    color: rgba(205, 133, 63, 0.2);
+    color: rgba(200, 200, 200, 0.2);
     font-weight: 300;
     line-height: 1;
 }
@@ -1707,7 +1707,7 @@ section {
 .card-title-enhanced {
     font-family: 'Didot LP Display', serif;
     font-size: 2rem;
-    color: #8B4513;
+    color: #333333;
     margin: 2rem 0 1rem 0;
     font-weight: 500;
     line-height: 1.3;
@@ -1716,7 +1716,7 @@ section {
 .card-subtitle-enhanced {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.9rem;
-    color: #CD853F;
+    color: #ffffff;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1744,19 +1744,19 @@ section {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.8rem;
     font-weight: 500;
-    color: #8B4513;
-    background: rgba(205, 133, 63, 0.1);
+    color: #666666;
+    background: rgba(255, 255, 255, 0.1);
     padding: 0.6rem 1.2rem;
     border-radius: 20px;
-    border: 1px solid rgba(205, 133, 63, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
 }
 
 .enhanced-tags span:hover {
-    background: rgba(205, 133, 63, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Portfolio Grid */
