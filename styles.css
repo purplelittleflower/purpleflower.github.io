@@ -1,6 +1,7 @@
-/* Import luxury fonts - Tan Meringue for main title, Didot LP Display for headings */
+/* Import luxury fonts - Tan Meringue for main title, Didot LP Display for headings, Garamond for body text */
 @import url('https://fonts.googleapis.com/css2?family=Tan+Meringue&family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Didot+LP+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
 
 /* Reset and base styles */
 * {
@@ -10,7 +11,7 @@
 }
 
 body {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'EB Garamond', 'Times New Roman', serif;
     line-height: 1.7;
     color: #2c2c2c;
     background: linear-gradient(to bottom, #F5DEB3 0%, #DEB887 20%, #D2B48C 40%, #CD853F 60%, #A0522D 80%, #8B4513 100%);
