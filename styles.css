@@ -444,28 +444,31 @@ nav {
 }
 
 .about-text .lead {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #8B4513;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    margin-bottom: 2rem;
+    line-height: 1.7;
 }
 
 .about-text p {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     color: #000;
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
 }
 
 .about-text .highlight {
     background: linear-gradient(120deg, #F5DEB3 0%, #DEB887 100%);
-    padding: 1rem;
-    border-radius: 10px;
-    border-left: 4px solid #8B4513;
+    padding: 2rem 2.5rem;
+    border-radius: 15px;
+    border-left: 6px solid #8B4513;
     font-style: italic;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
     color: #5D4037;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    text-align: center;
 }
 
 .about-stats {
@@ -489,17 +492,18 @@ nav {
 
 .stat .number {
     display: block;
-    font-size: 2.5rem;
+    font-size: 3.2rem;
     font-weight: bold;
     color: #8B4513;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .stat .label {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #000;
     text-transform: uppercase;
     letter-spacing: 1px;
+    line-height: 1.4;
 }
 
 /* Portfolio Section - 2x2 Grid Layout */
