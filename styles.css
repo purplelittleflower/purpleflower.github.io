@@ -513,7 +513,7 @@ nav {
 .contact-form select:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #6c63ff;
+    border-color: #8B4513;
 }
 
 .contact-form textarea {
