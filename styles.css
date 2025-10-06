@@ -12,6 +12,7 @@
 
 body {
     font-family: 'EB Garamond', 'Times New Roman', serif;
+    font-size: 18px;
     line-height: 1.7;
     color: #2c2c2c;
     background: linear-gradient(to bottom, #E6D7C3 0%, #D4C4A8 20%, #C4A580 40%, #A0715E 60%, #8B5A3C 80%, #6D4423 100%);
