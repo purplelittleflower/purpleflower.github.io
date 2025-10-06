@@ -19,8 +19,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // ========== HERO SECTION SPECTACULAR ENTRANCE ==========
 function initHeroAnimations() {
-    // Create timeline for hero entrance
-    const heroTL = gsap.timeline({ delay: 0.5 });
+    // Enhanced hero title letter-by-letter animation
+    const heroLetters = document.querySelectorAll('.hero-main-title .animate-letters span');
+    if (heroLetters.length > 0) {
+        // Override CSS animations and use GSAP for better control
+        gsap.set(heroLetters, {
+            opacity: 0,
+            y: 60,
+            scale: 0.2,
+            rotationY: 90,
+            filter: "blur(10px)"
+        });
+
+        // Animate letters in spectacular sequence
+        gsap.to(heroLetters, {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            rotationY: 0,
+            filter: "blur(0px)",
+            duration: 1.2,
+            ease: "back.out(1.7)",
+            stagger: {
+                amount: 2.5,
+                from: "start"
+            },
+            delay: 0.5
+        });
+    }
+
+    // Create timeline for hero entrance (starts after letters finish)
+    const heroTL = gsap.timeline({ delay: 3.5 });
     
     // Animate scattered text elements with stagger
     heroTL.from('.scattered-text', {
@@ -350,24 +379,90 @@ function initTextEffects() {
         delay: 2
     });
     
-    // Scramble effect for section titles on scroll
+    // Enhanced letter-by-letter animations for section titles on scroll
     const sectionTitles = document.querySelectorAll('.section-title-enhanced');
     
     sectionTitles.forEach(title => {
-        ScrollTrigger.create({
-            trigger: title,
-            start: 'top 80%',
-            onEnter: () => {
-                // Text reveal animation
-                gsap.from(title.querySelectorAll('.title-word, .title-word-large'), {
-                    duration: 1,
-                    opacity: 0,
-                    y: 50,
-                    ease: "power2.out",
-                    stagger: 0.2
+        const letters = title.querySelectorAll('.animate-letters span');
+        
+        if (letters.length > 0) {
+            // Set initial state for letters
+            gsap.set(letters, {
+                opacity: 0,
+                y: 50,
+                scale: 0.3,
+                rotationX: 90
+            });
+
+            ScrollTrigger.create({
+                trigger: title,
+                start: 'top 80%',
+                onEnter: () => {
+                    // Letter-by-letter reveal animation
+                    gsap.to(letters, {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        rotationX: 0,
+                        duration: 0.8,
+                        ease: "back.out(1.7)",
+                        stagger: {
+                            amount: 0.6,
+                            from: "start"
+                        }
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.to(letters, {
+                        opacity: 0,
+                        y: 50,
+                        scale: 0.3,
+                        rotationX: 90,
+                        duration: 0.5,
+                        stagger: {
+                            amount: 0.3,
+                            from: "end"
+                        }
+                    });
+                }
+            });
+
+            // Add interactive hover effects for individual letters
+            letters.forEach(letter => {
+                letter.addEventListener('mouseenter', () => {
+                    gsap.to(letter, {
+                        y: -10,
+                        scale: 1.2,
+                        duration: 0.3,
+                        ease: "back.out(2)"
+                    });
                 });
-            }
-        });
+
+                letter.addEventListener('mouseleave', () => {
+                    gsap.to(letter, {
+                        y: 0,
+                        scale: 1,
+                        duration: 0.3,
+                        ease: "back.out(2)"
+                    });
+                });
+            });
+        } else {
+            // Fallback for titles without letter spans
+            ScrollTrigger.create({
+                trigger: title,
+                start: 'top 80%',
+                onEnter: () => {
+                    gsap.from(title.querySelectorAll('.title-word, .title-word-large'), {
+                        duration: 1,
+                        opacity: 0,
+                        y: 50,
+                        ease: "power2.out",
+                        stagger: 0.2
+                    });
+                }
+            });
+        }
     });
 }
 

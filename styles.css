@@ -331,7 +331,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #8B4513, #A0522D);
+    background: linear-gradient(45deg, #666666, #888888);
     z-index: 9999;
     opacity: 0;
     visibility: hidden;
@@ -374,7 +374,7 @@ html {
 .back-to-top:hover {
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    background: linear-gradient(45deg, #A0522D, #CD853F);
+    background: linear-gradient(45deg, #777777, #999999);
 }
 
 .back-to-top:active {
@@ -393,14 +393,14 @@ h1, h2, h3, h4 {
     font-weight: 400;
     letter-spacing: 0.3px;
     margin-bottom: 1rem;
-    color: #8B4513;
+    color: #666666;
 }
 
 /* Main logo/brand title */
 .logo h1 {
     font-size: 2rem;
-    color: #8B4513;
-    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
+    color: #666666;
+    text-shadow: 1px 1px 2px rgba(102, 102, 102, 0.3);
     margin: 0;
 }
 
@@ -408,7 +408,7 @@ h1, h2, h3, h4 {
 h2 {
     font-family: 'Didot LP Display', 'Times New Roman', serif;
     font-size: 2.8rem;
-    color: #8B4513;
+    color: #666666;
     margin-bottom: 2rem;
     text-align: center;
     position: relative;
@@ -420,7 +420,7 @@ h2 {
 h3 {
     font-family: 'Didot LP Display', 'Times New Roman', serif;
     font-size: 1.8rem;
-    color: #A0522D;
+    color: #666666;
     margin-bottom: 1.5rem;
     line-height: 1.3;
 }
@@ -429,7 +429,7 @@ h3 {
 h4 {
     font-family: 'Didot LP Display', 'Times New Roman', serif;
     font-size: 1.4rem;
-    color: #8B4513;
+    color: #666666;
     margin-bottom: 1rem;
     line-height: 1.4;
 }
@@ -456,16 +456,16 @@ header {
 
 .logo h1 {
     font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
-    color: #8B4513;
+    color: #666666;
     font-size: 2rem;
     margin: 0;
     font-weight: 400;
-    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
+    text-shadow: 1px 1px 2px rgba(102, 102, 102, 0.3);
 }
 
 .logo .tagline {
     font-size: 0.9rem;
-    color: #A0522D;
+    color: #666666;
     margin-left: 15px;
     font-weight: 300;
     font-style: italic;
@@ -530,7 +530,7 @@ header {
 
 .nav-link {
     text-decoration: none;
-    color: #8B4513;
+    color: #666666;
     font-weight: 500;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.5px;
@@ -568,9 +568,9 @@ header {
 }
 
 .nav-link:hover {
-    color: #CD853F;
+    color: #888888;
     transform: translateY(-3px);
-    text-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+    text-shadow: 0 2px 8px rgba(136, 136, 136, 0.2);
 }
 
 .nav-link:hover::before {
@@ -1831,6 +1831,123 @@ section {
 
 /* ========== END VISUAL ELEMENTS ========== */
 
+/* ========== LETTER-BY-LETTER ANIMATION EFFECTS ========== */
+
+.animate-letters {
+    display: inline-block;
+}
+
+.animate-letters span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px) scale(0.3);
+    animation: letterBounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    will-change: transform, opacity;
+}
+
+/* Staggered delays for each letter */
+.animate-letters span:nth-child(1) { animation-delay: 0.1s; }
+.animate-letters span:nth-child(2) { animation-delay: 0.15s; }
+.animate-letters span:nth-child(3) { animation-delay: 0.2s; }
+.animate-letters span:nth-child(4) { animation-delay: 0.25s; }
+.animate-letters span:nth-child(5) { animation-delay: 0.3s; }
+.animate-letters span:nth-child(6) { animation-delay: 0.35s; }
+.animate-letters span:nth-child(7) { animation-delay: 0.4s; }
+.animate-letters span:nth-child(8) { animation-delay: 0.45s; }
+.animate-letters span:nth-child(9) { animation-delay: 0.5s; }
+.animate-letters span:nth-child(10) { animation-delay: 0.55s; }
+.animate-letters span:nth-child(11) { animation-delay: 0.6s; }
+.animate-letters span:nth-child(12) { animation-delay: 0.65s; }
+.animate-letters span:nth-child(13) { animation-delay: 0.7s; }
+.animate-letters span:nth-child(14) { animation-delay: 0.75s; }
+.animate-letters span:nth-child(15) { animation-delay: 0.8s; }
+
+@keyframes letterBounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.3) rotateX(90deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.1) rotateX(0deg);
+    }
+    70% {
+        transform: translateY(2px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateX(0deg);
+    }
+}
+
+/* Enhanced hero title letter animations */
+.hero-main-title .animate-letters span {
+    animation: none; /* Use GSAP instead for better control */
+}
+
+@keyframes heroLetterEffect {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.2) rotateY(90deg);
+        filter: blur(10px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.15) rotateY(0deg);
+        filter: blur(0px);
+    }
+    70% {
+        transform: translateY(3px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotateY(0deg);
+        filter: blur(0px);
+    }
+}
+
+/* Section title letter animations triggered on scroll */
+.section-title-enhanced .animate-letters span {
+    animation: none; /* Disable auto animation, use GSAP scroll trigger */
+}
+
+/* Hover effects for individual letters */
+.animate-letters span:hover {
+    animation: letterHover 0.3s ease-in-out;
+}
+
+@keyframes letterHover {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.2); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .animate-letters span {
+        animation-duration: 0.6s;
+    }
+    
+    .hero-main-title .animate-letters span {
+        animation-duration: 0.8s;
+    }
+    
+    /* Reduce delays on mobile for faster loading */
+    .animate-letters span:nth-child(n) {
+        animation-delay: calc(0.05s * var(--index));
+    }
+}
+
+/* Accessibility: Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .animate-letters span {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* ========== END LETTER-BY-LETTER ANIMATIONS ========== */
+
 /* Hero Quote Section */
 .journey-hero {
     margin-bottom: 5rem;
@@ -1860,7 +1977,7 @@ section {
 .lead-quote {
     font-family: 'Didot LP Display', serif;
     font-size: 1.6rem;
-    color: #8B4513;
+    color: #666666;
     line-height: 1.6;
     font-style: italic;
     margin: 0;
@@ -1949,7 +2066,7 @@ section {
 }
 
 .highlight-badge.tech {
-    background: linear-gradient(45deg, #D2B48C, #F4A460);
+    background: linear-gradient(45deg, #999999, #bbbbbb);
 }
 
 .achievement-stats {
@@ -1971,7 +2088,7 @@ section {
     font-family: 'Didot LP Display', serif;
     font-size: 2rem;
     font-weight: 700;
-    color: #8B4513;
+    color: #666666;
 }
 
 .stat-label {
@@ -1987,13 +2104,13 @@ section {
 }
 
 .focus-item {
-    background: rgba(139, 69, 19, 0.08);
-    color: #8B4513;
+    background: rgba(102, 102, 102, 0.08);
+    color: #666666;
     padding: 0.5rem 1rem;
     border-radius: 15px;
     font-size: 0.9rem;
     font-weight: 500;
-    border: 1px solid rgba(139, 69, 19, 0.15);
+    border: 1px solid rgba(102, 102, 102, 0.15);
 }
 
 /* Sidebar */
@@ -2013,7 +2130,7 @@ section {
 .essence-card h4, .experience-overview h4 {
     font-family: 'Didot LP Display', serif;
     font-size: 1.4rem;
-    color: #8B4513;
+    color: #666666;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -2060,7 +2177,7 @@ section {
     font-family: 'Didot LP Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: #8B4513;
+    color: #666666;
 }
 
 .exp-label {
@@ -2347,14 +2464,14 @@ section {
 }
 
 .portfolio-card:hover h3 {
-    color: #CD853F;
-    text-shadow: 0 0 15px rgba(205, 133, 63, 0.6);
+    color: #888888;
+    text-shadow: 0 0 15px rgba(136, 136, 136, 0.6);
     transform: translateZ(10px);
 }
 
 .portfolio-card:hover p {
     transform: translateZ(5px);
-    color: #8B4513;
+    color: #666666;
 }
 
 .portfolio-card:hover .skills-tags span {
@@ -2401,7 +2518,7 @@ section {
 
 .portfolio-card:hover h3 {
     transform: translateY(-5px);
-    color: #8B4513;
+    color: #666666;
 }
 
 .portfolio-card:hover p {
@@ -2481,7 +2598,7 @@ section {
 }
 
 .contact-info h3 {
-    color: #8B4513;
+    color: #666666;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -2525,7 +2642,7 @@ section {
 .contact-form select:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #8B4513;
+    border-color: #666666;
 }
 
 .contact-form textarea {
@@ -2597,7 +2714,7 @@ section {
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #CD853F, #D2B48C, #F4A460);
+    background: linear-gradient(90deg, #777777, #999999, #aaaaaa);
 }
 
 .degree-badge {
@@ -2616,7 +2733,7 @@ section {
 .current-studies-featured h3 {
     font-family: 'Didot LP Display', serif;
     font-size: 2.2rem;
-    color: #8B4513;
+    color: #666666;
     margin-bottom: 1.5rem;
     line-height: 1.3;
 }
@@ -2655,7 +2772,7 @@ section {
     font-family: 'Didot LP Display', serif;
     font-size: 2rem;
     text-align: center;
-    color: #8B4513;
+    color: #666666;
     margin-bottom: 3rem;
     position: relative;
 }
@@ -2668,7 +2785,7 @@ section {
     transform: translateX(-50%);
     width: 80px;
     height: 2px;
-    background: linear-gradient(90deg, #CD853F, #D2B48C);
+    background: linear-gradient(90deg, #777777, #999999);
 }
 
 .research-grid {
@@ -2743,13 +2860,13 @@ section {
 
 .research-card:hover h4 {
     transform: translateZ(10px);
-    color: #CD853F;
-    text-shadow: 0 0 15px rgba(205, 133, 63, 0.6);
+    color: #888888;
+    text-shadow: 0 0 15px rgba(136, 136, 136, 0.6);
 }
 
 .research-card:hover p {
     transform: translateZ(5px);
-    color: #8B4513;
+    color: #666666;
 }
 
 .research-card:hover .status-badge {
@@ -2779,15 +2896,15 @@ section {
 }
 
 .research-card.primary {
-    --card-gradient: linear-gradient(90deg, #CD853F, #D2B48C);
+    --card-gradient: linear-gradient(90deg, #777777, #999999);
 }
 
 .research-card.secondary {
-    --card-gradient: linear-gradient(90deg, #8B4513, #A0522D);
+    --card-gradient: linear-gradient(90deg, #666666, #888888);
 }
 
 .research-card.tertiary {
-    --card-gradient: linear-gradient(90deg, #DEB887, #F4A460);
+    --card-gradient: linear-gradient(90deg, #aaaaaa, #cccccc);
 }
 
 .research-card:hover {
@@ -2834,7 +2951,7 @@ section {
 .research-card h4 {
     font-family: 'Didot LP Display', serif;
     font-size: 1.4rem;
-    color: #8B4513;
+    color: #666666;
     margin-bottom: 1rem;
     line-height: 1.3;
 }
@@ -2889,7 +3006,7 @@ section {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: linear-gradient(to bottom, #8B4513, #CD853F);
+    background: linear-gradient(to bottom, #666666, #888888);
     transform: translateX(-50%);
 }
 
@@ -2914,7 +3031,7 @@ section {
     top: 20px;
     width: 15px;
     height: 15px;
-    background: #8B4513;
+    background: #666666;
     border-radius: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -2923,7 +3040,7 @@ section {
 .year {
     flex: 0 0 120px;
     font-weight: bold;
-    color: #8B4513;
+    color: #666666;
     font-size: 1.1rem;
     text-align: center;
     padding: 1rem;
