@@ -265,13 +265,7 @@ nav {
     position: relative;
 }
 
-.about h2::after {
-    content: '🌟';
-    position: absolute;
-    right: -50px;
-    top: 0;
-    font-size: 2rem;
-}
+
 
 .about-grid {
     display: grid;
