@@ -290,12 +290,13 @@ nav {
 }
 
 .about-text .highlight {
-    background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+    background: linear-gradient(120deg, #F5DEB3 0%, #DEB887 100%);
     padding: 1rem;
     border-radius: 10px;
-    border-left: 4px solid #ff6b6b;
+    border-left: 4px solid #8B4513;
     font-style: italic;
     margin-top: 1.5rem;
+    color: #5D4037;
 }
 
 .about-stats {
