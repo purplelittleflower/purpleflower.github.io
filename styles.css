@@ -554,19 +554,19 @@ nav {
 }
 
 .portfolio-card.music::before {
-    background: linear-gradient(90deg, #667eea, #764ba2, #ff6b6b);
+    background: linear-gradient(90deg, #CD853F, #D2B48C);
 }
 
 .portfolio-card.education::before {
-    background: linear-gradient(90deg, #f093fb, #f5576c);
+    background: linear-gradient(90deg, #CD853F, #D2B48C);
 }
 
 .portfolio-card.creative::before {
-    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    background: linear-gradient(90deg, #CD853F, #D2B48C);
 }
 
 .portfolio-card.tech::before {
-    background: linear-gradient(90deg, #43e97b, #38f9d7);
+    background: linear-gradient(90deg, #CD853F, #D2B48C);
 }
 
 .portfolio-card:hover {
