@@ -12,7 +12,9 @@ body {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.7;
     color: #2c2c2c;
-    background: linear-gradient(135deg, #f3f1ff 0%, #faf8ff 100%);
+    background: linear-gradient(to bottom, #F5DEB3 0%, #DEB887 20%, #D2B48C 40%, #CD853F 60%, #A0522D 80%, #8B4513 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
     font-weight: 400;
 }
 
@@ -34,25 +36,26 @@ h1, h2, h3, h4 {
 /* Main logo/brand title */
 .logo h1 {
     font-size: 2rem;
-    color: #6B5B95;
-    text-shadow: 1px 1px 2px rgba(107, 91, 149, 0.15);
+    color: #8B4513;
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
     margin: 0;
 }
 
 /* Section titles */
 h2 {
     font-size: 2.8rem;
-    color: #6B5B95;
+    color: #8B4513;
     margin-bottom: 2rem;
     text-align: center;
     position: relative;
     line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 /* Subsection titles */
 h3 {
     font-size: 1.8rem;
-    color: #8B7EC8;
+    color: #A0522D;
     margin-bottom: 1.5rem;
     line-height: 1.3;
 }
@@ -60,21 +63,21 @@ h3 {
 /* Card titles */
 h4 {
     font-size: 1.4rem;
-    color: #6B5B95;
+    color: #8B4513;
     margin-bottom: 1rem;
     line-height: 1.4;
 }
 
 /* Header and Navigation */
 header {
-    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(243,241,255,0.95) 100%);
+    background: rgba(255,255,255,0.15);
     backdrop-filter: blur(15px);
-    box-shadow: 0 4px 20px rgba(139, 126, 200, 0.15);
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(139, 126, 200, 0.1);
+    border-bottom: 1px solid rgba(139, 69, 19, 0.1);
 }
 
 nav {
@@ -86,16 +89,16 @@ nav {
 
 .logo h1 {
     font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
-    color: #6B5B95;
+    color: #8B4513;
     font-size: 2rem;
     margin: 0;
     font-weight: 400;
-    text-shadow: 1px 1px 2px rgba(107, 91, 149, 0.15);
+    text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.3);
 }
 
 .logo .tagline {
     font-size: 0.9rem;
-    color: #8B7EC8;
+    color: #A0522D;
     margin-left: 15px;
     font-weight: 300;
     font-style: italic;
@@ -109,7 +112,7 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #6B5B95;
+    color: #8B4513;
     font-weight: 500;
     font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0.5px;
@@ -127,12 +130,12 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #8B7EC8, #A89BE5);
+    background: linear-gradient(90deg, #CD853F, #DEB887);
     transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #8B7EC8;
+    color: #CD853F;
     transform: translateY(-2px);
 }
 
@@ -142,14 +145,13 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #8B7EC8 0%, #9A8CD6 30%, #A89BE5 70%, #B6A8F3 100%);
+    background: transparent;
     color: #fff;
     padding: 140px 0 100px;
     text-align: center;
     margin-top: 90px;
     position: relative;
     overflow: hidden;
-    box-shadow: inset 0 0 100px rgba(139, 126, 200, 0.15);
 }
 
 .hero::before {
@@ -225,9 +227,9 @@ nav {
 }
 
 .cta-button.primary {
-    background: linear-gradient(45deg, #9A8CD6, #8B7EC8);
+    background: linear-gradient(45deg, #CD853F, #D2B48C);
     color: white;
-    box-shadow: 0 4px 15px rgba(154, 140, 214, 0.4);
+    box-shadow: 0 4px 15px rgba(205, 133, 63, 0.4);
 }
 
 .cta-button.secondary {
@@ -242,7 +244,7 @@ nav {
 }
 
 .cta-button.primary:hover {
-    background: linear-gradient(45deg, #8B7EC8, #7A6DB8);
+    background: linear-gradient(45deg, #A0522D, #CD853F);
 }
 
 .cta-button.secondary:hover {
@@ -252,7 +254,7 @@ nav {
 /* About Section */
 .about {
     padding: 80px 0;
-    background: linear-gradient(135deg, #f3f1ff 0%, #faf8ff 100%);
+    background: transparent;
 }
 
 .about h2 {
@@ -339,7 +341,7 @@ nav {
 /* Portfolio Section - 2x2 Grid Layout */
 .portfolio {
     padding: 80px 0;
-    background: #fff;
+    background: transparent;
 }
 
 .portfolio h2 {
@@ -445,7 +447,7 @@ nav {
 /* Contact Section */
 .contact {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: transparent;
 }
 
 .contact h2 {
@@ -520,7 +522,7 @@ nav {
 }
 
 .contact-form button {
-    background: linear-gradient(45deg, #8B7EC8, #9A8CD6);
+    background: linear-gradient(45deg, #CD853F, #D2B48C);
     color: white;
     padding: 15px;
     border: none;
@@ -533,13 +535,13 @@ nav {
 
 .contact-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(139, 126, 200, 0.4);
+    box-shadow: 0 8px 25px rgba(205, 133, 63, 0.4);
 }
 
 /* Academic Section */
 .academic {
     padding: 80px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: transparent;
     color: white;
 }
 
@@ -609,7 +611,7 @@ nav {
 /* Experience Section */
 .experience {
     padding: 80px 0;
-    background: #f8f9fa;
+    background: transparent;
 }
 
 .experience h2 {
