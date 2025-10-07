@@ -3563,6 +3563,14 @@ section {
     text-transform: uppercase;
 }
 
+.planning-badge {
+    background: linear-gradient(45deg, #2563eb, #3b82f6) !important;
+}
+
+.coming-soon-badge {
+    background: linear-gradient(45deg, #059669, #10b981) !important;
+}
+
 .current-studies-featured h3 {
     font-family: 'Didot LP Display', serif;
     font-size: 2.2rem;
@@ -3595,6 +3603,64 @@ section {
     border: 1px solid rgba(102, 102, 102, 0.2);
 }
 
+/* Different badge colors for project status */
+.planning-badge {
+    background: linear-gradient(45deg, #2563eb, #3b82f6) !important;
+}
+
+.coming-soon-badge {
+    background: linear-gradient(45deg, #059669, #10b981) !important;
+}
+
+/* Action Buttons for Academic Cards */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-primary-academic {
+    background: linear-gradient(45deg, #404040, #666666);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-secondary-academic {
+    background: transparent;
+    color: #666;
+    border: 2px solid #666;
+    padding: 0.8rem 1.8rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.btn-primary-academic:hover {
+    background: linear-gradient(45deg, #333, #555);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary-academic:hover {
+    background: #666;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
 /* Academic Portfolio Section */
 .academic-portfolio {
     max-width: 1100px;
@@ -3621,17 +3687,17 @@ section {
     background: linear-gradient(90deg, #777777, #999999);
 }
 
-/* Research Grid - Inherits Article Card Styling */
+/* Research Grid - Using Current Studies Card Style */
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 3rem;
     margin-top: 3rem;
 }
 
-/* Research cards inherit all article-card styling */
+/* Research cards inherit current-studies-featured styling */
 .research-card {
-    /* All styling inherited from .article-card */
+    /* All styling inherited from .current-studies-featured */
     position: relative;
 }
 
