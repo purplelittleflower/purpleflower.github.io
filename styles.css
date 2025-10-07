@@ -1395,7 +1395,7 @@ header {
     line-height: 0.9;
     font-weight: 400;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1404,14 +1404,14 @@ header {
 }
 
 .title-line-1 {
-    font-size: 5.5rem;
+    font-size: 7rem;
     color: #000000;
     animation: titleFloat 6s ease-in-out infinite;
     text-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .title-line-2 {
-    font-size: 9rem;
+    font-size: 11rem;
     color: #000000;
     font-weight: 600;
     text-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
@@ -1419,7 +1419,7 @@ header {
 }
 
 .title-line-3 {
-    font-size: 6.5rem;
+    font-size: 8rem;
     color: #000000;
     animation: titleFloat 6s ease-in-out infinite 4s;
     text-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
@@ -1428,12 +1428,12 @@ header {
 /* Fix letter spacing for animate-letters spans */
 .animate-letters {
     display: inline-block;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.01em;
 }
 
 .animate-letters span {
     display: inline-block;
-    margin-right: 0.02em;
+    margin-right: -0.01em;
     animation: heroLetterGlow 3s ease-in-out infinite;
     animation-delay: calc(var(--index, 0) * 0.1s);
 }
@@ -1905,19 +1905,19 @@ header {
 
 .title-word {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: rgba(0, 0, 0, 0.7);
     font-weight: 300;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 
 .title-word-large {
     font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
-    font-size: 4rem;
+    font-size: 5rem;
     color: #000;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.1);
 }
 
