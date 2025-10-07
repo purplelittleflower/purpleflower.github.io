@@ -2338,10 +2338,12 @@ section {
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
+    display: block;
+    border-radius: 0;
 }
 
 .article-card:hover .article-image img {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .article-content {
@@ -3637,12 +3639,23 @@ section {
     transform: perspective(1000px) rotateY(-2deg) rotateX(3deg);
 }
 
+/* Enhanced article meta styling for research cards */
 .research-card .article-meta .category {
     color: #333;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.75rem;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+}
+
+.research-card .article-meta .date {
+    color: #666;
+    font-weight: 500;
+    font-size: 0.8rem;
 }
 
 .research-card .research-tags {
