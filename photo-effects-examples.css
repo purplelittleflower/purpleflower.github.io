@@ -1,0 +1,353 @@
+/* ========== PHOTO OVERLAY EFFECTS COLLECTION ========== */
+
+/* 1. GRADIENT OVERLAY EFFECT */
+.photo-gradient-overlay {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.photo-gradient-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 0, 150, 0.3) 0%,
+        rgba(0, 150, 255, 0.3) 50%,
+        rgba(255, 255, 0, 0.2) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.photo-gradient-overlay:hover::before {
+    opacity: 1;
+}
+
+/* 2. COLOR FILTER OVERLAY */
+.photo-color-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-color-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 0, 100, 0.4);
+    mix-blend-mode: multiply;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.photo-color-overlay:hover::after {
+    opacity: 1;
+}
+
+/* 3. VINTAGE FILM OVERLAY */
+.photo-vintage-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-vintage-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 50% 50%, transparent 50%, rgba(0,0,0,0.2) 100%),
+        linear-gradient(0deg, rgba(255,200,100,0.1) 0%, transparent 20%, transparent 80%, rgba(100,100,255,0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.photo-vintage-overlay:hover::before {
+    opacity: 1;
+}
+
+.photo-vintage-overlay img {
+    filter: sepia(0.3) contrast(1.2) brightness(1.1);
+    transition: filter 0.4s ease;
+}
+
+.photo-vintage-overlay:hover img {
+    filter: sepia(0.8) contrast(1.4) brightness(1.2);
+}
+
+/* 4. GLITCH OVERLAY EFFECT */
+.photo-glitch-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-glitch-overlay::before,
+.photo-glitch-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(90deg, transparent 0%, rgba(255,0,0,0.1) 2%, transparent 4%),
+        linear-gradient(90deg, transparent 50%, rgba(0,255,0,0.1) 52%, transparent 54%),
+        linear-gradient(90deg, transparent 80%, rgba(0,0,255,0.1) 82%, transparent 84%);
+    opacity: 0;
+    animation: glitch-lines 2s infinite;
+    z-index: 2;
+}
+
+.photo-glitch-overlay::after {
+    animation-delay: 0.5s;
+}
+
+.photo-glitch-overlay:hover::before,
+.photo-glitch-overlay:hover::after {
+    opacity: 1;
+}
+
+@keyframes glitch-lines {
+    0%, 90%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-2px); }
+    20% { transform: translateX(2px); }
+    30% { transform: translateX(-1px); }
+}
+
+/* 5. NEON GLOW OVERLAY */
+.photo-neon-overlay {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.photo-neon-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(0, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 0, 255, 0.3) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.photo-neon-overlay:hover::before {
+    opacity: 1;
+}
+
+.photo-neon-overlay:hover {
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(255, 0, 255, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* 6. HOLOGRAPHIC OVERLAY */
+.photo-holographic-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-holographic-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    z-index: 2;
+}
+
+.photo-holographic-overlay:hover::before {
+    transform: translateX(100%);
+}
+
+.photo-holographic-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            transparent 0px,
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 2px
+        );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.photo-holographic-overlay:hover::after {
+    opacity: 1;
+}
+
+/* 7. DOUBLE EXPOSURE OVERLAY */
+.photo-double-exposure {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-double-exposure::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="30" fill="none" stroke="white" stroke-width="0.5" opacity="0.3"/><circle cx="30" cy="30" r="20" fill="none" stroke="white" stroke-width="0.3" opacity="0.2"/></svg>');
+    background-size: 200px 200px;
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.photo-double-exposure:hover::before {
+    opacity: 1;
+}
+
+/* 8. POLAROID FRAME OVERLAY */
+.photo-polaroid-overlay {
+    position: relative;
+    padding: 20px 20px 60px 20px;
+    background: linear-gradient(145deg, #f8f8f8 0%, #e8e8e8 100%);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+}
+
+.photo-polaroid-overlay:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.photo-polaroid-overlay::after {
+    content: 'Captured Moment';
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 9. SCANLINES TV EFFECT */
+.photo-tv-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-tv-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            rgba(0, 0, 0, 0.1) 1px,
+            transparent 2px,
+            transparent 4px
+        );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.photo-tv-overlay:hover::before {
+    opacity: 1;
+}
+
+.photo-tv-overlay:hover img {
+    filter: contrast(1.2) brightness(1.1) saturate(0.8);
+}
+
+/* 10. LIQUID DISTORTION OVERLAY */
+.photo-liquid-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-liquid-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at var(--x, 50%) var(--y, 50%), 
+            rgba(255, 255, 255, 0.2) 0%, 
+            transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.photo-liquid-overlay:hover::before {
+    opacity: 1;
+}
+
+/* Base image styling for all effects */
+.photo-effect-container {
+    display: inline-block;
+    margin: 10px;
+}
+
+.photo-effect-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: all 0.4s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .photo-effect-container {
+        margin: 5px;
+    }
+    
+    .photo-polaroid-overlay {
+        padding: 15px 15px 45px 15px;
+    }
+    
+    .photo-polaroid-overlay::after {
+        font-size: 12px;
+        bottom: 8px;
+    }
+}
