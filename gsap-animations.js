@@ -41,15 +41,15 @@ function initHeroAnimations() {
             duration: 1.2,
             ease: "back.out(1.7)",
             stagger: {
-                amount: 2.5,
+                amount: 1.5,
                 from: "start"
             },
-            delay: 0.5
+            delay: 0.1
         });
     }
 
     // Create timeline for hero entrance (starts after letters finish)
-    const heroTL = gsap.timeline({ delay: 3.5 });
+    const heroTL = gsap.timeline({ delay: 2 });
     
     // Animate scattered text elements with stagger
     heroTL.from('.scattered-text', {
