@@ -1,7 +1,7 @@
 // ========== GSAP ENHANCED ANIMATIONS ==========
 
 // Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger, TextPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 
 // ========== INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,7 +15,121 @@ document.addEventListener('DOMContentLoaded', function() {
     initPortfolioAnimations();
     initTextEffects();
     initPageTransitions();
+    initVerticalNavigation();
 });
+
+// ========== VERTICAL NAVIGATION FUNCTIONALITY ==========
+function initVerticalNavigation() {
+    const navLinks = document.querySelectorAll('.vertical-nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    // Smooth scrolling for navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                // Remove active class from all links
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Smooth scroll to section
+                gsap.to(window, {
+                    duration: 1.5,
+                    scrollTo: {
+                        y: targetSection,
+                        offsetY: 0
+                    },
+                    ease: "power3.inOut"
+                });
+            }
+        });
+        
+        // Enhanced hover effects
+        link.addEventListener('mouseenter', () => {
+            gsap.to(link.querySelector('.nav-icon'), {
+                duration: 0.3,
+                scale: 1.2,
+                rotation: 10,
+                ease: "back.out(2)"
+            });
+        });
+        
+        link.addEventListener('mouseleave', () => {
+            gsap.to(link.querySelector('.nav-icon'), {
+                duration: 0.3,
+                scale: 1,
+                rotation: 0,
+                ease: "power2.out"
+            });
+        });
+    });
+    
+    // Update active navigation based on scroll position
+    function updateActiveNav() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (window.pageYOffset >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Listen to scroll events
+    window.addEventListener('scroll', updateActiveNav);
+    
+    // Vertical nav entrance animation
+    gsap.from('.vertical-nav', {
+        duration: 1.2,
+        x: -100,
+        opacity: 0,
+        ease: "power3.out",
+        delay: 0.5
+    });
+    
+    // Stagger nav items entrance
+    gsap.from('.vertical-nav-item', {
+        duration: 0.8,
+        x: -50,
+        opacity: 0,
+        ease: "back.out(1.7)",
+        stagger: 0.1,
+        delay: 1
+    });
+    
+    // Logo animation
+    gsap.from('.nav-logo-vertical', {
+        duration: 1,
+        scale: 0,
+        rotation: 180,
+        ease: "elastic.out(1, 0.5)",
+        delay: 0.8
+    });
+    
+    // Social links animation
+    gsap.from('.social-link-vertical', {
+        duration: 0.6,
+        scale: 0,
+        ease: "back.out(2)",
+        stagger: 0.1,
+        delay: 1.5
+    });
+}
 
 // ========== HERO SECTION SPECTACULAR ENTRANCE ==========
 function initHeroAnimations() {
