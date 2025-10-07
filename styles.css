@@ -3552,7 +3552,7 @@ section {
 
 .degree-badge {
     display: inline-block;
-    background: linear-gradient(45deg, #404040, #666666);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 25%, #404040 50%, #2d2d2d 75%, #1a1a1a 100%);
     color: white;
     padding: 0.8rem 2rem;
     border-radius: 25px;
@@ -3561,14 +3561,54 @@ section {
     letter-spacing: 0.5px;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
 }
 
 .planning-badge {
-    background: linear-gradient(45deg, #2563eb, #3b82f6) !important;
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 25%, #60a5fa 50%, #3b82f6 75%, #1e3a8a 100%) !important;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(96, 165, 250, 0.3) !important;
 }
 
 .coming-soon-badge {
-    background: linear-gradient(45deg, #059669, #10b981) !important;
+    background: linear-gradient(135deg, #064e3b 0%, #059669 25%, #10b981 50%, #059669 75%, #064e3b 100%) !important;
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(52, 211, 153, 0.3) !important;
+}
+
+/* Luxurious badge hover effects and shimmer */
+.degree-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.degree-badge:hover::before {
+    left: 100%;
+}
+
+.degree-badge:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.planning-badge:hover {
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+.coming-soon-badge:hover {
+    box-shadow: 0 12px 35px rgba(16, 185, 129, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-2px) scale(1.02) !important;
 }
 
 .current-studies-featured h3 {
