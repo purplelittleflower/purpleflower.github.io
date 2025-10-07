@@ -623,11 +623,11 @@ function initFloatingElements() {
     document.querySelectorAll('.journey-chapter').forEach(chapter => {
         chapter.addEventListener('mouseenter', () => {
             gsap.to(chapter, {
-                duration: 0.5,
-                scale: 1.02,
-                rotationY: 5,
-                rotationX: 2,
-                z: 50,
+                duration: 0.4,
+                scale: 1.01,
+                rotationY: 2,
+                rotationX: 1,
+                z: 20,
                 ease: "power2.out",
                 transformOrigin: "center center"
             });
@@ -635,8 +635,8 @@ function initFloatingElements() {
             // Animate highlight badges
             gsap.to(chapter.querySelectorAll('.highlight-badge, .focus-item-large'), {
                 duration: 0.3,
-                y: -10,
-                scale: 1.05,
+                y: -5,
+                scale: 1.02,
                 ease: "back.out(2)",
                 stagger: 0.05
             });
@@ -644,7 +644,7 @@ function initFloatingElements() {
         
         chapter.addEventListener('mouseleave', () => {
             gsap.to(chapter, {
-                duration: 0.5,
+                duration: 0.4,
                 scale: 1,
                 rotationY: 0,
                 rotationX: 0,
