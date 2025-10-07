@@ -150,71 +150,84 @@ function initVerticalNavigation() {
 function initHeroAnimations() {
     console.log('🎯 Initializing hero animations...');
     
+    // EMERGENCY FALLBACK: Make everything visible immediately
+    const heroSection = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    const heroTitle = document.querySelector('.hero-main-title');
+    
+    if (heroSection) {
+        heroSection.style.cssText = 'opacity: 1 !important; visibility: visible !important; display: block !important;';
+    }
+    if (heroContent) {
+        heroContent.style.cssText = 'opacity: 1 !important; visibility: visible !important; display: block !important;';
+    }
+    if (heroTitle) {
+        heroTitle.style.cssText = 'opacity: 1 !important; visibility: visible !important; display: flex !important;';
+    }
+    
+    // Make all title lines visible immediately
+    const titleLines = document.querySelectorAll('.title-line-1, .title-line-2, .title-line-3');
+    titleLines.forEach(line => {
+        if (line) {
+            line.style.cssText = 'opacity: 1 !important; visibility: visible !important; display: block !important;';
+        }
+    });
+    
     // Enhanced hero title letter-by-letter animation
     const heroLetters = document.querySelectorAll('.hero-main-title .animate-letters span');
     console.log('Found hero letters:', heroLetters.length);
     
-    if (heroLetters.length > 0) {
-        // Ensure elements are visible first
-        heroLetters.forEach(letter => {
-            letter.style.opacity = '1';
-            letter.style.visibility = 'visible';
-        });
-        
-        // Override CSS animations and use GSAP for better control
-        gsap.set(heroLetters, {
-            opacity: 0,
-            y: 60,
-            scale: 0.2,
-            rotationY: 90,
-            filter: "blur(10px)"
-        });
+    // Make all letters visible immediately first
+    heroLetters.forEach(letter => {
+        letter.style.cssText = 'opacity: 1 !important; visibility: visible !important; display: inline !important;';
+    });
+    
+    // Make all other hero elements visible
+    const heroElements = document.querySelectorAll('.hero-subtitle-enhanced, .hero-subtitle-secondary, .hero-description-enhanced, .hero-buttons-enhanced, .scattered-text');
+    heroElements.forEach(el => {
+        el.style.cssText = 'opacity: 1 !important; visibility: visible !important; display: block !important;';
+    });
+    
+    console.log('✅ Emergency visibility applied to all hero elements');
+    
+    // Only try animations if GSAP is available
+    if (typeof gsap !== 'undefined' && heroLetters.length > 0) {
+        try {
+            // Override CSS animations and use GSAP for better control
+            gsap.set(heroLetters, {
+                opacity: 0,
+                y: 60,
+                scale: 0.2,
+                rotationY: 90,
+                filter: "blur(10px)"
+            });
 
-        // Animate letters in spectacular sequence
-        gsap.to(heroLetters, {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            rotationY: 0,
-            filter: "blur(0px)",
-            duration: 1.2,
-            ease: "back.out(1.7)",
-            stagger: {
-                amount: 1.5,
-                from: "start"
-            },
-            delay: 0.1
-        });
-    } else {
-        console.warn('⚠️ No hero letters found, ensuring basic visibility');
-        // Fallback: make sure hero title is visible
-        const heroTitle = document.querySelector('.hero-main-title');
-        if (heroTitle) {
-            heroTitle.style.opacity = '1';
-            heroTitle.style.visibility = 'visible';
+            // Animate letters in spectacular sequence
+            gsap.to(heroLetters, {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                rotationY: 0,
+                filter: "blur(0px)",
+                duration: 1.2,
+                ease: "back.out(1.7)",
+                stagger: {
+                    amount: 1.5,
+                    from: "start"
+                },
+                delay: 0.1
+            });
+        } catch (error) {
+            console.error('GSAP animation failed, but content should still be visible:', error);
         }
+    } else {
+        console.warn('⚠️ GSAP not available or no hero letters found, using fallback visibility');
     }
 
-    // Ensure all hero elements are visible as fallback
-    const heroElements = [
-        '.hero-main-title',
-        '.hero-subtitle-enhanced', 
-        '.hero-subtitle-secondary',
-        '.hero-description-enhanced',
-        '.hero-buttons-enhanced',
-        '.scattered-text'
-    ];
-    
-    heroElements.forEach(selector => {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(el => {
-            el.style.opacity = '1';
-            el.style.visibility = 'visible';
-        });
-    });
-
     // Create timeline for hero entrance (starts after letters finish)
-    const heroTL = gsap.timeline({ delay: 2 });
+    if (typeof gsap !== 'undefined') {
+        try {
+            const heroTL = gsap.timeline({ delay: 2 });
     
     // Animate scattered text elements with stagger
     heroTL.from('.scattered-text', {
@@ -291,6 +304,10 @@ function initHeroAnimations() {
         ease: "power2.out",
         stagger: 0.1
     }, "-=0.5");
+        } catch (error) {
+            console.error('Hero timeline animation failed:', error);
+        }
+    }
 }
 
 // ========== ADVANCED SCROLL TRIGGER ANIMATIONS ==========
