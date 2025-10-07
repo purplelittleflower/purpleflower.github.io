@@ -466,11 +466,23 @@ main {
 .hero-main-title {
     opacity: 1 !important;
     visibility: visible !important;
+    color: #000000 !important;
+    display: flex !important;
 }
 
 .hero-main-title .animate-letters span {
     opacity: 1 !important;
     visibility: visible !important;
+    color: #000000 !important;
+}
+
+.title-line-1,
+.title-line-2, 
+.title-line-3 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #000000 !important;
+    display: inline-block !important;
 }
 
 .hero-subtitle-enhanced,
@@ -479,6 +491,28 @@ main {
 .scattered-text {
     opacity: 1 !important;
     visibility: visible !important;
+}
+
+/* ========== SECTION TITLE VISIBILITY FIX ========== */
+.section-title-enhanced {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #000000 !important;
+    display: flex !important;
+}
+
+.section-title-enhanced .animate-letters span {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #000000 !important;
+}
+
+.title-word,
+.title-word-large {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #000000 !important;
+    display: inline-block !important;
 }
 
 /* ========== MAGNETIC HOVER EFFECTS ========== */
@@ -1356,7 +1390,7 @@ header {
 
 /* Enhanced Hero Typography */
 .hero-main-title {
-    font-family: 'Tan Meringue', Georgia, serif;
+    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
     margin-bottom: 2rem;
     line-height: 0.9;
     font-weight: 400;
@@ -1366,6 +1400,7 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 0.2rem;
+    color: #000000;
 }
 
 .title-line-1 {
@@ -1878,7 +1913,7 @@ header {
 }
 
 .title-word-large {
-    font-family: 'Tan Meringue', Georgia, serif;
+    font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
     font-size: 4rem;
     color: #000;
     font-weight: 600;
