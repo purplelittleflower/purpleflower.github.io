@@ -617,35 +617,6 @@ function initScrollTriggerAnimations() {
 
 // ========== ENHANCED FLOATING ELEMENTS ==========
 function initFloatingElements() {
-    // Create more organic floating movement
-    gsap.to('.floating-note', {
-        duration: 'random(15, 25)',
-        rotation: 'random(-360, 360)',
-        x: 'random(-100, 100)',
-        y: 'random(-50, 50)',
-        ease: "none",
-        repeat: -1,
-        yoyo: true,
-        stagger: {
-            each: 2,
-            repeat: -1
-        }
-    });
-    
-    gsap.to('.floating-academia', {
-        duration: 'random(20, 30)',
-        rotation: 'random(-180, 180)',
-        x: 'random(-80, 80)',
-        y: 'random(-40, 40)',
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-        stagger: {
-            each: 3,
-            repeat: -1
-        }
-    });
-    
     // ========== SOPHISTICATED ABOUT SECTION HOVER EFFECTS ==========
     
     // Journey chapters interactive hover
@@ -793,29 +764,6 @@ function initFloatingElements() {
                 duration: 0.4,
                 scale: 1,
                 color: "#666666",
-                ease: "power2.out"
-            });
-        });
-    });
-    
-    // Mouse interaction enhancement for existing floating elements
-    const floatingElements = document.querySelectorAll('.floating-note, .floating-academia');
-    
-    floatingElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            gsap.to(element, {
-                duration: 0.3,
-                scale: 1.5,
-                rotation: 'random(-45, 45)',
-                ease: "power2.out"
-            });
-        });
-        
-        element.addEventListener('mouseleave', () => {
-            gsap.to(element, {
-                duration: 0.5,
-                scale: 1,
-                rotation: 0,
                 ease: "power2.out"
             });
         });

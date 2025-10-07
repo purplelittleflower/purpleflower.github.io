@@ -39,11 +39,11 @@
     width: 80px;
     height: 100vh;
     background: linear-gradient(180deg, 
-        rgba(0, 0, 0, 0.95) 0%, 
-        rgba(20, 20, 20, 0.98) 50%, 
-        rgba(0, 0, 0, 0.95) 100%);
+        rgba(255, 255, 255, 0.95) 0%, 
+        rgba(248, 248, 248, 0.98) 50%, 
+        rgba(255, 255, 255, 0.95) 100%);
     backdrop-filter: blur(20px);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,6 +52,7 @@
     z-index: 1000;
     transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: hidden;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .vertical-nav:hover {
@@ -70,7 +71,7 @@
 .logo-symbol {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #ffffff, #cccccc);
+    background: linear-gradient(135deg, #333333, #555555);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -78,9 +79,9 @@
     font-family: 'Didot LP Display', serif;
     font-weight: 700;
     font-size: 0.9rem;
-    color: #000000;
+    color: #ffffff;
     letter-spacing: 1px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .logo-text {
@@ -102,7 +103,7 @@
     font-family: 'Didot LP Display', serif;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #333333;
     letter-spacing: 2px;
 }
 
@@ -110,7 +111,7 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.7rem;
     font-weight: 400;
-    color: #cccccc;
+    color: #666666;
     letter-spacing: 1px;
 }
 
@@ -131,7 +132,7 @@
     display: flex;
     align-items: center;
     padding: 1rem;
-    color: #cccccc;
+    color: #666666;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 12px;
@@ -153,6 +154,8 @@
     transition: all 0.3s ease;
     min-width: 20px;
     text-align: center;
+    font-weight: 600;
+    color: #666666;
 }
 
 .nav-text {
@@ -172,18 +175,19 @@
 }
 
 .vertical-nav-link:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    color: #ffffff;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.05));
+    color: #333333;
     transform: translateX(5px);
 }
 
 .vertical-nav-link.active {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.08));
-    color: #ffffff;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.08));
+    color: #333333;
 }
 
 .vertical-nav-link.active .nav-icon {
     transform: scale(1.1);
+    color: #333333;
 }
 
 .nav-social-vertical {
@@ -199,7 +203,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #cccccc;
+    color: #666666;
     text-decoration: none;
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -207,13 +211,15 @@
 }
 
 .social-link-vertical:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background: rgba(0, 0, 0, 0.08);
+    color: #333333;
     transform: scale(1.1);
 }
 
 .social-icon {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .nav-indicator {
@@ -223,7 +229,7 @@
     transform: translateY(-50%);
     width: 3px;
     height: 60px;
-    background: linear-gradient(180deg, transparent, #ffffff, transparent);
+    background: linear-gradient(180deg, transparent, #333333, transparent);
     border-radius: 0 3px 3px 0;
     opacity: 0.6;
     animation: indicatorPulse 3s ease-in-out infinite;
@@ -1124,13 +1130,17 @@ header {
 .hero {
     background: transparent;
     color: #fff;
-    padding: 250px 2% 80px 2%;
+    padding: 50px 2% 80px 2%;
     text-align: center;
-    margin-top: 160px;
+    margin-top: 0;
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: none;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero::before {
