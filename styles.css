@@ -3913,11 +3913,6 @@ section {
     transform: translateY(-2px) scale(1.02) !important;
 }
 
-.in-progress-badge:hover {
-    box-shadow: 0 12px 35px rgba(239, 68, 68, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.25) !important;
-    transform: translateY(-2px) scale(1.02) !important;
-}
-
 .current-studies-featured h3 {
     font-family: 'Didot LP Display', serif;
     font-size: 2.2rem;
