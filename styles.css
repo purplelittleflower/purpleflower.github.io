@@ -108,6 +108,15 @@
     text-transform: uppercase;
 }
 
+.logo-academic {
+    font-family: 'Didot LP Display', serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555555;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 .logo-secondary {
     font-family: 'EB Garamond', serif;
     font-size: 0.75rem;
