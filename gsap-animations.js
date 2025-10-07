@@ -130,7 +130,9 @@ function initHeroAnimations() {
 
 // ========== ADVANCED SCROLL TRIGGER ANIMATIONS ==========
 function initScrollTriggerAnimations() {
-    // About section reveal
+    // ========== SOPHISTICATED ABOUT SECTION ANIMATIONS ==========
+    
+    // 1. Main title "THE RENAISSANCE JOURNEY" with dramatic entrance
     gsap.from('.about .section-title-enhanced', {
         scrollTrigger: {
             trigger: '.about',
@@ -138,11 +140,310 @@ function initScrollTriggerAnimations() {
             end: 'bottom 20%',
             toggleActions: 'play none none reverse'
         },
-        duration: 1.5,
+        duration: 2,
         opacity: 0,
-        y: 100,
+        y: 150,
+        scale: 0.8,
+        rotationX: 45,
         ease: "power3.out"
     });
+
+    // 2. Enhanced subtitle block with staggered reveal
+    gsap.from('.enhanced-subtitle-block .subtitle-line', {
+        scrollTrigger: {
+            trigger: '.enhanced-subtitle-block',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.5,
+        opacity: 0,
+        x: -100,
+        ease: "power2.out",
+        stagger: 0.3
+    });
+
+    gsap.from('.enhanced-subtitle-block .subtitle-line-large', {
+        scrollTrigger: {
+            trigger: '.enhanced-subtitle-block',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.8,
+        opacity: 0,
+        scale: 0.5,
+        rotation: -10,
+        ease: "elastic.out(1, 0.5)",
+        delay: 0.5
+    });
+
+    // 3. Journey quote with floating quote mark and typewriter effect
+    gsap.from('.quote-mark-large', {
+        scrollTrigger: {
+            trigger: '.journey-quote-enhanced',
+            start: 'top 75%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 2,
+        opacity: 0,
+        scale: 0,
+        rotation: 180,
+        ease: "back.out(1.7)"
+    });
+
+    gsap.from('.lead-quote-enhanced', {
+        scrollTrigger: {
+            trigger: '.journey-quote-enhanced',
+            start: 'top 75%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 2.5,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+        delay: 0.5
+    });
+
+    gsap.from('.quote-emphasis', {
+        scrollTrigger: {
+            trigger: '.journey-quote-enhanced',
+            start: 'top 70%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.5,
+        opacity: 0,
+        letterSpacing: "10px",
+        ease: "power2.out",
+        delay: 1
+    });
+
+    gsap.from('.quote-attribution', {
+        scrollTrigger: {
+            trigger: '.journey-quote-enhanced',
+            start: 'top 70%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        opacity: 0,
+        x: 100,
+        ease: "power2.out",
+        delay: 1.5
+    });
+
+    // 4. Chapter indicators with sequential activation
+    gsap.from('.chapter-indicators .indicator', {
+        scrollTrigger: {
+            trigger: '.chapter-indicators',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        opacity: 0,
+        scale: 0,
+        rotation: 360,
+        ease: "back.out(1.7)",
+        stagger: 0.2
+    });
+
+    // 5. Journey chapters with spectacular 3D entrance
+    gsap.from('.journey-chapter', {
+        scrollTrigger: {
+            trigger: '.journey-timeline',
+            start: 'top 70%',
+            end: 'bottom 30%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.8,
+        opacity: 0,
+        x: -200,
+        rotationY: -45,
+        rotationX: 20,
+        scale: 0.8,
+        ease: "power3.out",
+        stagger: 0.4
+    });
+
+    // 6. Chapter headers with individual animations
+    gsap.from('.chapter-meta span', {
+        scrollTrigger: {
+            trigger: '.journey-timeline',
+            start: 'top 65%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.2,
+        opacity: 0,
+        y: -30,
+        ease: "bounce.out",
+        stagger: 0.1,
+        delay: 0.5
+    });
+
+    gsap.from('.chapter-title-large', {
+        scrollTrigger: {
+            trigger: '.journey-timeline',
+            start: 'top 65%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.5,
+        opacity: 0,
+        scale: 0.7,
+        rotation: -5,
+        ease: "back.out(1.2)",
+        stagger: 0.3,
+        delay: 0.8
+    });
+
+    gsap.from('.chapter-subtitle', {
+        scrollTrigger: {
+            trigger: '.journey-timeline',
+            start: 'top 65%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        opacity: 0,
+        x: 50,
+        ease: "power2.out",
+        stagger: 0.3,
+        delay: 1.2
+    });
+
+    // 7. Highlight badges with floating animation
+    gsap.from('.highlight-badge', {
+        scrollTrigger: {
+            trigger: '.journey-highlights-enhanced',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.3,
+        opacity: 0,
+        y: 40,
+        scale: 0.8,
+        rotation: 10,
+        ease: "elastic.out(1, 0.5)",
+        stagger: 0.15
+    });
+
+    // 8. Achievement stats with counting animation
+    gsap.from('.mini-stat-enhanced', {
+        scrollTrigger: {
+            trigger: '.achievement-stats-enhanced',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.5,
+        opacity: 0,
+        scale: 0,
+        ease: "back.out(1.7)",
+        stagger: 0.2
+    });
+
+    // Animate stat numbers with counting effect
+    document.querySelectorAll('.stat-number-large').forEach((stat, index) => {
+        const finalValue = parseInt(stat.textContent);
+        gsap.from(stat, {
+            scrollTrigger: {
+                trigger: stat,
+                start: 'top 80%',
+                toggleActions: 'play none none reverse'
+            },
+            textContent: 0,
+            duration: 2,
+            ease: "power2.out",
+            snap: { textContent: 1 },
+            delay: 0.5 + (index * 0.2)
+        });
+    });
+
+    // 9. Current focus items with wave animation
+    gsap.from('.focus-item-large', {
+        scrollTrigger: {
+            trigger: '.current-focus-enhanced',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.2,
+        opacity: 0,
+        y: 30,
+        rotation: 5,
+        ease: "power2.out",
+        stagger: 0.1
+    });
+
+    // 10. Sidebar cards with 3D flip entrance
+    gsap.from('.essence-card-enhanced', {
+        scrollTrigger: {
+            trigger: '.journey-sidebar',
+            start: 'top 75%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.8,
+        opacity: 0,
+        rotationY: 180,
+        rotationX: 45,
+        scale: 0.5,
+        ease: "power3.out"
+    });
+
+    gsap.from('.experience-overview-enhanced', {
+        scrollTrigger: {
+            trigger: '.journey-sidebar',
+            start: 'top 70%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1.8,
+        opacity: 0,
+        rotationY: -180,
+        rotationX: -45,
+        scale: 0.5,
+        ease: "power3.out",
+        delay: 0.3
+    });
+
+    // 11. Experience numbers with spectacular entrance
+    gsap.from('.exp-number-huge', {
+        scrollTrigger: {
+            trigger: '.experience-grid-enhanced',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 2,
+        opacity: 0,
+        scale: 0,
+        rotation: 720,
+        ease: "elastic.out(1, 0.3)",
+        stagger: 0.2,
+        delay: 0.5
+    });
+
+    // 12. Creative pursuits with bouncy entrance
+    gsap.from('.pursuit-enhanced', {
+        scrollTrigger: {
+            trigger: '.creative-pursuits-enhanced',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+        },
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        scale: 0.8,
+        ease: "bounce.out",
+        stagger: 0.1
+    });
+
+    // 13. Add continuous floating animations for cards
+    gsap.to('.tilt-3d', {
+        duration: 'random(3, 6)',
+        y: 'random(-10, 10)',
+        rotation: 'random(-2, 2)',
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        stagger: {
+            each: 1,
+            repeat: -1
+        }
+    });
+
+    // Rest of existing scroll trigger animations...
     
     // Portfolio cards cascade
     gsap.from('.portfolio-card-enhanced', {
@@ -187,21 +488,6 @@ function initScrollTriggerAnimations() {
         rotation: 180,
         ease: "elastic.out(1, 0.5)"
     });
-    
-    // Journey chapters reveal
-    gsap.from('.journey-chapter', {
-        scrollTrigger: {
-            trigger: '.journey-timeline',
-            start: 'top 70%',
-            end: 'bottom 30%',
-            toggleActions: 'play none none reverse'
-        },
-        duration: 1.2,
-        opacity: 0,
-        x: -100,
-        ease: "power2.out",
-        stagger: 0.3
-    });
 }
 
 // ========== ENHANCED FLOATING ELEMENTS ==========
@@ -235,7 +521,157 @@ function initFloatingElements() {
         }
     });
     
-    // Mouse interaction enhancement
+    // ========== SOPHISTICATED ABOUT SECTION HOVER EFFECTS ==========
+    
+    // Journey chapters interactive hover
+    document.querySelectorAll('.journey-chapter').forEach(chapter => {
+        chapter.addEventListener('mouseenter', () => {
+            gsap.to(chapter, {
+                duration: 0.5,
+                scale: 1.02,
+                rotationY: 5,
+                rotationX: 2,
+                z: 50,
+                ease: "power2.out"
+            });
+            
+            // Animate highlight badges
+            gsap.to(chapter.querySelectorAll('.highlight-badge, .focus-item-large'), {
+                duration: 0.3,
+                y: -10,
+                scale: 1.05,
+                ease: "back.out(2)",
+                stagger: 0.05
+            });
+        });
+        
+        chapter.addEventListener('mouseleave', () => {
+            gsap.to(chapter, {
+                duration: 0.5,
+                scale: 1,
+                rotationY: 0,
+                rotationX: 0,
+                z: 0,
+                ease: "power2.out"
+            });
+            
+            gsap.to(chapter.querySelectorAll('.highlight-badge, .focus-item-large'), {
+                duration: 0.3,
+                y: 0,
+                scale: 1,
+                ease: "power2.out",
+                stagger: 0.05
+            });
+        });
+    });
+    
+    // Sidebar cards interactive effects
+    document.querySelectorAll('.essence-card-enhanced, .experience-overview-enhanced').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, {
+                duration: 0.4,
+                scale: 1.05,
+                rotationY: 10,
+                rotationX: 5,
+                z: 30,
+                ease: "power2.out"
+            });
+            
+            // Animate pursuit items or experience items
+            gsap.to(card.querySelectorAll('.pursuit-enhanced, .exp-item-enhanced'), {
+                duration: 0.3,
+                scale: 1.1,
+                rotation: 'random(-5, 5)',
+                ease: "elastic.out(1, 0.5)",
+                stagger: 0.05
+            });
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                duration: 0.4,
+                scale: 1,
+                rotationY: 0,
+                rotationX: 0,
+                z: 0,
+                ease: "power2.out"
+            });
+            
+            gsap.to(card.querySelectorAll('.pursuit-enhanced, .exp-item-enhanced'), {
+                duration: 0.3,
+                scale: 1,
+                rotation: 0,
+                ease: "power2.out",
+                stagger: 0.05
+            });
+        });
+    });
+    
+    // Quote mark interactive rotation
+    const quoteMark = document.querySelector('.quote-mark-large');
+    if (quoteMark) {
+        quoteMark.addEventListener('mouseenter', () => {
+            gsap.to(quoteMark, {
+                duration: 0.8,
+                rotation: 360,
+                scale: 1.2,
+                ease: "elastic.out(1, 0.5)"
+            });
+        });
+        
+        quoteMark.addEventListener('mouseleave', () => {
+            gsap.to(quoteMark, {
+                duration: 0.5,
+                rotation: 0,
+                scale: 1,
+                ease: "power2.out"
+            });
+        });
+    }
+    
+    // Chapter indicators interactive effects
+    document.querySelectorAll('.chapter-indicators .indicator').forEach((indicator, index) => {
+        indicator.addEventListener('mouseenter', () => {
+            gsap.to(indicator, {
+                duration: 0.3,
+                scale: 1.3,
+                rotation: 180,
+                ease: "back.out(2)"
+            });
+        });
+        
+        indicator.addEventListener('mouseleave', () => {
+            gsap.to(indicator, {
+                duration: 0.3,
+                scale: 1,
+                rotation: 0,
+                ease: "power2.out"
+            });
+        });
+    });
+    
+    // Experience numbers pulse effect on hover
+    document.querySelectorAll('.exp-number-huge').forEach(number => {
+        number.addEventListener('mouseenter', () => {
+            gsap.to(number, {
+                duration: 0.4,
+                scale: 1.2,
+                color: "#000000",
+                ease: "elastic.out(1, 0.5)"
+            });
+        });
+        
+        number.addEventListener('mouseleave', () => {
+            gsap.to(number, {
+                duration: 0.4,
+                scale: 1,
+                color: "#666666",
+                ease: "power2.out"
+            });
+        });
+    });
+    
+    // Mouse interaction enhancement for existing floating elements
     const floatingElements = document.querySelectorAll('.floating-note, .floating-academia');
     
     floatingElements.forEach(element => {
