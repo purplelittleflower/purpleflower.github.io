@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initPageTransitions();
     initVerticalNavigation();
     initInteractivePortfolio(); // Add new interactive features
-    initPhotographyGallery(); // Add photography gallery animations
 });
 
 // ========== VERTICAL NAVIGATION FUNCTIONALITY ==========
@@ -1189,130 +1188,6 @@ function initInteractivePortfolio() {
     initProjectPreview();
     
     console.log('✨ Interactive Portfolio Features Initialized!');
-}
-
-// ========== PHOTOGRAPHY GALLERY ANIMATIONS ==========
-function initPhotographyGallery() {
-    console.log('📸 Initializing Photography Gallery...');
-    
-    // Animate photo grid items on scroll
-    gsap.fromTo('.photo-grid-item', {
-        y: 60,
-        opacity: 0,
-        scale: 0.8
-    }, {
-        y: 0,
-        opacity: 1,
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-            trigger: '.photography-grid',
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
-        }
-    });
-    
-    // Animate featured photo with special effect
-    gsap.fromTo('.photo-featured', {
-        x: -100,
-        opacity: 0,
-        rotationY: -15
-    }, {
-        x: 0,
-        opacity: 1,
-        rotationY: 0,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-            trigger: '.photo-featured',
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-        }
-    });
-    
-    // Animate stats cards
-    gsap.fromTo('.stat-card', {
-        y: 40,
-        opacity: 0
-    }, {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: "back.out(1.7)",
-        scrollTrigger: {
-            trigger: '.stats-container',
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
-        }
-    });
-    
-    // Interactive liquid effect that follows mouse
-    document.querySelectorAll('.photo-liquid-overlay').forEach(overlay => {
-        overlay.addEventListener('mousemove', (e) => {
-            const rect = overlay.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            
-            overlay.style.setProperty('--x', x + '%');
-            overlay.style.setProperty('--y', y + '%');
-        });
-    });
-    
-    // Add parallax effect to photography section background
-    gsap.to('.photography-gallery::before', {
-        yPercent: -50,
-        ease: "none",
-        scrollTrigger: {
-            trigger: '.photography-gallery',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true
-        }
-    });
-    
-    // Animate photography title
-    const photographyTitle = document.querySelector('.photography-title-enhanced');
-    if (photographyTitle) {
-        gsap.fromTo(photographyTitle, {
-            y: 50,
-            opacity: 0
-        }, {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: photographyTitle,
-                start: 'top 90%',
-                toggleActions: 'play none none reverse'
-            }
-        });
-    }
-    
-    // Interactive hover effects for photo grid items
-    document.querySelectorAll('.photo-grid-item, .photo-featured').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            gsap.to(item, {
-                scale: 1.02,
-                duration: 0.3,
-                ease: "power2.out"
-            });
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            gsap.to(item, {
-                scale: 1,
-                duration: 0.3,
-                ease: "power2.out"
-            });
-        });
-    });
-    
-    console.log('📸 Photography Gallery Animations Initialized!');
 }
 
 console.log('🎭 GSAP Enhanced Animations Loaded Successfully! 🚀');
