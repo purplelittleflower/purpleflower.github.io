@@ -358,7 +358,7 @@ function initScrollTriggerAnimations() {
         stagger: 0.2
     });
 
-    // 5. Journey chapters with spectacular 3D entrance
+    // 5. Journey chapters with simple, clean entrance (no 3D transforms)
     gsap.from('.journey-chapter', {
         scrollTrigger: {
             trigger: '.journey-timeline',
@@ -366,17 +366,15 @@ function initScrollTriggerAnimations() {
             end: 'bottom 30%',
             toggleActions: 'play none none reverse'
         },
-        duration: 1.8,
+        duration: 1.2,
         opacity: 0,
-        x: -200,
-        rotationY: -45,
-        rotationX: 20,
-        scale: 0.8,
-        ease: "power3.out",
-        stagger: 0.4,
-        clearProps: "transform",
+        y: 50,
+        scale: 0.95,
+        ease: "power2.out",
+        stagger: 0.3,
+        clearProps: "all",
         onComplete: function() {
-            // Ensure proper layout after animation
+            // Ensure clean layout after animation
             gsap.set('.journey-chapter', { clearProps: "all" });
         }
     });

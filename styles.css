@@ -430,6 +430,16 @@ main {
         0 0 30px rgba(255, 255, 255, 0.2);
 }
 
+/* Override 3D effects for journey chapters to prevent layout issues */
+.journey-chapter.tilt-3d {
+    transform-style: flat !important;
+}
+
+.journey-chapter.tilt-3d:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15) !important;
+}
+
 /* ========== SCROLL REVEAL ANIMATIONS ========== */
 .scroll-reveal {
     opacity: 0;
@@ -2593,7 +2603,7 @@ section {
     z-index: 2;
 }
 
-/* Timeline Narrative Layout */
+/* Timeline Narrative Layout - Fixed */
 .journey-timeline {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -2604,6 +2614,8 @@ section {
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
+    position: relative;
 }
 
 @media (max-width: 1024px) {
@@ -2620,6 +2632,8 @@ section {
     gap: 3rem;
     align-items: stretch;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .journey-chapter {
@@ -2627,7 +2641,7 @@ section {
     border-radius: 20px;
     padding: 2.5rem;
     border-top: 4px solid #000;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     min-height: 280px;
@@ -2638,10 +2652,12 @@ section {
     box-sizing: border-box;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    transform: none !important;
+    transform-style: flat !important;
 }
 
 .journey-chapter:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) !important;
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
