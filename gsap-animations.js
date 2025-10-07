@@ -6,17 +6,31 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin);
 // ========== INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🎭 GSAP Animations Initialized!');
+    console.log('GSAP available:', typeof gsap !== 'undefined');
+    console.log('ScrollTrigger available:', typeof ScrollTrigger !== 'undefined');
+    
+    // Test if hero elements exist
+    const heroTitle = document.querySelector('.hero-main-title');
+    const heroLetters = document.querySelectorAll('.hero-main-title .animate-letters span');
+    console.log('Hero title found:', !!heroTitle);
+    console.log('Hero letters found:', heroLetters.length);
     
     // Initialize all animations
-    initHeroAnimations();
-    initScrollTriggerAnimations();
-    initFloatingElements();
-    initCursorEffects();
-    initPortfolioAnimations();
-    initTextEffects();
-    initPageTransitions();
-    initVerticalNavigation();
-    initInteractivePortfolio(); // Add new interactive features
+    try {
+        initHeroAnimations();
+        initScrollTriggerAnimations();
+        initFloatingElements();
+        initCursorEffects();
+        initPortfolioAnimations();
+        initTextEffects();
+        initPageTransitions();
+        initVerticalNavigation();
+        initInteractivePortfolio(); // Add new interactive features
+    } catch (error) {
+        console.error('Animation initialization error:', error);
+        // Fallback: make sure content is visible
+        document.documentElement.style.setProperty('--fallback-opacity', '1');
+    }
 });
 
 // ========== VERTICAL NAVIGATION FUNCTIONALITY ==========
@@ -134,9 +148,19 @@ function initVerticalNavigation() {
 
 // ========== HERO SECTION SPECTACULAR ENTRANCE ==========
 function initHeroAnimations() {
+    console.log('🎯 Initializing hero animations...');
+    
     // Enhanced hero title letter-by-letter animation
     const heroLetters = document.querySelectorAll('.hero-main-title .animate-letters span');
+    console.log('Found hero letters:', heroLetters.length);
+    
     if (heroLetters.length > 0) {
+        // Ensure elements are visible first
+        heroLetters.forEach(letter => {
+            letter.style.opacity = '1';
+            letter.style.visibility = 'visible';
+        });
+        
         // Override CSS animations and use GSAP for better control
         gsap.set(heroLetters, {
             opacity: 0,
@@ -161,7 +185,33 @@ function initHeroAnimations() {
             },
             delay: 0.1
         });
+    } else {
+        console.warn('⚠️ No hero letters found, ensuring basic visibility');
+        // Fallback: make sure hero title is visible
+        const heroTitle = document.querySelector('.hero-main-title');
+        if (heroTitle) {
+            heroTitle.style.opacity = '1';
+            heroTitle.style.visibility = 'visible';
+        }
     }
+
+    // Ensure all hero elements are visible as fallback
+    const heroElements = [
+        '.hero-main-title',
+        '.hero-subtitle-enhanced', 
+        '.hero-subtitle-secondary',
+        '.hero-description-enhanced',
+        '.hero-buttons-enhanced',
+        '.scattered-text'
+    ];
+    
+    heroElements.forEach(selector => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.visibility = 'visible';
+        });
+    });
 
     // Create timeline for hero entrance (starts after letters finish)
     const heroTL = gsap.timeline({ delay: 2 });

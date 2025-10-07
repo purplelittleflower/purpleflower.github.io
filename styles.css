@@ -88,8 +88,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0;
-    transform: translateX(-20px);
+    opacity: 1;  /* Changed from 0 to 1 to ensure visibility */
+    transform: translateX(0);  /* Changed from -20px to 0 */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     white-space: nowrap;
 }
@@ -459,6 +459,24 @@ main {
 .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0) scale(1);
+}
+
+/* ========== HERO FALLBACK VISIBILITY ========== */
+/* Ensure hero content is visible even if GSAP animations fail */
+.hero-main-title,
+.hero-subtitle-enhanced,
+.hero-subtitle-secondary,
+.hero-description-enhanced,
+.hero-buttons-enhanced,
+.scattered-text {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Ensure individual letter spans are visible */
+.hero-main-title .animate-letters span {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 /* ========== MAGNETIC HOVER EFFECTS ========== */
