@@ -3875,6 +3875,12 @@ section {
     border: 1px solid rgba(52, 211, 153, 0.3) !important;
 }
 
+.in-progress-badge {
+    background: linear-gradient(135deg, #7c2d12 0%, #dc2626 25%, #ef4444 50%, #dc2626 75%, #7c2d12 100%) !important;
+    box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(248, 113, 113, 0.3) !important;
+}
+
 /* Luxurious badge hover effects and shimmer */
 .degree-badge::before {
     content: '';
@@ -3904,6 +3910,11 @@ section {
 
 .coming-soon-badge:hover {
     box-shadow: 0 12px 35px rgba(16, 185, 129, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+}
+
+.in-progress-badge:hover {
+    box-shadow: 0 12px 35px rgba(239, 68, 68, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.25) !important;
     transform: translateY(-2px) scale(1.02) !important;
 }
 
