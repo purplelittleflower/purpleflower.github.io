@@ -247,7 +247,7 @@
 }
 
 .explosion-gallery {
-    padding: 100px 0;
+    padding: 60px 0;
     background: transparent;
     position: relative;
     overflow: hidden;
@@ -1235,13 +1235,13 @@ header {
 
 /* About Section */
 .about {
-    padding: 80px 0;
+    padding: 50px 0;
     background: transparent;
 }
 
 /* About Section - Magazine Style Design */
 .about {
-    padding: 100px 0;
+    padding: 50px 0;
     background: transparent;
 }
 
@@ -1817,7 +1817,7 @@ section {
 /* ========== IMAGE GALLERY SECTION ========== */
 
 .image-gallery {
-    padding: 80px 0;
+    padding: 50px 0;
     background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
     position: relative;
 }
@@ -1894,7 +1894,7 @@ section {
 /* ========== ARTICLES PREVIEW SECTION ========== */
 
 .articles-preview {
-    padding: 80px 0;
+    padding: 50px 0;
     background: linear-gradient(135deg, #f8f8f8 0%, #eeeeee 100%);
 }
 
@@ -2391,7 +2391,7 @@ section {
 
 /* Portfolio Section - 2x2 Grid Layout */
 .portfolio {
-    padding: 80px 0;
+    padding: 50px 0;
     background: transparent;
 }
 
@@ -2776,7 +2776,7 @@ section {
 
 /* Contact Section */
 .contact {
-    padding: 80px 0;
+    padding: 50px 0;
     background: transparent;
 }
 
@@ -2871,7 +2871,7 @@ section {
 
 /* Academic Section - Sophisticated Design */
 .academic {
-    padding: 100px 0;
+    padding: 50px 0;
     background: transparent;
     color: #2c2c2c;
 }
@@ -3195,7 +3195,7 @@ section {
 
 /* Experience Section */
 .experience {
-    padding: 80px 0;
+    padding: 50px 0;
     background: transparent;
 }
 
