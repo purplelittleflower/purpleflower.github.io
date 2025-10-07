@@ -1424,7 +1424,7 @@ header {
 .description-label {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 0.9rem;
-    color: #ffffff;
+    color: #000000;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -1436,7 +1436,7 @@ header {
 .hero-description-enhanced {
     font-size: 1.2rem;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
+    color: #000000;
     text-align: left;
     background: rgba(0, 0, 0, 0.1);
     padding: 2rem;
