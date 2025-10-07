@@ -1188,14 +1188,14 @@ header {
 .hero {
     background: transparent;
     color: #fff;
-    padding: 50px 2% 80px 2%;
+    padding: 120px 2% 100px 2%;
     text-align: center;
-    margin-top: 0;
+    margin-top: 60px;
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: none;
-    min-height: 100vh;
+    min-height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4111,5 +4111,30 @@ html {
     
     .cursor-glow, .cursor-trail {
         display: none;
+    }
+}
+
+/* ========== RESPONSIVE HERO PROPORTIONS ========== */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 4% 60px 4%;
+        margin-top: 40px;
+        min-height: calc(100vh - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 4% 40px 4%;
+        margin-top: 30px;
+        min-height: calc(100vh - 30px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero {
+        padding: 140px 2% 120px 2%;
+        margin-top: 80px;
+        min-height: calc(100vh - 80px);
     }
 }
