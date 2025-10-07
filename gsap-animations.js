@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initTextEffects();
     initPageTransitions();
     initVerticalNavigation();
+    initInteractivePortfolio(); // Add new interactive features
 });
 
 // ========== VERTICAL NAVIGATION FUNCTIONALITY ==========
@@ -1053,5 +1054,140 @@ function optimizeForMobile() {
 
 window.addEventListener('resize', optimizeForMobile);
 optimizeForMobile();
+
+// ========== INTERACTIVE PORTFOLIO FEATURES ==========
+function initInteractivePortfolio() {
+    console.log('🎯 Initializing Interactive Portfolio...');
+    
+    // Animated Statistics Counter
+    function animateStats() {
+        const statItems = document.querySelectorAll('.animated-stat');
+        
+        statItems.forEach(item => {
+            const target = parseInt(item.dataset.target);
+            const numberElement = item.querySelector('.stat-number');
+            const progressBar = item.querySelector('.stat-progress');
+            const progressWidth = progressBar.dataset.width;
+            
+            ScrollTrigger.create({
+                trigger: item,
+                start: 'top 80%',
+                onEnter: () => {
+                    // Animate number counting
+                    gsap.to(numberElement, {
+                        innerHTML: target,
+                        duration: 2,
+                        ease: "power2.out",
+                        snap: { innerHTML: 1 },
+                        onUpdate: function() {
+                            numberElement.innerHTML = Math.ceil(this.targets()[0].innerHTML);
+                        }
+                    });
+                    
+                    // Animate progress bar
+                    gsap.to(progressBar, {
+                        width: progressWidth,
+                        duration: 2,
+                        ease: "power2.out",
+                        delay: 0.3
+                    });
+                }
+            });
+        });
+    }
+    
+    // Skill Constellation Interactive Effects
+    function initSkillConstellation() {
+        const skillNodes = document.querySelectorAll('.skill-node');
+        const connectionLines = document.querySelectorAll('.connection-line');
+        
+        skillNodes.forEach((node, index) => {
+            // Entrance animation
+            gsap.from(node, {
+                scrollTrigger: {
+                    trigger: '.skill-constellation',
+                    start: 'top 70%'
+                },
+                scale: 0,
+                opacity: 0,
+                duration: 0.8,
+                delay: index * 0.2,
+                ease: "back.out(1.7)"
+            });
+            
+            // Interactive hover effects
+            node.addEventListener('mouseenter', () => {
+                gsap.to(node.querySelector('.node-core'), {
+                    scale: 1.2,
+                    rotation: 360,
+                    duration: 0.5,
+                    ease: "power2.out"
+                });
+                
+                // Animate connected lines
+                connectionLines.forEach(line => {
+                    gsap.to(line, {
+                        strokeWidth: 2,
+                        stroke: 'rgba(255,255,255,0.6)',
+                        duration: 0.3
+                    });
+                });
+            });
+            
+            node.addEventListener('mouseleave', () => {
+                gsap.to(node.querySelector('.node-core'), {
+                    scale: 1,
+                    rotation: 0,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+                
+                connectionLines.forEach(line => {
+                    gsap.to(line, {
+                        strokeWidth: 1,
+                        stroke: 'rgba(255,255,255,0.2)',
+                        duration: 0.3
+                    });
+                });
+            });
+            
+            // Click effect
+            node.addEventListener('click', () => {
+                gsap.to(node.querySelector('.skill-level'), {
+                    scale: 1.5,
+                    duration: 0.2,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: "power2.out"
+                });
+            });
+        });
+    }
+    
+    // Project Preview Animation
+    function initProjectPreview() {
+        const previewElements = document.querySelectorAll('.project-preview');
+        
+        previewElements.forEach(preview => {
+            gsap.from(preview, {
+                scrollTrigger: {
+                    trigger: preview,
+                    start: 'top 80%'
+                },
+                x: 50,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power2.out"
+            });
+        });
+    }
+    
+    // Initialize all interactive features
+    animateStats();
+    initSkillConstellation();
+    initProjectPreview();
+    
+    console.log('✨ Interactive Portfolio Features Initialized!');
+}
 
 console.log('🎭 GSAP Enhanced Animations Loaded Successfully! 🚀');
