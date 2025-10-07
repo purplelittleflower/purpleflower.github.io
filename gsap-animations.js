@@ -374,7 +374,11 @@ function initScrollTriggerAnimations() {
         scale: 0.8,
         ease: "power3.out",
         stagger: 0.4,
-        clearProps: "transform" // Clear transforms after animation
+        clearProps: "transform",
+        onComplete: function() {
+            // Ensure proper layout after animation
+            gsap.set('.journey-chapter', { clearProps: "all" });
+        }
     });
 
     // 6. Chapter headers with individual animations
@@ -495,7 +499,10 @@ function initScrollTriggerAnimations() {
         rotationY: 180,
         rotationX: 45,
         scale: 0.5,
-        ease: "power3.out"
+        ease: "power3.out",
+        onComplete: function() {
+            gsap.set('.essence-card-enhanced', { clearProps: "transform" });
+        }
     });
 
     gsap.from('.experience-overview-enhanced', {
@@ -510,7 +517,10 @@ function initScrollTriggerAnimations() {
         rotationX: -45,
         scale: 0.5,
         ease: "power3.out",
-        delay: 0.3
+        delay: 0.3,
+        onComplete: function() {
+            gsap.set('.experience-overview-enhanced', { clearProps: "transform" });
+        }
     });
 
     // 11. Experience numbers with spectacular entrance
