@@ -1405,24 +1405,41 @@ header {
 
 .title-line-1 {
     font-size: 7rem;
-    color: #000000;
-    animation: titleFloat 6s ease-in-out infinite;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: transparent;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    background-size: 200%;
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear, titleFloat 6s ease-in-out infinite;
 }
 
 .title-line-2 {
     font-size: 11rem;
-    color: #000000;
-    font-weight: 600;
-    text-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
-    animation: titleFloat 6s ease-in-out infinite 2s;
+    font-weight: bold;
+    color: transparent;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    background-size: 200%;
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear, titleFloat 6s ease-in-out infinite 2s;
 }
 
 .title-line-3 {
     font-size: 8rem;
-    color: #000000;
-    animation: titleFloat 6s ease-in-out infinite 4s;
-    text-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: transparent;
+    background-image: url('https://images.unsplash.com/photo-1732535725600-f805d8b33c9c?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    background-size: 200%;
+    background-position: 0 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-background 5s infinite alternate linear, titleFloat 6s ease-in-out infinite 4s;
 }
 
 /* Fix letter spacing for animate-letters spans */
@@ -1452,6 +1469,15 @@ header {
 @keyframes titleFloat {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
+}
+
+@keyframes animate-background {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 .hero-subtitle-enhanced {
