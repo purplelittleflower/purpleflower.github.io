@@ -2259,6 +2259,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    align-items: stretch;
 }
 
 .journey-chapter {
@@ -2266,36 +2267,35 @@ section {
     border-radius: 20px;
     padding: 2.5rem;
     border-left: 4px solid #666666;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .journey-chapter:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.15);
+    /* Hover effects handled by GSAP animations */
+    cursor: pointer;
 }
 
-.chapter-header {
+.chapter-header-enhanced {
     display: flex;
-    align-items: center;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
     margin-bottom: 1.5rem;
+    min-height: 120px;
 }
 
-.chapter-number {
-    font-family: 'Didot LP Display', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #666666;
-    opacity: 0.7;
-}
-
-.chapter-header h3 {
-    font-family: 'Didot LP Display', serif;
-    font-size: 1.8rem;
-    color: #555555;
-    margin: 0;
+.chapter-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .chapter-content p {
@@ -2303,6 +2303,7 @@ section {
     line-height: 1.7;
     color: #444;
     margin-bottom: 1.5rem;
+    flex: 1;
 }
 
 .journey-highlights {
@@ -2329,6 +2330,122 @@ section {
 
 .highlight-badge.tech {
     background: linear-gradient(45deg, #999999, #bbbbbb);
+}
+
+/* ========== ENHANCED JOURNEY CHAPTER ELEMENTS ========== */
+
+.chapter-header-enhanced {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    min-height: 120px;
+}
+
+.chapter-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.chapter-year {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666666;
+    letter-spacing: 1px;
+}
+
+.chapter-duration {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #999999;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.chapter-title-large {
+    font-family: 'Didot LP Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333333;
+    margin: 0.5rem 0;
+    line-height: 1.2;
+}
+
+.chapter-subtitle {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    color: #666666;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.journey-highlights-enhanced {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.achievement-stats-enhanced {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.mini-stat-enhanced {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-number-large {
+    font-family: 'Didot LP Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #666666;
+    line-height: 1;
+}
+
+.stat-label-enhanced {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #999999;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.current-focus-enhanced {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.focus-item-large {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666666;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.focus-item-large:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: #cccccc;
 }
 
 .achievement-stats {

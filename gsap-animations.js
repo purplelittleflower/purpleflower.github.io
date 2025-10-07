@@ -259,7 +259,8 @@ function initScrollTriggerAnimations() {
         rotationX: 20,
         scale: 0.8,
         ease: "power3.out",
-        stagger: 0.4
+        stagger: 0.4,
+        clearProps: "transform" // Clear transforms after animation
     });
 
     // 6. Chapter headers with individual animations
@@ -532,7 +533,8 @@ function initFloatingElements() {
                 rotationY: 5,
                 rotationX: 2,
                 z: 50,
-                ease: "power2.out"
+                ease: "power2.out",
+                transformOrigin: "center center"
             });
             
             // Animate highlight badges
@@ -552,7 +554,8 @@ function initFloatingElements() {
                 rotationY: 0,
                 rotationX: 0,
                 z: 0,
-                ease: "power2.out"
+                ease: "power2.out",
+                transformOrigin: "center center"
             });
             
             gsap.to(chapter.querySelectorAll('.highlight-badge, .focus-item-large'), {
