@@ -461,68 +461,24 @@ main {
     transform: translateY(0) scale(1);
 }
 
-/* ========== EMERGENCY HERO VISIBILITY FIX ========== */
-/* Nuclear option to force hero content visibility */
-.hero,
-.hero-content,
-.hero-main-title,
-.title-line-1,
-.title-line-2,
-.title-line-3 {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: block !important;
-    transform: none !important;
-    animation: none !important;
-    position: relative !important;
-    z-index: 999 !important;
-    color: white !important;
-    font-size: inherit !important;
-    line-height: inherit !important;
-}
-
+/* ========== CLEAN HERO VISIBILITY FIX ========== */
+/* Ensure hero content is visible without breaking layout */
 .hero-main-title {
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-.animate-letters span {
     opacity: 1 !important;
     visibility: visible !important;
-    display: inline !important;
-    transform: none !important;
-    animation: none !important;
-    color: white !important;
 }
 
-/* ========== HERO FALLBACK VISIBILITY ========== */
-/* Ensure hero content is visible even if GSAP animations fail */
-.hero,
-.hero *,
-.hero-content,
-.hero-content *,
-.hero-main-title,
-.hero-main-title *,
-.title-line-1,
-.title-line-2, 
-.title-line-3,
-.animate-letters,
-.animate-letters span,
+.hero-main-title .animate-letters span {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 .hero-subtitle-enhanced,
 .hero-subtitle-secondary,
 .hero-description-enhanced,
-.hero-buttons-enhanced,
 .scattered-text {
     opacity: 1 !important;
     visibility: visible !important;
-    display: block !important;
-    transform: none !important;
-    animation: none !important;
-}
-
-/* Specific override for inline elements */
-.animate-letters span {
-    display: inline !important;
 }
 
 /* ========== MAGNETIC HOVER EFFECTS ========== */
