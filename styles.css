@@ -626,6 +626,36 @@ main {
     overflow: hidden;
 }
 
+/* Visual Duo (two-column side-by-side layout) */
+.visual-duo {
+    padding: 80px 0;
+    background: transparent;
+}
+
+.visual-duo .duo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.visual-duo .duo-column {
+    position: relative;
+}
+
+/* Ensure inner gallery blocks don't over-expand */
+.visual-duo .explosion-gallery-container {
+    margin-top: 1.5rem;
+}
+
+/* Stack on tablets/phones */
+@media (max-width: 1024px) {
+    .visual-duo .duo-grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+}
+
 .explosion-gallery-container {
     display: flex;
     flex-direction: column;
