@@ -2188,6 +2188,74 @@ main h3, section h3, .container h3, h3 {
     }
 }
 
+/* ========================================= */
+/* Typography consolidation per user request */
+/* - Times New Roman for hero & all headings */
+/* - Consistent sans for all buttons         */
+/* ========================================= */
+
+/* Extend serif heading family to h1–h6 */
+main h1, section h1, .container h1, h1,
+main h2, section h2, .container h2, h2,
+main h3, section h3.title, .container h3.title,
+main h4, section h4, .container h4, h4,
+main h5, section h5, .container h5, h5,
+main h6, section h6, .container h6, h6 {
+    font-family: Times, "Times New Roman", Georgia, serif;
+}
+
+/* Hero titles explicitly in Times New Roman */
+.hero-main-title,
+.hero-main-title .title-line-1,
+.hero-main-title .title-line-2,
+.hero-main-title .title-line-3 {
+    font-family: Times, "Times New Roman", Georgia, serif !important;
+}
+
+/* Section composite headings use Times */
+.section-title-enhanced .title-word,
+.section-title-enhanced .title-word-large,
+.renaissance-title-enhanced .section-title-enhanced .title-word,
+.renaissance-title-enhanced .section-title-enhanced .title-word-large {
+    font-family: Times, "Times New Roman", Georgia, serif !important;
+}
+
+/* Card and module titles coerced to Times */
+.chapter-title-large,
+.card-title-large,
+.portfolio-card h3,
+.portfolio-card-enhanced h3,
+.research-card h3,
+.article-card h3,
+.current-studies-featured h3,
+.academic-portfolio h3 {
+    font-family: Times, "Times New Roman", Georgia, serif !important;
+    text-transform: none;
+}
+
+/* Uniform button font stack (uppercase sans) */
+button,
+[role="button"],
+.button,
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-primary-academic,
+.btn-secondary-academic,
+.action-buttons button,
+.cta-button,
+.hero-buttons .cta-button,
+.hero-buttons-enhanced .cta-button,
+.primary-enhanced,
+.secondary-enhanced,
+.geometric-section .read-more button,
+.research-card .action-buttons button {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", Verdana, sans-serif !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 /* Mobile adjustments for the new default h2 size */
 @media (max-width: 768px) {
     main h2, section h2, .container h2, h2 {
