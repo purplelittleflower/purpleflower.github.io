@@ -148,23 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     enhanceFloatingMovement();
     
-    // ========== GLOW TEXT EFFECTS ON SCROLL ========== 
-    const addGlowToVisibleElements = () => {
-        const elements = document.querySelectorAll('h1, h2, h3');
-        
-        elements.forEach(element => {
-            const rect = element.getBoundingClientRect();
-            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            
-            if (isVisible) {
-                element.classList.add('glow-text');
-            } else {
-                element.classList.remove('glow-text');
-            }
-        });
-    };
-    
-    window.addEventListener('scroll', addGlowToVisibleElements);
+    // ========== GLOW TEXT EFFECTS DISABLED BY REQUEST ==========
     
     // ========== LIQUID BACKGROUND EFFECTS ========== 
     const addLiquidEffects = () => {
@@ -245,16 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ========== LOADING ANIMATION ========== 
-    // Add page entrance animation
-    document.body.style.opacity = '0';
-    document.body.style.transform = 'translateY(20px)';
-    
-    setTimeout(() => {
-        document.body.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        document.body.style.opacity = '1';
-        document.body.style.transform = 'translateY(0)';
-    }, 100);
+    // ========== LOADING ANIMATION DISABLED ==========
     
     // ========== ENHANCED SCROLL ANIMATIONS ==========
     

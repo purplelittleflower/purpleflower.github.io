@@ -1413,7 +1413,7 @@ header {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: animate-background 5s infinite alternate linear, titleFloat 6s ease-in-out infinite;
+    /* animation removed by request */
 }
 
 .title-line-2 {
@@ -1426,7 +1426,7 @@ header {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: animate-background 5s infinite alternate linear, titleFloat 6s ease-in-out infinite 2s;
+    /* animation removed by request */
 }
 
 .title-line-3 {
@@ -1439,7 +1439,7 @@ header {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: animate-background 5s infinite alternate linear, titleFloat 6s ease-in-out infinite 4s;
+    /* animation removed by request */
 }
 
 /* Fix letter spacing for animate-letters spans */
@@ -1451,8 +1451,7 @@ header {
 .animate-letters span {
     display: inline-block;
     margin-right: -0.01em;
-    animation: heroLetterGlow 3s ease-in-out infinite;
-    animation-delay: calc(var(--index, 0) * 0.1s);
+    /* animation removed by request */
 }
 
 @keyframes heroLetterGlow {
@@ -2911,6 +2910,37 @@ section {
 }
 
 /* ========== END VISUAL ELEMENTS ========== */
+
+/* ========== HERO/TITLE ANIMATION DISABLE (Requested) ========== */
+/* Turn off all animations and transitions for hero titles and hero section */
+.hero-main-title,
+.hero-main-title .title-line-1,
+.hero-main-title .title-line-2,
+.hero-main-title .title-line-3,
+.hero-main-title .animate-letters,
+.hero-main-title .animate-letters span,
+.hero-subtitle-enhanced,
+.hero-subtitle-secondary,
+.hero-description-enhanced,
+.section-title-enhanced .animate-letters,
+.section-title-enhanced .animate-letters span {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* In case any global glow is applied, cancel it for the hero heading */
+.hero-main-title.glow-text,
+.hero-subtitle-enhanced.glow-text,
+.hero-subtitle-secondary.glow-text {
+    animation: none !important;
+}
+
+/* Ensure masked title lines stay static (no background-position animation) */
+.hero-main-title .title-line-1,
+.hero-main-title .title-line-2,
+.hero-main-title .title-line-3 {
+    background-position: 50% 50% !important;
+}
 
 /* ========== LETTER-BY-LETTER ANIMATION EFFECTS ========== */
 
