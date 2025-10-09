@@ -2908,6 +2908,34 @@ section {
     background-position: 50% 50% !important;
 }
 
+/* ========== SECTION TITLES: UNIFIED STYLE (match THE / RENAISSANCE / JOURNEY) ========== */
+/* Apply same font, color, and size across all section titles */
+.section-title-enhanced .title-word,
+.section-title-enhanced .title-word-large {
+    font-family: var(--font-serif) !important;
+    color: #000000 !important;
+    text-transform: none !important;
+}
+
+.section-title-enhanced .title-word {
+    font-size: 2.5rem !important;
+    letter-spacing: -0.5px;
+}
+
+.section-title-enhanced .title-word-large {
+    font-size: 5rem !important;
+    letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+    .section-title-enhanced .title-word {
+        font-size: 1.8rem !important;
+    }
+    .section-title-enhanced .title-word-large {
+        font-size: 3rem !important;
+    }
+}
+
 /* Letter-by-letter effects removed */
 
 /* Hero Quote Section */
