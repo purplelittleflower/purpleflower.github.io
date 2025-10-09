@@ -2188,6 +2188,37 @@ main h3, section h3, .container h3, h3 {
     }
 }
 
+/* ===================================== */
+/* Hero letter layout hardening          */
+/* Prevent wide spacing/distribution     */
+/* ===================================== */
+/* Keep each word’s letters tightly grouped and centered */
+.hero-main-title .animate-letters {
+    display: inline-flex !important;
+    justify-content: center;
+    align-items: baseline;
+    white-space: nowrap;
+    gap: 0;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+    text-align: left !important;
+    font-kerning: normal;
+    font-feature-settings: "kern" 1;
+}
+
+/* Remove any extra margins between the per-letter spans */
+.hero-main-title .animate-letters span {
+    margin: 0 !important;
+}
+
+/* Ensure hero title lines don’t stretch */
+.hero-main-title .title-line-1,
+.hero-main-title .title-line-2,
+.hero-main-title .title-line-3 {
+    width: auto !important;
+    max-width: none !important;
+}
+
 /* ========================================= */
 /* Typography consolidation per user request */
 /* - Times New Roman for hero & all headings */
