@@ -467,14 +467,10 @@ main {
     opacity: 1 !important;
     visibility: visible !important;
     color: #000000 !important;
-    display: flex !important;
+    /* keep default display per layout; no forced flex needed */
 }
 
-.hero-main-title .animate-letters span {
-    opacity: 1 !important;
-    visibility: visible !important;
-    color: #000000 !important;
-}
+/* Removed per-letter spans; no special handling needed */
 
 .title-line-1,
 .title-line-2, 
@@ -501,11 +497,7 @@ main {
     display: flex !important;
 }
 
-.section-title-enhanced .animate-letters span {
-    opacity: 1 !important;
-    visibility: visible !important;
-    color: #000000 !important;
-}
+/* Removed per-letter spans; no special handling needed */
 
 .title-word,
 .title-word-large {
@@ -1442,17 +1434,7 @@ header {
     /* animation removed by request */
 }
 
-/* Fix letter spacing for animate-letters spans */
-.animate-letters {
-    display: inline-block;
-    letter-spacing: 0.01em;
-}
-
-.animate-letters span {
-    display: inline-block;
-    margin-right: -0.01em;
-    /* animation removed by request */
-}
+/* Per-letter effect removed */
 
 @keyframes heroLetterGlow {
     0%, 100% { 
@@ -2192,23 +2174,7 @@ main h3, section h3, .container h3, h3 {
 /* Prevent wide spacing/distribution     */
 /* ===================================== */
 /* Keep each word’s letters tightly grouped and centered */
-.hero-main-title .animate-letters {
-    display: inline-flex !important;
-    justify-content: center;
-    align-items: baseline;
-    white-space: nowrap;
-    gap: 0;
-    letter-spacing: 0 !important;
-    word-spacing: 0 !important;
-    text-align: left !important;
-    font-kerning: normal;
-    font-feature-settings: "kern" 1;
-}
-
-/* Remove any extra margins between the per-letter spans */
-.hero-main-title .animate-letters span {
-    margin: 0 !important;
-}
+/* Per-letter containers removed; rely on default inline flow for title lines */
 
 /* Ensure hero title lines don’t stretch */
 .hero-main-title .title-line-1,
@@ -2942,122 +2908,7 @@ section {
     background-position: 50% 50% !important;
 }
 
-/* ========== LETTER-BY-LETTER ANIMATION EFFECTS ========== */
-
-.animate-letters {
-    display: inline-block;
-}
-
-.animate-letters span {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(30px) scale(0.3);
-    animation: letterBounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-    will-change: transform, opacity;
-}
-
-/* Staggered delays for each letter */
-.animate-letters span:nth-child(1) { animation-delay: 0.1s; }
-.animate-letters span:nth-child(2) { animation-delay: 0.15s; }
-.animate-letters span:nth-child(3) { animation-delay: 0.2s; }
-.animate-letters span:nth-child(4) { animation-delay: 0.25s; }
-.animate-letters span:nth-child(5) { animation-delay: 0.3s; }
-.animate-letters span:nth-child(6) { animation-delay: 0.35s; }
-.animate-letters span:nth-child(7) { animation-delay: 0.4s; }
-.animate-letters span:nth-child(8) { animation-delay: 0.45s; }
-.animate-letters span:nth-child(9) { animation-delay: 0.5s; }
-.animate-letters span:nth-child(10) { animation-delay: 0.55s; }
-.animate-letters span:nth-child(11) { animation-delay: 0.6s; }
-.animate-letters span:nth-child(12) { animation-delay: 0.65s; }
-.animate-letters span:nth-child(13) { animation-delay: 0.7s; }
-.animate-letters span:nth-child(14) { animation-delay: 0.75s; }
-.animate-letters span:nth-child(15) { animation-delay: 0.8s; }
-
-@keyframes letterBounceIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px) scale(0.3) rotateX(90deg);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(-5px) scale(1.1) rotateX(0deg);
-    }
-    70% {
-        transform: translateY(2px) scale(0.95);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1) rotateX(0deg);
-    }
-}
-
-/* Enhanced hero title letter animations */
-.hero-main-title .animate-letters span {
-    animation: none; /* Use GSAP instead for better control */
-}
-
-@keyframes heroLetterEffect {
-    0% {
-        opacity: 0;
-        transform: translateY(50px) scale(0.2) rotateY(90deg);
-        filter: blur(10px);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(-10px) scale(1.15) rotateY(0deg);
-        filter: blur(0px);
-    }
-    70% {
-        transform: translateY(3px) scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1) rotateY(0deg);
-        filter: blur(0px);
-    }
-}
-
-/* Section title letter animations triggered on scroll */
-.section-title-enhanced .animate-letters span {
-    animation: none; /* Disable auto animation, use GSAP scroll trigger */
-}
-
-/* Hover effects for individual letters */
-.animate-letters span:hover {
-    animation: letterHover 0.3s ease-in-out;
-}
-
-@keyframes letterHover {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-8px) scale(1.2); }
-}
-
-/* Mobile optimizations */
-@media (max-width: 768px) {
-    .animate-letters span {
-        animation-duration: 0.6s;
-    }
-    
-    .hero-main-title .animate-letters span {
-        animation-duration: 0.8s;
-    }
-    
-    /* Reduce delays on mobile for faster loading */
-    .animate-letters span:nth-child(n) {
-        animation-delay: calc(0.05s * var(--index));
-    }
-}
-
-/* Accessibility: Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    .animate-letters span {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
-
-/* ========== END LETTER-BY-LETTER ANIMATIONS ========== */
+/* Letter-by-letter effects removed */
 
 /* Hero Quote Section */
 .journey-hero {
