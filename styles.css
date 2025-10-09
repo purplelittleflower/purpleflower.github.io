@@ -2297,6 +2297,32 @@ h1, h2, h3, h4, h5, h6,
     font-family: inherit !important;
 }
 
+/* Unify all small labels/badges/subtitles to the sans stack (matches buttons) */
+.section-label-scattered,
+.section-number-scattered,
+.about-section-label,
+.subtitle-line,
+.subtitle-line-large,
+.description-label,
+.chapter-subtitle,
+.chapter-meta,
+.degree-badge,
+.in-progress-badge,
+.planning-badge,
+.coming-soon-badge,
+.highlight-badge,
+.focus-item-large,
+.stat-item .stat-label,
+.mini-stat .stat-label,
+.category,
+.date,
+.sidebar-label,
+.pursuit,
+.read-more span,
+.geometric-section .read-more button span {
+    font-family: var(--font-sans) !important;
+}
+
 /* Mobile adjustments for the new default h2 size */
 @media (max-width: 768px) {
     main h2, section h2, .container h2, h2 {
