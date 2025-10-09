@@ -2074,6 +2074,34 @@ section {
     backface-visibility: hidden;
 }
 
+/* ====================== */
+/* Global Heading Tweaks  */
+/* (User-requested test)  */
+/* ====================== */
+/* Note: Placed late in the file to ensure it wins over generic element styles.
+   Class selectors (e.g., .title-word, .chapter-title-large) may still override
+   these; we can adjust those too if you want this look everywhere. */
+
+h3 {
+    font-family: Gill Sans, Verdana, sans-serif;
+    font-size: 11px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: Times, "Times New Roman", Georgia, serif;
+    color: #444;
+    margin: 0;
+    padding: 0 0 6px 0;
+    font-size: 51px;
+    line-height: 44px;
+    letter-spacing: -2px;
+    font-weight: bold;
+}
+
 /* Enhanced section transitions */
 section {
     will-change: transform;
