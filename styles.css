@@ -632,6 +632,10 @@ main {
     background: transparent;
 }
 
+.visual-duo-title {
+    margin-bottom: 3rem;
+}
+
 .visual-duo .duo-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
