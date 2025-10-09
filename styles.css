@@ -2256,6 +2256,47 @@ button,
     letter-spacing: 1px;
 }
 
+/* =============================== */
+/* Final typography lock (Times)   */
+/* Ensures absolute consistency    */
+/* =============================== */
+
+:root {
+    --font-serif: Times, "Times New Roman", Georgia, serif;
+    --font-sans: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", Verdana, sans-serif;
+    --font-body: 'EB Garamond', Georgia, 'Times New Roman', serif;
+}
+
+/* Force Times for all headings and designated title classes */
+h1, h2, h3, h4, h5, h6,
+.hero-content h1,
+.section-title-enhanced,
+.section-title-enhanced .title-word,
+.section-title-enhanced .title-word-large,
+.renaissance-title-enhanced .section-title-enhanced .title-word,
+.renaissance-title-enhanced .section-title-enhanced .title-word-large,
+.hero-main-title,
+.hero-main-title .title-line-1,
+.hero-main-title .title-line-2,
+.hero-main-title .title-line-3,
+.chapter-title-large,
+.card-title-large,
+.portfolio-card h3,
+.portfolio-card-enhanced h3,
+.research-card h3,
+.article-card h3,
+.current-studies-featured h3,
+.academic-portfolio h3 {
+    font-family: var(--font-serif) !important;
+    text-transform: none;
+}
+
+/* Ensure letter-by-letter spans inherit the heading font */
+.animate-letters,
+.animate-letters span {
+    font-family: inherit !important;
+}
+
 /* Mobile adjustments for the new default h2 size */
 @media (max-width: 768px) {
     main h2, section h2, .container h2, h2 {
