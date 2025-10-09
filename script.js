@@ -591,4 +591,111 @@ document.addEventListener('DOMContentLoaded', function() {
     
     createMobileMenu();
     window.addEventListener('resize', createMobileMenu);
+
+    // ========== VERTICAL NAV SCROLLSPY & SMOOTH SCROLL ==========
+    const verticalNavLinks = Array.from(document.querySelectorAll('.vertical-nav .vertical-nav-link'));
+    const idToLink = new Map();
+    const observedSections = [];
+
+    verticalNavLinks.forEach(link => {
+        const href = link.getAttribute('href') || '';
+        if (href.startsWith('#')) {
+            const id = href.slice(1);
+            const section = document.getElementById(id);
+            if (section) {
+                idToLink.set(id, link);
+                observedSections.push(section);
+            }
+        }
+    });
+
+    let currentActiveId = null;
+
+    const setActiveLink = (id) => {
+        if (id && id !== currentActiveId) {
+            verticalNavLinks.forEach(l => l.classList.remove('active'));
+            const link = idToLink.get(id);
+            if (link) {
+                link.classList.add('active');
+                verticalNavLinks.forEach(l => l.removeAttribute('aria-current'));
+                link.setAttribute('aria-current', 'page');
+                currentActiveId = id;
+            }
+        }
+    };
+
+    // Smooth scroll for vertical nav
+    verticalNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href') || '';
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const id = href.slice(1);
+                const target = document.getElementById(id);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setActiveLink(id);
+                }
+            }
+        });
+    });
+
+    // Update active link based on scroll position (scrollspy)
+    const updateActiveOnScroll = () => {
+        const viewportProbeY = window.innerHeight * 0.33; // one-third down the viewport
+        let bestId = null;
+        let bestDistance = Infinity;
+
+        observedSections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const distance = Math.abs(rect.top - viewportProbeY);
+            // Prefer sections that overlap the probe line
+            const overlaps = rect.top <= viewportProbeY && rect.bottom >= viewportProbeY;
+            if (overlaps) {
+                if (distance < bestDistance) {
+                    bestDistance = distance;
+                    bestId = section.id;
+                }
+            }
+        });
+
+        // Fallback: pick the topmost section above the probe if none overlaps
+        if (!bestId) {
+            observedSections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= viewportProbeY && viewportProbeY <= rect.bottom) {
+                    bestId = section.id;
+                }
+            });
+            if (!bestId) {
+                let topmost = null;
+                observedSections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= viewportProbeY) {
+                        if (!topmost || rect.top > topmost.top) {
+                            topmost = { id: section.id, top: rect.top };
+                        }
+                    }
+                });
+                if (topmost) bestId = topmost.id;
+            }
+        }
+
+        if (bestId) setActiveLink(bestId);
+    };
+
+    // Throttle with rAF
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateActiveOnScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Initialize on load
+    updateActiveOnScroll();
 });
