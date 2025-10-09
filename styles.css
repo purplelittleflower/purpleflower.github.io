@@ -2074,6 +2074,92 @@ section {
     backface-visibility: hidden;
 }
 
+/* ================================ */
+/* Global Typography Rollout (v1)   */
+/* Serif for major headings (h1/h2) */
+/* Sans small-caps for h3 labels    */
+/* ================================ */
+
+/* Body defaults (placed late to override earlier body font) */
+html body {
+    font-family: Times, "Times New Roman", Georgia, serif;
+}
+
+/* High-specificity heading overrides */
+main h1, section h1, .container h1, h1,
+main h2, section h2, .container h2, h2 {
+    font-family: Times, "Times New Roman", Georgia, serif;
+    color: #444;
+    letter-spacing: -2px;
+    font-weight: 700;
+}
+
+/* Apply user-provided h2 metrics more broadly */
+main h2, section h2, .container h2, h2 {
+    margin: 0;
+    padding: 0 0 6px 0;
+    font-size: 51px;
+    line-height: 44px;
+}
+
+/* Small uppercase label style for h3 (Gill Sans/Verdana) */
+main h3, section h3, .container h3, h3 {
+    font-family: "Gill Sans", Verdana, sans-serif;
+    font-size: 11px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Keep hero title family consistent with global serif while preserving the masked effect */
+.hero-main-title { font-family: Times, "Times New Roman", Georgia, serif; }
+.title-word-large { font-family: Times, "Times New Roman", Georgia, serif; }
+.section-title-enhanced .title-word-large { font-family: Times, "Times New Roman", Georgia, serif; }
+
+/* Important exceptions: some major headings are implemented as h3.
+   Ensure they remain large serif headings rather than tiny label style. */
+.chapter-title-large,
+.card-title-large,
+.portfolio-card-enhanced h3,
+.research-card h3,
+.article-card h3,
+.academic-portfolio h3,
+.current-studies-featured h3 {
+    font-family: Times, "Times New Roman", Georgia, serif;
+    text-transform: none;
+    letter-spacing: -0.5px;
+    font-weight: 700;
+    font-size: clamp(22px, 3.2vw, 34px);
+    line-height: 1.2;
+}
+
+/* Align hero subtitles with the sans label vibe without shrinking sizes */
+.hero-subtitle-enhanced { font-family: "Gill Sans", Verdana, sans-serif; }
+
+/* Keep small scattered labels sans too */
+.section-label-scattered,
+.subtitle-line,
+.subtitle-line-large,
+.description-label { font-family: "Gill Sans", Verdana, sans-serif; }
+
+/* Ensure lettered animated words inherit the new families */
+.section-title-enhanced .title-word,
+.section-title-enhanced .title-word-large,
+.hero-main-title .title-line-1,
+.hero-main-title .title-line-2,
+.hero-main-title .title-line-3 {
+    font-family: inherit;
+}
+
+/* Mobile adjustments for the new default h2 size */
+@media (max-width: 768px) {
+    main h2, section h2, .container h2, h2 {
+        font-size: 36px;
+        line-height: 36px;
+        letter-spacing: -1px;
+    }
+}
 /* ====================== */
 /* Global Heading Tweaks  */
 /* (User-requested test)  */
