@@ -2445,7 +2445,7 @@ section {
     }
     
     .summary-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -2530,8 +2530,8 @@ section {
 /* Portfolio Cards Grid */
 .portfolio-journey-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
     margin-bottom: 3rem;
 }
 
@@ -2677,10 +2677,9 @@ section {
     transform: translateY(-2px);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
     .portfolio-journey-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
 }
@@ -2690,6 +2689,15 @@ section {
         padding: 5rem 0;
     }
     
+    .portfolio-journey-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .portfolio-card-new {
+        padding: 2rem;
+    }
+}
     .portfolio-card-new {
         padding: 2rem;
     }
@@ -2749,7 +2757,7 @@ section {
 /* Visuals Cards Grid */
 .visuals-journey-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
     margin-bottom: 3rem;
 }
@@ -2856,7 +2864,7 @@ section {
 /* Visual Gallery Grid */
 .visual-gallery-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 0.8rem;
     margin: 1rem 0;
 }
@@ -4940,7 +4948,7 @@ section {
     }
     
     .stats-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
     }
     
@@ -5527,7 +5535,7 @@ footer {
 /* Tablet Responsive - 2 column grid for research cards */
 @media (max-width: 1024px) and (min-width: 769px) {
     .research-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
     }
 }
