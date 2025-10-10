@@ -4467,6 +4467,37 @@ section {
     position: relative;
 }
 
+/* Apply NAV gradient colors to research cards */
+.research-grid .research-card:nth-child(1) {
+    background: linear-gradient(135deg, rgba(74, 90, 63, 0.15) 0%, rgba(107, 122, 93, 0.12) 100%);
+    border: 1px solid rgba(74, 90, 63, 0.3);
+    box-shadow: 0 20px 60px rgba(74, 90, 63, 0.2);
+}
+
+.research-grid .research-card:nth-child(1)::before {
+    background: linear-gradient(90deg, var(--forest-green), var(--moss-green));
+}
+
+.research-grid .research-card:nth-child(2) {
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.15) 0%, rgba(109, 76, 61, 0.12) 100%);
+    border: 1px solid rgba(138, 155, 124, 0.3);
+    box-shadow: 0 20px 60px rgba(138, 155, 124, 0.2);
+}
+
+.research-grid .research-card:nth-child(2)::before {
+    background: linear-gradient(90deg, var(--sage-green), var(--warm-brown));
+}
+
+.research-grid .research-card:nth-child(3) {
+    background: linear-gradient(135deg, rgba(125, 95, 111, 0.15) 0%, rgba(93, 58, 79, 0.12) 100%);
+    border: 1px solid rgba(125, 95, 111, 0.3);
+    box-shadow: 0 20px 60px rgba(125, 95, 111, 0.2);
+}
+
+.research-grid .research-card:nth-child(3)::before {
+    background: linear-gradient(90deg, var(--muted-purple), var(--deep-burgundy));
+}
+
 .research-card.featured {
     transform: perspective(1000px) rotateY(-2deg) rotateX(3deg);
 }
