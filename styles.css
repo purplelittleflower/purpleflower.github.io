@@ -422,10 +422,16 @@ main {
 
 .scroll-progress-bar {
     height: 100%;
-    background: linear-gradient(90deg, #000000, #666666, #cccccc, #ffffff);
+    background: linear-gradient(90deg, 
+        rgba(74, 90, 63, 1) 0%, 
+        rgba(107, 122, 93, 1) 20%, 
+        rgba(138, 155, 124, 1) 40%, 
+        rgba(109, 76, 61, 1) 60%, 
+        rgba(125, 95, 111, 1) 80%, 
+        rgba(232, 224, 213, 1) 100%);
     width: 0%;
     transition: width 0.3s ease;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(138, 155, 124, 0.5);
 }
 
 /* ========== 3D TILT EFFECTS ========== */
