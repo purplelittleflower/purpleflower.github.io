@@ -2039,6 +2039,65 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 30px rgba(44, 44, 44, 0.2);
+
+/* Renaissance Quote Panel */
+.renaissance-quote-panel {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.08) 0%, rgba(107, 122, 93, 0.06) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(138, 155, 124, 0.2);
+    box-shadow: 0 10px 40px rgba(74, 90, 63, 0.1);
+    position: relative;
+}
+
+.renaissance-quote-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--sage-green), var(--moss-green), var(--forest-green), transparent);
+    border-radius: 20px 20px 0 0;
+}
+
+.renaissance-quote-panel .quote-label {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--forest-green);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+}
+
+.renaissance-quote {
+    font-family: 'EB Garamond', 'Times New Roman', serif;
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: #3a3a3a;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    font-weight: 400;
+    position: relative;
+}
+
+.renaissance-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--sage-green);
+    opacity: 0.3;
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
 }
 
 /* Section Positioning */
