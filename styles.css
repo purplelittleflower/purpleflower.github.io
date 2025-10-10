@@ -2555,22 +2555,22 @@ section {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
-/* Card 1: Musical Arts - Muted Purple/Burgundy */
+/* Card 1: Musical Arts - Forest Green */
 .card-music::before {
-    background: linear-gradient(90deg, var(--muted-purple), var(--deep-burgundy));
+    background: linear-gradient(90deg, var(--forest-green), var(--moss-green));
 }
 
 .card-music:hover {
-    box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
+    box-shadow: 0 20px 60px rgba(74, 90, 63, 0.25);
 }
 
-/* Card 2: Education - Muted Purple/Burgundy */
+/* Card 2: Education - Sage Green/Warm Brown */
 .card-education::before {
-    background: linear-gradient(90deg, var(--deep-burgundy), var(--muted-purple));
+    background: linear-gradient(90deg, var(--sage-green), var(--warm-brown));
 }
 
 .card-education:hover {
-    box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
+    box-shadow: 0 20px 60px rgba(138, 155, 124, 0.25);
 }
 
 /* Card 3: Visual Arts - Muted Purple/Burgundy */
@@ -2582,14 +2582,15 @@ section {
     box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
 }
 
-/* Card 4: Technology - Burgundy/Purple Mix */
+/* Card 4: Technology - Forest/Burgundy Mix */
 .card-tech::before {
-    background: linear-gradient(90deg, var(--deep-burgundy), var(--muted-purple));
+    background: linear-gradient(90deg, var(--warm-brown), var(--deep-burgundy));
 }
 
 .card-tech:hover {
-    box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
+    box-shadow: 0 20px 60px rgba(109, 76, 61, 0.25);
 }
+
 /* Card Elements */
 .portfolio-card-new .card-category-badge {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
@@ -6001,21 +6002,20 @@ html {
 }
 
 /* Card Colors - Using botanical palette already applied */
-/* Card Colors - Using muted purple/burgundy botanical palette */
 .card-articles::before {
-    background: linear-gradient(90deg, var(--muted-purple), var(--deep-burgundy));
+    background: linear-gradient(90deg, var(--forest-green), var(--moss-green));
 }
 
 .card-articles:hover {
-    box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
+    box-shadow: 0 20px 60px rgba(74, 90, 63, 0.25);
 }
 
 .card-projects::before {
-    background: linear-gradient(90deg, var(--deep-burgundy), var(--muted-purple));
+    background: linear-gradient(90deg, var(--sage-green), var(--warm-brown));
 }
 
 .card-projects:hover {
-    box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
+    box-shadow: 0 20px 60px rgba(138, 155, 124, 0.25);
 }
 
 .card-publications::before {
@@ -6026,7 +6026,7 @@ html {
     box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
 }
 
-/* Status Badges - Purple/Burgundy Variation */
+/* Status Badges - Creative Variation */
 .card-status-badge {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     font-size: 0.65rem;
@@ -6042,16 +6042,17 @@ html {
 }
 
 .badge-progress {
-    background: linear-gradient(135deg, var(--muted-purple), var(--deep-burgundy));
+    background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
 }
 
 .badge-planning {
-    background: linear-gradient(135deg, var(--deep-burgundy), var(--muted-purple));
+    background: linear-gradient(135deg, var(--sage-green), var(--warm-brown));
 }
 
 .badge-soon {
     background: linear-gradient(135deg, var(--muted-purple), var(--deep-burgundy));
 }
+
 /* Card Elements */
 .academic-card-new .card-header {
     margin-bottom: 1.5rem;
@@ -6142,27 +6143,24 @@ html {
     background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
     color: white;
     box-shadow: 0 4px 12px rgba(74, 90, 63, 0.3);
-.btn-academic-primary {
-    background: linear-gradient(135deg, var(--muted-purple), var(--deep-burgundy));
-    color: white;
-    box-shadow: 0 4px 12px rgba(125, 95, 111, 0.3);
 }
 
 .btn-academic-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(125, 95, 111, 0.4);
+    box-shadow: 0 6px 20px rgba(74, 90, 63, 0.4);
 }
 
 .btn-academic-secondary {
     background: white;
-    color: var(--deep-burgundy);
-    border: 2px solid var(--muted-purple);
+    color: var(--forest-green);
+    border: 2px solid var(--sage-green);
 }
 
 .btn-academic-secondary:hover {
-    background: linear-gradient(135deg, rgba(125, 95, 111, 0.1), rgba(93, 58, 79, 0.05));
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.1), rgba(107, 122, 93, 0.05));
     transform: translateY(-2px);
 }
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .featured-content {
