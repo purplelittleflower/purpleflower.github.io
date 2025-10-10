@@ -76,6 +76,7 @@
           font-size: 1rem;
           cursor: pointer;
           transform-style: preserve-3d;
+          z-index: 1;
           
           --ts: calc(
             var(--hover-smoothness) * var(--falloff) +
@@ -91,8 +92,13 @@
             scale var(--op, .15s),
             filter var(--fs),
             transform var(--ts, var(--fall-smoothness)),
-            flex .3s
+            flex .3s,
+            z-index 0s
           ;
+        }
+
+        a:hover {
+          z-index: 10;
         }
 
         a {
@@ -103,7 +109,7 @@
           --w: .4;
           --falloff: clamp(calc(0.5 * (1 + cos(min(var(--u), 1) * 180deg))), 0, 1);
           
-          --tilt: calc(clamp(-1,var(--diff) * 5, 1) * var(--falloff) * 70deg);
+          --tilt: calc(clamp(-1,var(--diff) * 5, 1) * var(--falloff) * 45deg);
           
           transform: 
             translateZ(calc(var(--falloff) * var(--hover-intensity)))
