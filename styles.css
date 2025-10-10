@@ -4435,7 +4435,7 @@ section {
 /* Research Grid - Using Current Studies Card Style */
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     margin-top: 3rem;
 }
@@ -4582,6 +4582,14 @@ footer {
 }
 
 /* Responsive Design */
+/* Tablet Responsive - 2 column grid for research cards */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .research-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links {
         display: none;
