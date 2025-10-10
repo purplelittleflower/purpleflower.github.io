@@ -2107,6 +2107,370 @@ section {
 
 /* ========== END GLOBAL SOMEFOLK-INSPIRED ELEMENTS ========== */
 
+
+/* ========== RENAISSANCE SECTION REDESIGNED ========== */
+
+.renaissance-section-redesigned {
+    padding: 8rem 0;
+    background: transparent;
+    position: relative;
+}
+
+/* Header */
+.renaissance-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.renaissance-main-title {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 1;
+    margin: 2rem 0 1.5rem 0;
+    font-weight: 400;
+}
+
+.renaissance-main-title .title-line {
+    display: block;
+    font-size: 0.35em;
+    letter-spacing: 0.15em;
+    color: var(--forest-green);
+    font-weight: 500;
+    margin-bottom: 0.2em;
+}
+
+.renaissance-main-title .title-line-large {
+    display: block;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    color: #2c2c2c;
+    font-weight: 300;
+}
+
+.renaissance-subtitle {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--moss-green);
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* Focus Statement */
+.renaissance-focus-statement {
+    max-width: 900px;
+    margin: 0 auto 5rem auto;
+    padding: 3rem 3.5rem;
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.08) 0%, rgba(107, 122, 93, 0.06) 100%);
+    border-radius: 20px;
+    border-left: 4px solid var(--sage-green);
+    box-shadow: 0 10px 40px rgba(74, 90, 63, 0.08);
+    position: relative;
+}
+
+.focus-label {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: var(--forest-green);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+}
+
+.focus-quote {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #3a3a3a;
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Journey Cards Grid */
+.renaissance-journey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 5rem;
+}
+
+.renaissance-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 3px solid transparent;
+}
+
+.renaissance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    transition: all 0.4s ease;
+}
+
+.renaissance-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Card 1: Musical Foundation - Forest Green */
+.card-musical::before {
+    background: linear-gradient(90deg, var(--forest-green), var(--moss-green));
+}
+
+.card-musical:hover {
+    box-shadow: 0 20px 60px rgba(74, 90, 63, 0.25);
+}
+
+/* Card 2: Educational Impact - Sage Green/Warm Brown */
+.card-education::before {
+    background: linear-gradient(90deg, var(--sage-green), var(--warm-brown));
+}
+
+.card-education:hover {
+    box-shadow: 0 20px 60px rgba(138, 155, 124, 0.25);
+}
+
+/* Card 3: Digital Renaissance - Muted Purple/Burgundy */
+.card-digital::before {
+    background: linear-gradient(90deg, var(--muted-purple), var(--deep-burgundy));
+}
+
+.card-digital:hover {
+    box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
+}
+
+/* Card Elements */
+.card-year-badge {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(135deg, #2c2c2c, #4a4a4a);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 1.5rem;
+}
+
+.card-title {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.card-duration {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--moss-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-description {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+/* Card Tags */
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.card-tags .tag {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.12), rgba(107, 122, 93, 0.08));
+    color: var(--forest-green);
+    border-radius: 20px;
+    border: 1px solid rgba(138, 155, 124, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card-tags .tag:hover {
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.18), rgba(107, 122, 93, 0.12));
+    transform: translateY(-2px);
+}
+
+/* Card Stats */
+.card-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.05), rgba(107, 122, 93, 0.03));
+    border-radius: 12px;
+}
+
+.card-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-number {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--forest-green);
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--moss-green);
+    text-align: center;
+}
+
+/* Experience Summary */
+.renaissance-experience-summary {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(74, 90, 63, 0.05) 0%, rgba(138, 155, 124, 0.05) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(138, 155, 124, 0.15);
+}
+
+.summary-title {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #2c2c2c;
+    text-align: center;
+    margin: 0 0 2.5rem 0;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.summary-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(74, 90, 63, 0.15);
+}
+
+.summary-number {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--forest-green);
+    line-height: 1;
+}
+
+.summary-label {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--moss-green);
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .renaissance-journey-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .renaissance-section-redesigned {
+        padding: 5rem 0;
+    }
+    
+    .renaissance-focus-statement {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .focus-quote {
+        font-size: 1.1rem;
+    }
+    
+    .renaissance-card {
+        padding: 2rem;
+    }
+    
+    .summary-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .renaissance-experience-summary {
+        padding: 2rem;
+    }
+}
+
 /* ========== GSAP ENHANCEMENT STYLES ========== */
 
 /* Ensure smooth GSAP animations */
