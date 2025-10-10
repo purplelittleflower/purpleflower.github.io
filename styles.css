@@ -3564,192 +3564,205 @@ section {
 
 /* ========== END GSAP ENHANCEMENT STYLES ========== */
 
-/* ========== VISUAL DIVIDERS & GEOMETRIC ELEMENTS ========== */
+/* ========== BOTANICAL DIVIDER ========== */
 
-.visual-divider {
+.botanical-divider {
     position: relative;
-    height: 200px;
+    padding: 4rem 0;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.geometric-section {
-    background: transparent !important; /* remove gradient background */
-}
-
-.pattern-section {
-    background: transparent !important; /* remove gradient background */
-}
-
-/* Geometric Shapes */
-.geometric-shapes {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.shape {
-    position: absolute;
-    opacity: 0.6;
-    animation: floatShape 20s infinite ease-in-out;
-}
-
-.circle-1 {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(45deg, #666666, #999999);
-    border-radius: 50%;
-    top: 20%;
-    left: 15%;
-    animation-delay: 0s;
-}
-
-.triangle-1 {
-    width: 0;
-    height: 0;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom: 70px solid #808080;
-    top: 60%;
-    right: 20%;
-    animation-delay: -5s;
-}
-
-.square-1 {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #555555, #777777);
-    top: 40%;
-    right: 40%;
-    transform: rotate(45deg);
-    animation-delay: -10s;
-}
-
-@keyframes floatShape {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    25% { transform: translateY(-20px) rotate(90deg); }
-    50% { transform: translateY(-10px) rotate(180deg); }
-    75% { transform: translateY(-30px) rotate(270deg); }
-}
-
-/* Pattern Elements */
-.pattern-elements {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.pattern-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
-    width: 60%;
-    margin: 0 auto;
+.divider-container {
+    display: flex;
     align-items: center;
-    height: 100%;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    gap: 2rem;
+    position: relative;
 }
 
-.pattern-dot {
-    width: 20px;
-    height: 20px;
-    background: #666666;
-    border-radius: 50%;
-    animation: pulse 3s infinite;
-}
-
-.pattern-line {
-    width: 80px;
+/* Animated gradient lines */
+.divider-line {
+    flex: 1;
     height: 2px;
-    background: linear-gradient(90deg, #888888, #aaaaaa);
-    animation: extend 4s infinite;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(138, 155, 124, 0.2) 20%,
+        rgba(107, 122, 93, 0.3) 40%,
+        rgba(74, 90, 63, 0.4) 60%,
+        rgba(107, 122, 93, 0.3) 80%,
+        transparent 100%);
 }
 
-.pattern-circle {
-    width: 40px;
-    height: 40px;
-    border: 3px solid #777777;
-    border-radius: 50%;
-    animation: rotate 6s infinite linear;
+/* Growing line animation */
+.divider-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--sage-green) 20%,
+        var(--forest-green) 50%,
+        var(--sage-green) 80%,
+        transparent 100%);
+    animation: dividerGrow 3s ease-in-out infinite;
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 0.4; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+.divider-line.left::before {
+    left: -100%;
 }
 
-@keyframes extend {
-    0%, 100% { transform: scaleX(1); }
-    50% { transform: scaleX(1.5); }
+.divider-line.right::before {
+    right: -100%;
 }
 
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes dividerGrow {
+    0%, 100% {
+        transform: translateX(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(100%);
+        opacity: 0.8;
+    }
 }
 
-/* Gradient Overlays */
-.gradient-overlay { display: none !important; }
-.overlay-1 { background: transparent !important; }
-.overlay-2 { background: transparent !important; }
-
-/* Additional animated shapes for visual interest */
-.circle-2 {
+/* Center ornament */
+.divider-ornament {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 60px;
     height: 60px;
-    background: radial-gradient(circle at 30% 30%, #888, #666);
+}
+
+/* Central dot with glow */
+.ornament-dot {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg,
+        var(--sage-green) 0%,
+        var(--forest-green) 50%,
+        var(--moss-green) 100%);
     border-radius: 50%;
-    top: 30%;
-    left: 40%;
-    animation-delay: -3s;
+    position: relative;
+    z-index: 2;
+    animation: dotPulse 3s ease-in-out infinite;
+    box-shadow: 
+        0 0 10px rgba(74, 90, 63, 0.3),
+        0 0 20px rgba(74, 90, 63, 0.2),
+        0 0 30px rgba(74, 90, 63, 0.1);
 }
 
-.circle-3 {
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle at 70% 40%, #aaa, #777);
-    border-radius: 50%;
-    top: 10%;
-    left: 70%;
-    opacity: 0.4;
-    animation-duration: 26s;
-    animation-delay: -8s;
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 
+            0 0 10px rgba(74, 90, 63, 0.3),
+            0 0 20px rgba(74, 90, 63, 0.2),
+            0 0 30px rgba(74, 90, 63, 0.1);
+    }
+    50% {
+        transform: scale(1.3);
+        box-shadow: 
+            0 0 15px rgba(74, 90, 63, 0.5),
+            0 0 30px rgba(74, 90, 63, 0.3),
+            0 0 45px rgba(74, 90, 63, 0.2);
+    }
 }
 
-.triangle-2 {
-    width: 0;
-    height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-top: 60px solid #9a9a9a;
-    top: 25%;
-    right: 10%;
-    animation-delay: -12s;
+/* Botanical leaf ornaments */
+.ornament-leaves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.square-2 {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #707070, #9a9a9a);
-    top: 65%;
-    left: 25%;
-    transform: rotate(30deg);
-    animation-duration: 18s;
-    animation-delay: -6s;
+.leaf {
+    font-size: 1.5rem;
+    color: var(--sage-green);
+    opacity: 0.6;
+    animation: leafFloat 4s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(138, 155, 124, 0.3);
 }
 
-.ring-1 {
-    width: 70px;
-    height: 70px;
-    border: 3px solid #8a8a8a;
-    border-radius: 50%;
-    top: 50%;
-    right: 35%;
-    animation: rotate 12s infinite linear, floatShape 22s infinite ease-in-out;
-    opacity: 0.5;
+.left-leaf {
+    animation-delay: 0s;
+    transform-origin: center right;
 }
 
+.right-leaf {
+    animation-delay: 2s;
+    transform-origin: center left;
+}
+
+@keyframes leafFloat {
+    0%, 100% {
+        transform: rotate(-5deg) translateY(0);
+        opacity: 0.4;
+    }
+    50% {
+        transform: rotate(5deg) translateY(-5px);
+        opacity: 0.7;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .botanical-divider {
+        padding: 3rem 0;
+    }
+    
+    .divider-container {
+        max-width: 90%;
+        gap: 1.5rem;
+    }
+    
+    .divider-ornament {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .leaf {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .botanical-divider {
+        padding: 2rem 0;
+    }
+    
+    .divider-container {
+        gap: 1rem;
+    }
+    
+    .divider-ornament {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .ornament-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .leaf {
+        font-size: 1rem;
+    }
+}
 /* ========== IMAGE GALLERY SECTION ========== */
 
 .image-gallery {
