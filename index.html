@@ -333,85 +333,108 @@
             </div>
         </section>
 
-        <!-- Visual Duo Grid: Creative Moments + Photo Stories side by side (moved below Portfolio) -->
-        <section id="visuals" class="visuals-section-redesigned">
+        <!-- Visual Arts Section with 3D Gallery -->
+        <section id="visuals" class="visuals-section-3d">
             <div class="container">
                 <!-- Section Header -->
-                <div class="visuals-header">
+                <div class="visuals-header-3d">
                     <div class="section-label-scattered">VISUAL JOURNEY</div>
                     <div class="section-number-scattered">03</div>
                     
-                    <h2 class="visuals-main-title">
+                    <h2 class="visuals-main-title-3d">
                         <span class="title-line">VISUAL</span>
                         <span class="title-line-large">ARTS</span>
                     </h2>
                     
-                    <p class="visuals-subtitle">Creative Expression Through Multiple Mediums</p>
+                    <p class="visuals-subtitle-3d">Creative Expression Through Multiple Mediums</p>
                 </div>
 
-                <!-- Visual Arts Cards Grid -->
-                <div class="visuals-journey-grid">
-                    <!-- Card 1: Creative Moments (Paintings) -->
-                    <article class="visuals-card-new card-paintings">
-                        <div class="card-category-badge">Paintings</div>
-                        <div class="card-header">
-                            <h3 class="card-title">Creative Moments</h3>
-                            <p class="card-duration">Emotional Artistic Expression</p>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-description">A collection of my artistic expressions through paint, brush, and imagination. Each piece tells a story of creative exploration and emotional depth, capturing moments of inspiration and introspection.</p>
-                            
-                            <!-- Gallery Grid -->
-                            <div class="visual-gallery-grid">
-                                <img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=400&h=300&fit=crop&q=90" alt="Painting 1" class="gallery-image">
-                                <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&q=90" alt="Painting 2" class="gallery-image">
-                                <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=300&fit=crop&q=90" alt="Painting 3" class="gallery-image">
-                                <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=400&h=300&fit=crop&q=90" alt="Painting 4" class="gallery-image">
-                            </div>
-                            
-                            <div class="card-stats">
-                                <div class="stat">
-                                    <span class="stat-number">15+</span>
-                                    <span class="stat-label">Original Paintings</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-number">2019</span>
-                                    <span class="stat-label">Started Journey</span>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
+                <!-- Filter Tabs -->
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="paintings">Paintings</button>
+                    <button class="filter-btn" data-filter="photography">Photography</button>
+                </div>
 
-                    <!-- Card 2: Photo Stories -->
-                    <article class="visuals-card-new card-photography">
-                        <div class="card-category-badge">Photography</div>
-                        <div class="card-header">
-                            <h3 class="card-title">Photo Stories</h3>
-                            <p class="card-duration">Captured Life Moments</p>
+                <!-- 3D Gallery Strip -->
+                <div class="gallery-3d-container">
+                    <nav class="gallery-3d-nav" style="--max-p: 14; --max-z: 14; --p: 1; --z: 1;">
+                        <!-- Paintings -->
+                        <a href="#" class="gallery-item" data-category="paintings" style="--i: 0;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="paintings" style="--i: 1;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="paintings" style="--i: 2;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="paintings" style="--i: 3;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1574269909862-7e1d70bb8078?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="paintings" style="--i: 4;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1549887534-1541e9326642?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="paintings" style="--i: 5;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1578832946355-4c6c12ac18f2?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="paintings" style="--i: 6;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1582561425972-a1dd3c5dff87?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        
+                        <!-- Photography -->
+                        <a href="#" class="gallery-item" data-category="photography" style="--i: 7;">
+                            <div class="gallery-img" style="--img: url('images/IMG_0913 2.JPG');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="photography" style="--i: 8;">
+                            <div class="gallery-img" style="--img: url('images/IMG_1505 2.JPG');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="photography" style="--i: 9;">
+                            <div class="gallery-img" style="--img: url('images/IMG_1672 2.JPG');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="photography" style="--i: 10;">
+                            <div class="gallery-img" style="--img: url('images/IMG_2618 2.JPG');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="photography" style="--i: 11;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="photography" style="--i: 12;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&h=1800&fit=crop&q=90');"></div>
+                        </a>
+                        <a href="#" class="gallery-item" data-category="photography" style="--i: 13;">
+                            <div class="gallery-img" style="--img: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop&q=95');"></div>
+                        </a>
+                        
+                        <div class="hover-zone">
+                            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
                         </div>
-                        <div class="card-body">
-                            <p class="card-description">Capturing life's fleeting moments through the lens. From urban landscapes to natural beauty, each photograph tells a unique story of light, composition, and emotion in the world around us.</p>
-                            
-                            <!-- Gallery Grid -->
-                            <div class="visual-gallery-grid">
-                                <img src="images/IMG_0913 2.JPG" alt="Interior with Plants" class="gallery-image">
-                                <img src="images/IMG_1505 2.JPG" alt="Candlelit Evening" class="gallery-image">
-                                <img src="images/IMG_1672 2.JPG" alt="Dramatic Sunset" class="gallery-image">
-                                <img src="images/IMG_2618 2.JPG" alt="Elegant Living Room" class="gallery-image">
-                            </div>
-                            
-                            <div class="card-stats">
-                                <div class="stat">
-                                    <span class="stat-number">100+</span>
-                                    <span class="stat-label">Photos Captured</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-number">2020</span>
-                                    <span class="stat-label">Started Journey</span>
-                                </div>
-                            </div>
+                    </nav>
+                    
+                    <p class="gallery-hint">← Hover to explore →</p>
+                </div>
+
+                <!-- Stats and CTA -->
+                <div class="visuals-footer-3d">
+                    <div class="visual-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Original Paintings</span>
                         </div>
-                    </article>
+                        <div class="stat-item">
+                            <span class="stat-number">100+</span>
+                            <span class="stat-label">Photos Captured</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2019</span>
+                            <span class="stat-label">Started Journey</span>
+                        </div>
+                    </div>
+                    
+                    <div class="visual-cta">
+                        <button class="cta-button primary-enhanced">View Full Gallery</button>
+                        <button class="cta-button secondary-enhanced">Commission Work</button>
+                    </div>
                 </div>
             </div>
         </section>

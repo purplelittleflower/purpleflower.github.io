@@ -699,3 +699,62 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize on load
     updateActiveOnScroll();
 });
+/* ========================================== */
+/* 3D GALLERY INTERACTIVITY */
+/* ========================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize 3D Gallery
+    const gallery3D = document.querySelector('.gallery-3d-nav');
+    const hoverZones = document.querySelectorAll('.hover-zone > i');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (gallery3D && hoverZones.length && galleryItems.length) {
+        // Hover zone tracking for 3D effect
+        hoverZones.forEach((zone, index) => {
+            zone.addEventListener('mouseenter', () => {
+                gallery3D.style.setProperty('--z', index + 1);
+            });
+        });
+        
+        // Gallery item tracking for 3D effect
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+                gallery3D.style.setProperty('--p', index + 1);
+            });
+        });
+        
+        // Reset on mouseleave
+        gallery3D.addEventListener('mouseleave', () => {
+            gallery3D.style.removeProperty('--p');
+            gallery3D.style.removeProperty('--z');
+        });
+    }
+    
+    // Gallery Filters
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const allGalleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (filterBtns.length && allGalleryItems.length) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Filter gallery items
+                allGalleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+});
+
+/* ========== END 3D GALLERY ========== */
