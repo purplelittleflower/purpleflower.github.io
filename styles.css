@@ -2690,6 +2690,248 @@ section {
 }
 
 
+/* ========== VISUALS SECTION REDESIGNED ========== */
+
+.visuals-section-redesigned {
+    padding: 8rem 0;
+    background: transparent;
+    position: relative;
+}
+
+/* Header */
+.visuals-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.visuals-main-title {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 1;
+    margin: 2rem 0 1.5rem 0;
+    font-weight: 400;
+}
+
+.visuals-main-title .title-line {
+    display: block;
+    font-size: 0.35em;
+    letter-spacing: 0.15em;
+    color: var(--forest-green);
+    font-weight: 500;
+    margin-bottom: 0.2em;
+}
+
+.visuals-main-title .title-line-large {
+    display: block;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    color: #2c2c2c;
+    font-weight: 300;
+}
+
+.visuals-subtitle {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--moss-green);
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+/* Visuals Cards Grid */
+.visuals-journey-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.visuals-card-new {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 3px solid transparent;
+}
+
+.visuals-card-new::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    transition: all 0.4s ease;
+}
+
+.visuals-card-new:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Card 1: Paintings - Muted Purple/Burgundy */
+.card-paintings::before {
+    background: linear-gradient(90deg, var(--muted-purple), var(--deep-burgundy));
+}
+
+.card-paintings:hover {
+    box-shadow: 0 20px 60px rgba(125, 95, 111, 0.25);
+}
+
+/* Card 2: Photography - Sage Green/Forest Green */
+.card-photography::before {
+    background: linear-gradient(90deg, var(--sage-green), var(--forest-green));
+}
+
+.card-photography:hover {
+    box-shadow: 0 20px 60px rgba(138, 155, 124, 0.25);
+}
+
+/* Card Elements */
+.visuals-card-new .card-category-badge {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(135deg, #2c2c2c, #4a4a4a);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.visuals-card-new .card-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding-bottom: 1.5rem;
+}
+
+.visuals-card-new .card-title {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+}
+
+.visuals-card-new .card-duration {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--moss-green);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.visuals-card-new .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.visuals-card-new .card-description {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin: 0;
+}
+
+/* Visual Gallery Grid */
+.visual-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    margin: 1rem 0;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Stats */
+.visuals-card-new .card-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.05), rgba(107, 122, 93, 0.03));
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.visuals-card-new .card-stats .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.visuals-card-new .stat-number {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--forest-green);
+    line-height: 1;
+}
+
+.visuals-card-new .stat-label {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--moss-green);
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .visuals-journey-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .visuals-section-redesigned {
+        padding: 5rem 0;
+    }
+    
+    .visuals-card-new {
+        padding: 2rem;
+    }
+    
+    .visual-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-image {
+        height: 220px;
+    }
+}
+
+
 /* ========== GSAP ENHANCEMENT STYLES ========== */
 
 /* Ensure smooth GSAP animations */
