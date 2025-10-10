@@ -183,7 +183,7 @@
     </style>
 </head>
 <body>
-    <nav style="--max-p: 7; --max-z: 7;">
+    <nav style="--max-p: 7; --max-z: 7; --p: 1; --z: 1;">
         <a href="#" style="--i: 0;">
             <div class="img" style="--img: url('images/IMG_0913 2.JPG');"></div>
         </a>
@@ -216,5 +216,32 @@
             <i></i>
         </div>
     </nav>
+
+    <script>
+        const nav = document.querySelector('nav');
+        const hoverZone = document.querySelector('.hover-zone');
+        const items = document.querySelectorAll('.hover-zone > i');
+        
+        // Track mouse position over hover zones
+        items.forEach((item, index) => {
+            item.addEventListener('mouseenter', () => {
+                nav.style.setProperty('--z', index + 1);
+            });
+        });
+        
+        // Track which image is being hovered
+        const links = document.querySelectorAll('nav > a');
+        links.forEach((link, index) => {
+            link.addEventListener('mouseenter', () => {
+                nav.style.setProperty('--p', index + 1);
+            });
+        });
+        
+        // Reset on mouse leave
+        nav.addEventListener('mouseleave', () => {
+            nav.style.setProperty('--p', 1);
+            nav.style.setProperty('--z', 1);
+        });
+    </script>
 </body>
 </html>
