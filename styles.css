@@ -235,17 +235,6 @@
     justify-content: center;
 }
 
-/* Elegant indicator dot that scales */
-.nav-icon::before {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #999999;
-    border-radius: 50%;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    opacity: 0.6;
-}
 
 .nav-text {
     margin-left: 1.5rem;
@@ -285,15 +274,8 @@
     background: linear-gradient(135deg, 
         rgba(138, 155, 124, 0.12) 0%, 
         rgba(232, 224, 213, 0.25) 100%);
-    transform: translateX(4px);
-}
 
-.vertical-nav-link:hover .nav-icon::before {
-    width: 10px;
-    height: 10px;
-    background: var(--forest-green);
-    opacity: 1;
-    box-shadow: 0 0 12px rgba(74, 90, 63, 0.4);
+    transform: translateX(4px);
 }
 
 .vertical-nav-link:hover .nav-text {
@@ -318,14 +300,6 @@
     opacity: 1;
 }
 
-.vertical-nav-link.active .nav-icon::before {
-    width: 10px;
-    height: 10px;
-    background: var(--forest-green);
-    opacity: 1;
-    box-shadow: 0 0 12px rgba(74, 90, 63, 0.5),
-                0 0 24px rgba(74, 90, 63, 0.2);
-}
 
 .vertical-nav-link.active .nav-text {
     color: var(--forest-green);
