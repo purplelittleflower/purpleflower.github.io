@@ -6477,12 +6477,6 @@ html {
     position: relative;
 }
 
-.tag-botanical::before {
-    content: '🌿';
-    margin-right: 0.5rem;
-    animation: leaf-rustle 2s ease-in-out infinite;
-    display: inline-block;
-}
 
 .tag-botanical:hover {
     background: linear-gradient(135deg, rgba(138, 155, 124, 0.2), rgba(107, 122, 93, 0.15));
@@ -6586,14 +6580,6 @@ html {
     background: linear-gradient(135deg, var(--sage-green), var(--moss-green));
     border-radius: 0 0 16px 0;
     opacity: 0;
-    transition: all 0.4s ease;
-    animation: leaf-rustle 3s ease-in-out infinite;
-}
-
-.botanical-leaf-accent::before {
-    content: '🍃';
-    position: absolute;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1.5rem;
