@@ -2834,7 +2834,7 @@ section {
 
 .articles-preview {
     padding: 50px 0;
-    background: linear-gradient(135deg, #f8f8f8 0%, #eeeeee 100%);
+    background: transparent;
 }
 
 .articles-grid {
