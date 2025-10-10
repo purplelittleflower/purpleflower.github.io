@@ -1518,14 +1518,14 @@ header {
 .hero-main-title {
     font-family: 'Tan Meringue', 'Playfair Display', Georgia, serif;
     margin-bottom: 2rem;
-    line-height: 0.9;
+    line-height: 0.85;
     font-weight: 400;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     letter-spacing: 0.5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0;
     color: #000000;
 }
 
@@ -2216,7 +2216,7 @@ section {
     letter-spacing: 0.15em;
     color: var(--forest-green);
     font-weight: 500;
-    margin-bottom: 0.2em;
+    margin-bottom: 0;
 }
 
 .renaissance-main-title .title-line-large {
@@ -2579,7 +2579,7 @@ section {
     letter-spacing: 0.15em;
     color: var(--forest-green);
     font-weight: 500;
-    margin-bottom: 0.2em;
+    margin-bottom: 0;
 }
 
 .portfolio-main-title .title-line-large {
@@ -2806,7 +2806,7 @@ section {
     letter-spacing: 0.15em;
     color: var(--forest-green);
     font-weight: 500;
-    margin-bottom: 0.2em;
+    margin-bottom: 0;
 }
 
 .visuals-main-title .title-line-large {
@@ -6388,7 +6388,7 @@ html {
     letter-spacing: 0.15em;
     color: var(--forest-green);
     font-weight: 500;
-    margin-bottom: 0.2em;
+    margin-bottom: 0;
 }
 
 .articles-main-title .title-line-large {
