@@ -7315,3 +7315,109 @@ html {
 }
 
 /* ========== END 3D GALLERY SECTION ========== */
+
+/* ========================================== */
+/* EXPANDING GALLERY - ACADEMIC SECTION */
+/* ========================================== */
+
+.expanding-gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto;
+    max-width: 1400px;
+    padding: 0 2rem;
+    overflow: hidden;
+    transform: skew(5deg);
+    min-height: 60vh;
+}
+
+.expanding-card {
+    flex: 1;
+    transition: all 1s ease-in-out;
+    height: 75vmin;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.expanding-card:not(:last-child) {
+    margin-right: 1em;
+}
+
+.expanding-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.expanding-card__head {
+    color: #fff;
+    background: rgba(139, 120, 93, 0.85);
+    padding: 0.5em;
+    transform: rotate(-90deg);
+    transform-origin: 0% 0%;
+    transition: all 0.5s ease-in-out;
+    min-width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 1em;
+    white-space: nowrap;
+    font-family: "Gill Sans", Verdana, sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.expanding-card:hover {
+    flex-grow: 10;
+}
+
+.expanding-card:hover img {
+    filter: grayscale(0);
+}
+
+.expanding-card:hover .expanding-card__head {
+    text-align: center;
+    top: calc(100% - 2em);
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 2em;
+    transform: rotate(0deg) skew(-5deg);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .expanding-gallery-container {
+        flex-direction: column;
+        transform: skew(0deg);
+        height: auto;
+        min-height: auto;
+    }
+    
+    .expanding-card {
+        width: 100%;
+        height: 30vh;
+        margin-right: 0 !important;
+        margin-bottom: 1rem;
+    }
+    
+    .expanding-card__head {
+        transform: rotate(0deg);
+        bottom: 0;
+        top: auto;
+        font-size: 1.2em;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    .expanding-card:hover .expanding-card__head {
+        font-size: 1.5em;
+        transform: skew(0deg);
+    }
+}
+
+/* ========== END EXPANDING GALLERY ========== */
