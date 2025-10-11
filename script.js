@@ -952,13 +952,13 @@ function addWatermarkToImages() {
         // Standard watermark (always visible)
         const watermark = document.createElement('div');
         watermark.className = 'image-watermark';
-        watermark.innerHTML = '© 2025';
+        watermark.innerHTML = '©CARenaissance';
         item.appendChild(watermark);
         
         // Enhanced hover watermark (more prominent)
         const hoverWatermark = document.createElement('div');
         hoverWatermark.className = 'image-watermark-hover';
-        hoverWatermark.innerHTML = '© 2025 All Rights Reserved<br>Unauthorized use prohibited';
+        hoverWatermark.innerHTML = '©CARenaissance<br>Unauthorized use prohibited';
         item.appendChild(hoverWatermark);
     });
 }
