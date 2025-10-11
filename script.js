@@ -1159,7 +1159,7 @@ function showTermsModal() {
                 <h2>⚖️ Terms of Use</h2>
             </div>
             <div class="terms-modal-body">
-                <p><strong>Welcome to my creative portfolio!</strong></p>
+                <p><strong>Welcome to Creative Academic Renaissance!</strong></p>
                 <p>Before exploring, please note:</p>
                 <ul>
                     <li>✅ All content is protected by copyright</li>
