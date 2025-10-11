@@ -2716,19 +2716,54 @@ section {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Individual card backgrounds with subtle gradients */
+.summary-item:nth-child(1) {
+    background: linear-gradient(135deg, rgba(74, 90, 63, 0.08) 0%, rgba(107, 122, 93, 0.12) 100%);
+}
+
+.summary-item:nth-child(2) {
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.08) 0%, rgba(109, 76, 61, 0.12) 100%);
+}
+
+.summary-item:nth-child(3) {
+    background: linear-gradient(135deg, rgba(109, 76, 61, 0.08) 0%, rgba(125, 95, 111, 0.12) 100%);
+}
+
+.summary-item:nth-child(4) {
+    background: linear-gradient(135deg, rgba(125, 95, 111, 0.08) 0%, rgba(232, 224, 213, 0.15) 100%);
 }
 
 .summary-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(74, 90, 63, 0.15);
+    box-shadow: 0 8px 30px rgba(74, 90, 63, 0.2);
 }
 
 .summary-number {
     font-family: 'Times New Roman', Times, Georgia, serif;
     font-size: 3.5rem;
     font-weight: 300;
-    color: var(--forest-green);
     line-height: 1;
+}
+
+/* Individual number colors */
+.summary-item:nth-child(1) .summary-number {
+    color: var(--forest-green);
+}
+
+.summary-item:nth-child(2) .summary-number {
+    color: var(--sage-green);
+}
+
+.summary-item:nth-child(3) .summary-number {
+    color: var(--warm-brown);
+}
+
+.summary-item:nth-child(4) .summary-number {
+    color: var(--muted-purple);
 }
 
 .summary-label {
