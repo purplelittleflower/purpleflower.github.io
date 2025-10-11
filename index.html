@@ -605,6 +605,59 @@
     <!-- Page Transition Overlay -->
     <div class="page-transition"></div>
 
+    <!-- Contact Popup -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="contact-popup" id="contactPopup">
+        <div class="popup-header">
+            <button class="popup-close" id="popupClose" aria-label="Close contact form"></button>
+            <h3>Get In Touch</h3>
+            <p>Let's discuss your project or inquiry</p>
+        </div>
+        <div class="popup-body">
+            <form class="popup-form" id="popupContactForm">
+                <div class="form-group">
+                    <label for="popup-firstName">First Name *</label>
+                    <input type="text" id="popup-firstName" name="firstName" required placeholder="Jane">
+                </div>
+                
+                <div class="form-group">
+                    <label for="popup-lastName">Last Name *</label>
+                    <input type="text" id="popup-lastName" name="lastName" required placeholder="Doe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="popup-email">Email Address *</label>
+                    <input type="email" id="popup-email" name="email" required placeholder="jane@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="popup-message">Message *</label>
+                    <textarea id="popup-message" name="message" required placeholder="Tell me about your inquiry, project details, or what you'd like to discuss..."></textarea>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="popup-newsletter" name="newsletter">
+                    <label for="popup-newsletter">I'd like to receive updates about new artwork and projects</label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="popup-terms" name="terms" required>
+                    <label for="popup-terms">I agree to the <a href="terms.html" target="_blank">Terms of Use</a> and <a href="copyright.html" target="_blank">Copyright Policy</a> *</label>
+                </div>
+                
+                <button type="submit" class="popup-submit">Send Message</button>
+            </form>
+            
+            <div class="popup-success" id="popupSuccess">
+                <h4>✓ Message Sent!</h4>
+                <p>Thank you for reaching out. I'll get back to you within 2-3 business days.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Contact Button -->
+    <button class="contact-trigger" id="contactTrigger" title="Open contact form - Send me a message"></button>
+
     <!-- GSAP scripts removed by request -->
     <script src="script.js"></script>
 </body>

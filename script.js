@@ -897,3 +897,122 @@ ${formData.message}
 
 /* ========== END COPYRIGHT PROTECTION ========== */
 
+/* ========================================== */
+/* CONTACT POPUP FUNCTIONALITY */
+/* ========================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const contactTrigger = document.getElementById('contactTrigger');
+    const contactPopup = document.getElementById('contactPopup');
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupClose = document.getElementById('popupClose');
+    const popupForm = document.getElementById('popupContactForm');
+    const popupSuccess = document.getElementById('popupSuccess');
+    
+    // Open popup
+    function openPopup() {
+        contactPopup.classList.add('active');
+        popupOverlay.classList.add('active');
+        contactTrigger.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    // Close popup
+    function closePopup() {
+        contactPopup.classList.remove('active');
+        popupOverlay.classList.remove('active');
+        contactTrigger.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+        
+        // Reset success message after animation
+        setTimeout(() => {
+            popupSuccess.classList.remove('show');
+        }, 300);
+    }
+    
+    // Event listeners for opening
+    if (contactTrigger) {
+        contactTrigger.addEventListener('click', openPopup);
+    }
+    
+    // Event listeners for closing
+    if (popupClose) {
+        popupClose.addEventListener('click', closePopup);
+    }
+    
+    if (popupOverlay) {
+        popupOverlay.addEventListener('click', closePopup);
+    }
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && contactPopup.classList.contains('active')) {
+            closePopup();
+        }
+    });
+    
+    // Form submission
+    if (popupForm) {
+        popupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                firstName: document.getElementById('popup-firstName').value,
+                lastName: document.getElementById('popup-lastName').value,
+                email: document.getElementById('popup-email').value,
+                message: document.getElementById('popup-message').value,
+                newsletter: document.getElementById('popup-newsletter').checked,
+                terms: document.getElementById('popup-terms').checked
+            };
+            
+            // Validate terms
+            if (!formData.terms) {
+                alert('Please agree to the Terms of Use and Copyright Policy to continue.');
+                return;
+            }
+            
+            // Create mailto link (for static site)
+            const subject = encodeURIComponent(`Contact Form: ${formData.firstName} ${formData.lastName}`);
+            const body = encodeURIComponent(`
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Newsletter Subscription: ${formData.newsletter ? 'Yes' : 'No'}
+
+Message:
+${formData.message}
+
+---
+Sent from portfolio contact form
+            `);
+            
+            // Open email client
+            window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+            
+            // Show success message
+            popupSuccess.classList.add('show');
+            
+            // Hide form temporarily
+            popupForm.style.display = 'none';
+            
+            // Reset form and close after delay
+            setTimeout(() => {
+                popupForm.reset();
+                popupForm.style.display = 'block';
+                closePopup();
+            }, 3000);
+        });
+    }
+    
+    // Also open popup when clicking nav contact link
+    const contactNavLinks = document.querySelectorAll('a[href="#contact"]');
+    contactNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            openPopup();
+        });
+    });
+});
+
+/* ========== END CONTACT POPUP ========== */
+
