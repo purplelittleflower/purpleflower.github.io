@@ -710,6 +710,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     
     if (gallery3D && hoverZones.length && galleryItems.length) {
+        // Set initial center values
+        const centerP = Math.ceil(galleryItems.length / 2);
+        const centerZ = Math.ceil(hoverZones.length / 2);
+        
+        gallery3D.style.setProperty('--p', centerP);
+        gallery3D.style.setProperty('--z', centerZ);
+        
         // Hover zone tracking for 3D effect
         hoverZones.forEach((zone, index) => {
             zone.addEventListener('mouseenter', () => {
@@ -724,10 +731,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Reset on mouseleave
+        // Reset to center on mouseleave (not remove)
         gallery3D.addEventListener('mouseleave', () => {
-            gallery3D.style.removeProperty('--p');
-            gallery3D.style.removeProperty('--z');
+            gallery3D.style.setProperty('--p', centerP);
+            gallery3D.style.setProperty('--z', centerZ);
         });
     }
     
