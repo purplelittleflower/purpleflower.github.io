@@ -1140,13 +1140,10 @@ Sent from portfolio contact form
 
 /* ========== ENHANCED PROTECTION FEATURES ========== */
 
-// Terms of Use Modal - Show on first visit
+// Terms of Use Modal - Show on EVERY visit
 document.addEventListener('DOMContentLoaded', function() {
-    const hasAcceptedTerms = localStorage.getItem('termsAccepted');
-    
-    if (!hasAcceptedTerms) {
-        showTermsModal();
-    }
+    // Always show the terms modal on every page load
+    showTermsModal();
     
     // Add protection banner to gallery
     addProtectionBanner();
