@@ -8605,8 +8605,8 @@ img,
 }
 
 .terms-modal-header {
-    background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
-    color: white;
+    background: white;
+    color: var(--forest-green);
     padding: 2rem;
     border-radius: 20px 20px 0 0;
     text-align: center;
