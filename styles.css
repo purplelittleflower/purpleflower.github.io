@@ -1703,13 +1703,13 @@ header {
 }
 
 .scattered-text.bottom-left {
-    bottom: -40px;
+    bottom: 20px;
     left: 5%;
     transform: rotate(8deg);
 }
 
 .scattered-text.bottom-right {
-    bottom: -60px;
+    bottom: 0px;
     right: 10%;
     transform: rotate(-12deg);
 }
