@@ -2471,38 +2471,73 @@ section {
 
 /* Focus Statement */
 .renaissance-focus-statement {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto 5rem auto;
-    padding: 3rem 3.5rem;
-    background: linear-gradient(135deg, rgba(138, 155, 124, 0.08) 0%, rgba(107, 122, 93, 0.06) 100%);
-    border-radius: 20px;
-    border-left: 4px solid var(--sage-green);
-    box-shadow: 0 10px 40px rgba(74, 90, 63, 0.08);
+    padding: 4rem 5rem;
+    background: 
+        linear-gradient(135deg, 
+            rgba(232, 224, 213, 0.4) 0%, 
+            rgba(138, 155, 124, 0.15) 50%,
+            rgba(125, 95, 111, 0.1) 100%
+        );
+    border-radius: 0;
+    border: none;
+    border-left: 3px solid var(--moss-green);
+    border-right: 3px solid var(--muted-purple);
+    box-shadow: 
+        0 20px 60px rgba(74, 90, 63, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
     position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.renaissance-focus-statement::before {
+    content: '"';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 8rem;
+    line-height: 1;
+    color: var(--sage-green);
+    opacity: 0.15;
+    font-weight: 700;
+    z-index: 0;
 }
 
 .focus-label {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 600;
-    letter-spacing: 2.5px;
-    color: var(--forest-green);
+    letter-spacing: 3px;
+    color: var(--warm-brown);
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     display: inline-block;
-    padding: 0.4rem 1rem;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.9) 0%, 
+        rgba(232, 224, 213, 0.8) 100%
+    );
+    border-radius: 4px;
+    border: 1px solid rgba(107, 122, 93, 0.2);
+    box-shadow: 0 2px 10px rgba(74, 90, 63, 0.08);
+    position: relative;
+    z-index: 1;
 }
 
 .focus-quote {
     font-family: 'EB Garamond', Georgia, serif;
-    font-size: 1.25rem;
-    line-height: 1.8;
-    color: #3a3a3a;
+    font-size: 1.35rem;
+    line-height: 2;
+    color: #2c2c2c;
     margin: 0;
     font-style: italic;
     font-weight: 400;
+    position: relative;
+    z-index: 1;
+    text-align: justify;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 /* Journey Cards Grid */
