@@ -1567,9 +1567,9 @@ header {
 .hero {
     background: transparent;
     color: #2c2c2c;
-    padding: 120px 2% 100px 2%;
+    padding: 80px 2% 100px 2%;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 40px;
     position: relative;
     overflow: hidden;
     width: 100%;
