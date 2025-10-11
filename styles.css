@@ -641,14 +641,17 @@ main {
     height: 100%;
     pointer-events: none;
     z-index: 1;
+    display: none;
+    opacity: 0;
 }
 
 .floating-note, .floating-academia {
     position: absolute;
     font-size: 2rem;
-    opacity: 0.3;
-    animation: floatDance 20s infinite linear;
+    opacity: 0;
+    animation: none;
     transition: all 0.3s ease;
+    display: none;
 }
 
 .note-1 { top: 10%; left: 10%; animation-delay: 0s; color: #ffffff; }
@@ -1150,15 +1153,15 @@ body::before {
 /* Keyframes for moving grain effect */
 @keyframes grain-move {
     0%, 100% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -10%); }
-    20% { transform: translate(-15%, 5%); }
-    30% { transform: translate(7%, -25%); }
-    40% { transform: translate(-5%, 25%); }
-    50% { transform: translate(-15%, 10%); }
-    60% { transform: translate(15%, 0%); }
-    70% { transform: translate(0%, 15%); }
-    80% { transform: translate(3%, 35%); }
-    90% { transform: translate(-10%, 10%); }
+    10% { transform: translate(-3%, -5%); }
+    20% { transform: translate(-8%, 3%); }
+    30% { transform: translate(4%, -8%); }
+    40% { transform: translate(-3%, 8%); }
+    50% { transform: translate(-8%, 5%); }
+    60% { transform: translate(8%, 0%); }
+    70% { transform: translate(0%, 8%); }
+    80% { transform: translate(2%, 10%); }
+    90% { transform: translate(-5%, 5%); }
 }
 
 /* ========== ANIMATION FOUNDATION ========== */
