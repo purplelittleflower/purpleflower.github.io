@@ -280,7 +280,8 @@
         rgba(232, 224, 213, 0.35) 100%);
 }
 
-.vertical-nav-link.active::before {
+/* Only show vertical line indicator when nav is expanded */
+.vertical-nav:hover .vertical-nav-link.active::before {
     transform: translateY(-50%) scaleY(1);
     height: 70%;
     opacity: 1;
