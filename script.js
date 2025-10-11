@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Disable keyboard shortcuts for saving
+    // Disable keyboard shortcuts for saving and screenshots
     document.addEventListener('keydown', function(e) {
         // Disable Ctrl+S (Save)
         if ((e.ctrlKey || e.metaKey) && e.key === 's') {
@@ -808,13 +808,49 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             return false;
         }
+        
+        // Disable screenshot shortcuts
+        // Windows: PrtScn, Alt+PrtScn, Win+PrtScn, Win+Shift+S
+        if (e.key === 'PrintScreen') {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+        
+        // Mac: Cmd+Shift+3 (Full screenshot)
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '3') {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+        
+        // Mac: Cmd+Shift+4 (Partial screenshot)
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '4') {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+        
+        // Mac: Cmd+Shift+5 (Screenshot & recording menu)
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '5') {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+        
+        // Windows: Win+Shift+S (Snipping tool)
+        if (e.shiftKey && e.key === 's' && e.metaKey) {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
     });
     
     // Add subtle watermark overlay dynamically
     addWatermarkToImages();
 });
 
-// Show copyright notice when someone tries to save
+// Show copyright notice when someone tries to save or screenshot
 function showCopyrightNotice() {
     // Create or show notice
     let notice = document.getElementById('copyright-notice');
@@ -826,6 +862,7 @@ function showCopyrightNotice() {
             <div class="copyright-notice-content">
                 <h3>© All Rights Reserved</h3>
                 <p>This content is protected by copyright.</p>
+                <p>Screenshots and downloads are not permitted.</p>
                 <p>For licensing inquiries, please <a href="copyright.html#licensing">contact us</a>.</p>
             </div>
         `;
