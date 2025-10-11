@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Disable keyboard shortcuts for saving and screenshots
+    // Disable keyboard shortcuts for saving, screenshots, and copying
     document.addEventListener('keydown', function(e) {
         // Disable Ctrl+S (Save)
         if ((e.ctrlKey || e.metaKey) && e.key === 's') {
@@ -797,8 +797,29 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
         
+        // Disable Ctrl+C (Copy)
+        if ((e.ctrlKey || e.metaKey) && e.key === 'c') {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+        
+        // Disable Ctrl+X (Cut)
+        if ((e.ctrlKey || e.metaKey) && e.key === 'x') {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+        
+        // Disable Ctrl+A (Select All)
+        if ((e.ctrlKey || e.metaKey) && e.key === 'a') {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+        
         // Disable Ctrl+Shift+I (DevTools)
-        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') {
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
             e.preventDefault();
             return false;
         }
@@ -809,39 +830,82 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
         
+        // Disable Ctrl+Shift+C (Inspect Element)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'C' || e.key === 'c')) {
+            e.preventDefault();
+            return false;
+        }
+        
+        // Disable Ctrl+U (View Source)
+        if ((e.ctrlKey || e.metaKey) && (e.key === 'u' || e.key === 'U')) {
+            e.preventDefault();
+            return false;
+        }
+        
         // Disable screenshot shortcuts
         // Windows: PrtScn, Alt+PrtScn, Win+PrtScn, Win+Shift+S
-        if (e.key === 'PrintScreen') {
+        if (e.key === 'PrintScreen' || e.key === 'Print') {
             e.preventDefault();
             showCopyrightNotice();
             return false;
         }
         
-        // Mac: Cmd+Shift+3 (Full screenshot)
-        if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '3') {
+        // Mac: Cmd+Shift+3 (Full screenshot) - using keyCode for better detection
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === '3' || e.key === '#' || e.keyCode === 51)) {
             e.preventDefault();
             showCopyrightNotice();
             return false;
         }
         
         // Mac: Cmd+Shift+4 (Partial screenshot)
-        if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '4') {
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === '4' || e.key === '$' || e.keyCode === 52)) {
             e.preventDefault();
             showCopyrightNotice();
             return false;
         }
         
         // Mac: Cmd+Shift+5 (Screenshot & recording menu)
-        if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === '5') {
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === '5' || e.key === '%' || e.keyCode === 53)) {
             e.preventDefault();
             showCopyrightNotice();
             return false;
         }
         
-        // Windows: Win+Shift+S (Snipping tool)
-        if (e.shiftKey && e.key === 's' && e.metaKey) {
+        // Mac: Cmd+Shift+6 (Touch Bar screenshot on MacBook Pro)
+        if ((e.metaKey || e.ctrlKey) && e.shiftKey && (e.key === '6' || e.key === '^' || e.keyCode === 54)) {
             e.preventDefault();
             showCopyrightNotice();
+            return false;
+        }
+        
+        // Windows: Win+Shift+S (Snipping tool) - check for S key with shift
+        if (e.shiftKey && (e.key === 's' || e.key === 'S') && (e.metaKey || e.key === 'Meta')) {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+    });
+    
+    // Also disable copy event directly
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        showCopyrightNotice();
+        return false;
+    });
+    
+    // Disable cut event
+    document.addEventListener('cut', function(e) {
+        e.preventDefault();
+        showCopyrightNotice();
+        return false;
+    });
+    
+    // Disable text selection on images and gallery
+    document.addEventListener('selectstart', function(e) {
+        if (e.target.tagName === 'IMG' || 
+            e.target.closest('.gallery-item') || 
+            e.target.closest('.gallery-3d-nav')) {
+            e.preventDefault();
             return false;
         }
     });
@@ -850,7 +914,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addWatermarkToImages();
 });
 
-// Show copyright notice when someone tries to save or screenshot
+// Show copyright notice when someone tries to save, screenshot, or copy
 function showCopyrightNotice() {
     // Create or show notice
     let notice = document.getElementById('copyright-notice');
@@ -862,7 +926,7 @@ function showCopyrightNotice() {
             <div class="copyright-notice-content">
                 <h3>🚫 © All Rights Reserved</h3>
                 <p>This content is protected by copyright.</p>
-                <p>Screenshots and downloads are not permitted.</p>
+                <p><strong>Screenshots, copying, and downloads are not permitted.</strong></p>
                 <p><strong>⚠️ Unauthorized use is monitored and may result in legal action.</strong></p>
                 <p>For licensing inquiries, please <a href="copyright.html#licensing">contact us</a>.</p>
             </div>
@@ -1182,15 +1246,42 @@ document.addEventListener('contextmenu', function(e) {
     logProtectionEvent('right-click-attempt');
 });
 
+// Enhanced logging for all protection attempts
 document.addEventListener('keydown', function(e) {
-    if (e.key === 'PrintScreen' || 
-        ((e.metaKey || e.ctrlKey) && e.shiftKey && ['3', '4', '5'].includes(e.key))) {
+    // Log screenshot attempts
+    if (e.key === 'PrintScreen' || e.key === 'Print' ||
+        ((e.metaKey || e.ctrlKey) && e.shiftKey && ['3', '4', '5', '6', '#', '$', '%', '^'].includes(e.key))) {
         logProtectionEvent('screenshot-attempt');
     }
     
-    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+    // Log save attempts
+    if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
         logProtectionEvent('save-attempt');
     }
+    
+    // Log copy attempts
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'c' || e.key === 'C')) {
+        logProtectionEvent('copy-attempt');
+    }
+    
+    // Log cut attempts
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'x' || e.key === 'X')) {
+        logProtectionEvent('cut-attempt');
+    }
+    
+    // Log select all attempts
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'a' || e.key === 'A')) {
+        logProtectionEvent('select-all-attempt');
+    }
+});
+
+// Log direct copy/cut events
+document.addEventListener('copy', function(e) {
+    logProtectionEvent('copy-event');
+});
+
+document.addEventListener('cut', function(e) {
+    logProtectionEvent('cut-event');
 });
 
 /* ========== END ENHANCED PROTECTION ========== */
