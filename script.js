@@ -1145,8 +1145,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Always show the terms modal on every page load
     showTermsModal();
     
-    // Add protection banner to gallery
-    addProtectionBanner();
+    // Protection banner removed per user request
+    // addProtectionBanner();
 });
 
 function showTermsModal() {
