@@ -935,6 +935,12 @@ document.addEventListener('DOMContentLoaded', function() {
         contactTrigger.addEventListener('click', openPopup);
     }
     
+    // CTA button in contact section
+    const ctaContactButton = document.getElementById('ctaContactButton');
+    if (ctaContactButton) {
+        ctaContactButton.addEventListener('click', openPopup);
+    }
+    
     // Event listeners for closing
     if (popupClose) {
         popupClose.addEventListener('click', closePopup);
