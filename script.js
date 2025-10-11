@@ -860,9 +860,10 @@ function showCopyrightNotice() {
         notice.id = 'copyright-notice';
         notice.innerHTML = `
             <div class="copyright-notice-content">
-                <h3>© All Rights Reserved</h3>
+                <h3>🚫 © All Rights Reserved</h3>
                 <p>This content is protected by copyright.</p>
                 <p>Screenshots and downloads are not permitted.</p>
+                <p><strong>⚠️ Unauthorized use is monitored and may result in legal action.</strong></p>
                 <p>For licensing inquiries, please <a href="copyright.html#licensing">contact us</a>.</p>
             </div>
         `;
@@ -873,10 +874,10 @@ function showCopyrightNotice() {
     
     setTimeout(() => {
         notice.classList.remove('show');
-    }, 3000);
+    }, 4000);
 }
 
-// Add subtle watermark to gallery images
+// Add enhanced watermark to gallery images
 function addWatermarkToImages() {
     const galleryItems = document.querySelectorAll('.gallery-item');
     
@@ -884,10 +885,17 @@ function addWatermarkToImages() {
         // Skip if watermark already exists
         if (item.querySelector('.image-watermark')) return;
         
+        // Standard watermark (always visible)
         const watermark = document.createElement('div');
         watermark.className = 'image-watermark';
         watermark.innerHTML = '© 2025';
         item.appendChild(watermark);
+        
+        // Enhanced hover watermark (more prominent)
+        const hoverWatermark = document.createElement('div');
+        hoverWatermark.className = 'image-watermark-hover';
+        hoverWatermark.innerHTML = '© 2025 All Rights Reserved<br>Unauthorized use prohibited';
+        item.appendChild(hoverWatermark);
     });
 }
 
@@ -1064,4 +1072,127 @@ Sent from portfolio contact form
 });
 
 /* ========== END CONTACT POPUP ========== */
+
+
+/* ========== ENHANCED PROTECTION FEATURES ========== */
+
+// Terms of Use Modal - Show on first visit
+document.addEventListener('DOMContentLoaded', function() {
+    const hasAcceptedTerms = localStorage.getItem('termsAccepted');
+    
+    if (!hasAcceptedTerms) {
+        showTermsModal();
+    }
+    
+    // Add protection banner to gallery
+    addProtectionBanner();
+});
+
+function showTermsModal() {
+    const modal = document.createElement('div');
+    modal.id = 'terms-modal';
+    modal.className = 'terms-modal';
+    modal.innerHTML = `
+        <div class="terms-modal-content">
+            <div class="terms-modal-header">
+                <h2>⚖️ Terms of Use</h2>
+            </div>
+            <div class="terms-modal-body">
+                <p><strong>Welcome to my creative portfolio!</strong></p>
+                <p>Before exploring, please note:</p>
+                <ul>
+                    <li>✅ All content is protected by copyright</li>
+                    <li>🚫 Screenshots, downloads, and reproduction are prohibited</li>
+                    <li>⚠️ Unauthorized use is monitored and may result in legal action</li>
+                    <li>📧 Licensing options available - please contact for inquiries</li>
+                    <li>🎨 Viewing for personal inspiration is welcomed</li>
+                </ul>
+                <p>By continuing, you agree to respect these terms.</p>
+                <div class="terms-modal-footer">
+                    <button id="acceptTermsBtn" class="btn-accept-terms">I Accept & Continue</button>
+                    <a href="terms.html" target="_blank" class="terms-link">Read Full Terms</a>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Prevent scrolling
+    document.body.style.overflow = 'hidden';
+    
+    // Show modal with animation
+    setTimeout(() => modal.classList.add('show'), 100);
+    
+    // Accept button handler
+    document.getElementById('acceptTermsBtn').addEventListener('click', function() {
+        localStorage.setItem('termsAccepted', 'true');
+        localStorage.setItem('termsAcceptedDate', new Date().toISOString());
+        
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.remove();
+            document.body.style.overflow = '';
+        }, 300);
+    });
+}
+
+function addProtectionBanner() {
+    // Find gallery sections
+    const gallerySections = document.querySelectorAll('.visuals-section-3d, .gallery-section, #visuals, #gallery');
+    
+    gallerySections.forEach(section => {
+        // Skip if banner already exists
+        if (section.querySelector('.protection-banner')) return;
+        
+        const banner = document.createElement('div');
+        banner.className = 'protection-banner';
+        banner.innerHTML = `
+            <span class="banner-icon">🛡️</span>
+            <span class="banner-text">Protected Content - All images are copyrighted and monitored</span>
+            <a href="copyright.html" class="banner-link">Learn More</a>
+        `;
+        
+        // Insert at the beginning of the section
+        section.insertBefore(banner, section.firstChild);
+    });
+}
+
+// Track potential unauthorized actions (for evidence)
+let protectionLog = [];
+
+function logProtectionEvent(eventType) {
+    const event = {
+        type: eventType,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        page: window.location.href
+    };
+    
+    protectionLog.push(event);
+    
+    // Store in sessionStorage for current session
+    sessionStorage.setItem('protectionLog', JSON.stringify(protectionLog));
+    
+    // Optional: Send to analytics or your server
+    // console.log('Protection event logged:', event);
+}
+
+// Update existing protection events to log
+document.addEventListener('contextmenu', function(e) {
+    logProtectionEvent('right-click-attempt');
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'PrintScreen' || 
+        ((e.metaKey || e.ctrlKey) && e.shiftKey && ['3', '4', '5'].includes(e.key))) {
+        logProtectionEvent('screenshot-attempt');
+    }
+    
+    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        logProtectionEvent('save-attempt');
+    }
+});
+
+/* ========== END ENHANCED PROTECTION ========== */
+
 
