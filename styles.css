@@ -255,23 +255,29 @@
 
 /* Hover state - sophisticated and elegant */
 .vertical-nav-link:hover {
+    transform: translateX(4px);
+}
+
+/* Only show hover background when nav is expanded */
+.vertical-nav:hover .vertical-nav-link:hover {
     background: linear-gradient(135deg, 
         rgba(138, 155, 124, 0.12) 0%, 
         rgba(232, 224, 213, 0.25) 100%);
-
-    transform: translateX(4px);
 }
 
 .vertical-nav-link:hover .nav-text {
     color: var(--forest-green);
 }
 
-/* Active state - ALWAYS visible regardless of section */
+/* Active state - only show background when nav is expanded */
 .vertical-nav-link.active {
+    color: var(--forest-green);
+}
+
+.vertical-nav:hover .vertical-nav-link.active {
     background: linear-gradient(135deg, 
         rgba(138, 155, 124, 0.18) 0%, 
         rgba(232, 224, 213, 0.35) 100%);
-    color: var(--forest-green);
 }
 
 .vertical-nav-link.active::before {
@@ -420,11 +426,15 @@
 }
 
 .nav-legal-link:hover {
+    color: var(--forest-green);
+    transform: translateX(4px);
+}
+
+/* Only show hover background when nav is expanded */
+.vertical-nav:hover .nav-legal-link:hover {
     background: linear-gradient(135deg, 
         rgba(138, 155, 124, 0.12) 0%, 
         rgba(232, 224, 213, 0.25) 100%);
-    color: var(--forest-green);
-    transform: translateX(4px);
 }
 
 .nav-legal-link:hover::before {
