@@ -941,6 +941,12 @@ document.addEventListener('DOMContentLoaded', function() {
         ctaContactButton.addEventListener('click', openPopup);
     }
     
+    // Nav contact button
+    const navContactTrigger = document.getElementById('navContactTrigger');
+    if (navContactTrigger) {
+        navContactTrigger.addEventListener('click', openPopup);
+    }
+    
     // Event listeners for closing
     if (popupClose) {
         popupClose.addEventListener('click', closePopup);
