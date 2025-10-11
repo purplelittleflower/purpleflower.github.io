@@ -2414,6 +2414,7 @@ header {
 /* Section Positioning */
 section {
     position: relative;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* ========== END GLOBAL SOMEFOLK-INSPIRED ELEMENTS ========== */
