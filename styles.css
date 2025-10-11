@@ -2692,10 +2692,12 @@ section {
 }
 
 .summary-title {
-    font-family: 'Times New Roman', Times, Georgia, serif;
-    font-size: 2rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.9rem;
     font-weight: 500;
-    color: #2c2c2c;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--moss-green);
     text-align: center;
     margin: 0 0 2.5rem 0;
 }
