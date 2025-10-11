@@ -5839,10 +5839,13 @@ section {
 
 /* Footer */
 footer {
-    background: linear-gradient(135deg,
-        rgba(74, 90, 63, 0.95) 0%,
-        rgba(107, 122, 93, 0.92) 50%,
-        rgba(109, 76, 61, 0.95) 100%);
+    background: linear-gradient(90deg,
+        rgba(74, 90, 63, 0.95) 0%, 
+        rgba(107, 122, 93, 0.92) 20%, 
+        rgba(138, 155, 124, 0.90) 40%, 
+        rgba(109, 76, 61, 0.92) 60%, 
+        rgba(125, 95, 111, 0.93) 80%, 
+        rgba(232, 224, 213, 0.95) 100%);
     backdrop-filter: blur(20px);
     color: var(--cream);
     text-align: center;
@@ -5860,10 +5863,13 @@ footer::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg,
-        rgba(74, 90, 63, 0.95) 0%,
-        rgba(107, 122, 93, 0.92) 50%,
-        rgba(109, 76, 61, 0.95) 100%);
+    background: linear-gradient(90deg,
+        rgba(74, 90, 63, 0.95) 0%, 
+        rgba(107, 122, 93, 0.92) 20%, 
+        rgba(138, 155, 124, 0.90) 40%, 
+        rgba(109, 76, 61, 0.92) 60%, 
+        rgba(125, 95, 111, 0.93) 80%, 
+        rgba(232, 224, 213, 0.95) 100%);
     z-index: -1;
     pointer-events: none;
 }
