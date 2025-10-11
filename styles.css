@@ -8578,7 +8578,12 @@ img,
 }
 
 .terms-modal-content {
-    background: linear-gradient(135deg, var(--cream) 0%, var(--light-beige) 100%);
+    background: linear-gradient(135deg, 
+        rgba(138, 155, 124, 0.95) 0%, 
+        rgba(107, 122, 93, 0.92) 30%, 
+        rgba(109, 76, 61, 0.95) 60%, 
+        rgba(125, 95, 111, 0.93) 100%);
+    backdrop-filter: blur(20px);
     border-radius: 20px;
     max-width: 600px;
     width: 90%;
@@ -8621,7 +8626,7 @@ img,
 
 .terms-modal-body p {
     margin-bottom: 1rem;
-    color: var(--warm-brown);
+    color: var(--cream);
     line-height: 1.7;
 }
 
@@ -8633,9 +8638,9 @@ img,
 
 .terms-modal-body li {
     padding: 0.75rem 0;
-    color: var(--forest-green);
+    color: var(--light-beige);
     font-weight: 500;
-    border-bottom: 1px solid rgba(138, 155, 124, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .terms-modal-body li:last-child {
