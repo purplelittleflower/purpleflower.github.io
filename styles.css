@@ -8578,11 +8578,7 @@ img,
 }
 
 .terms-modal-content {
-    background: linear-gradient(135deg, 
-        rgba(138, 155, 124, 0.95) 0%, 
-        rgba(107, 122, 93, 0.92) 30%, 
-        rgba(109, 76, 61, 0.95) 60%, 
-        rgba(125, 95, 111, 0.93) 100%);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(20px);
     border-radius: 20px;
     max-width: 600px;
