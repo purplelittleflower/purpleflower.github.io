@@ -7427,7 +7427,19 @@ html {
     margin-top: 1rem;
 }
 
-/* Contact Content Grid */
+/* Contact Content Centered Layout */
+.contact-content-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contact Content Grid (Legacy - kept for reference) */
 .contact-content-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -7752,11 +7764,19 @@ html {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
+    
+    .contact-content-centered {
+        padding: 0 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
     .contact-section-redesigned {
         padding: 5rem 0;
+    }
+    
+    .contact-content-centered {
+        padding: 0 1rem;
     }
     
     .collaboration-card,
