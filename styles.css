@@ -1599,17 +1599,18 @@ header {
 .hero {
     background: transparent;
     color: #2c2c2c;
-    padding: 80px 2% 100px 2%;
+    padding: 20px 2% 100px 2%;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 0px;
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: none;
     min-height: calc(100vh - 60px);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 80px;
 }
 
 .hero::before {
