@@ -684,7 +684,7 @@ main {
     top: 0;
     left: 80px;
     width: calc(100% - 80px);
-    height: 6px;
+    height: 10px;
     background: rgba(0, 0, 0, 0.15);
     z-index: 1001;
 }
