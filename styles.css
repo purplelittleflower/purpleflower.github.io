@@ -5912,7 +5912,7 @@ footer .container > p {
     gap: 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 0.5rem;
+    margin-top: 0;
 }
 
 .footer-link {
