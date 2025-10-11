@@ -7994,34 +7994,38 @@ html {
 }
 
 .visuals-main-title-3d {
-    font-family: Times, "Times New Roman", Georgia, serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 1;
+    margin: 2rem 0 1.5rem 0;
+    font-weight: 400;
 }
 
 .visuals-main-title-3d .title-line {
-    font-size: 2.5rem;
-    color: rgba(0, 0, 0, 0.7);
-    letter-spacing: 4px;
-    text-transform: uppercase;
+    display: block;
+    font-size: 0.35em;
+    letter-spacing: 0.15em;
+    color: var(--forest-green);
+    font-weight: 500;
+    margin-bottom: 0;
 }
 
 .visuals-main-title-3d .title-line-large {
-    font-size: 5rem;
-    color: #000;
-    font-weight: 700;
-    letter-spacing: -1px;
+    display: block;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    color: #2c2c2c;
+    font-weight: 300;
 }
 
 .visuals-subtitle-3d {
-    font-family: "Gill Sans", Verdana, sans-serif;
-    font-size: 1.2rem;
-    color: rgba(0, 0, 0, 0.6);
-    letter-spacing: 2px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
+    color: var(--moss-green);
+    font-weight: 500;
+    margin-top: 1rem;
 }
 
 /* Filter Tabs */
@@ -8242,7 +8246,7 @@ html {
 .visual-stats {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
     margin-bottom: 3rem;
     flex-wrap: wrap;
 }
@@ -8251,23 +8255,64 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+}
+
+/* Individual card backgrounds with subtle gradients */
+.stat-item:nth-child(1) {
+    background: linear-gradient(135deg, rgba(74, 90, 63, 0.08) 0%, rgba(107, 122, 93, 0.12) 100%);
+}
+
+.stat-item:nth-child(2) {
+    background: linear-gradient(135deg, rgba(138, 155, 124, 0.08) 0%, rgba(109, 76, 61, 0.12) 100%);
+}
+
+.stat-item:nth-child(3) {
+    background: linear-gradient(135deg, rgba(109, 76, 61, 0.08) 0%, rgba(125, 95, 111, 0.12) 100%);
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(74, 90, 63, 0.2);
 }
 
 .stat-number {
-    font-family: Times, "Times New Roman", Georgia, serif;
+    font-family: 'Times New Roman', Times, Georgia, serif;
     font-size: 3rem;
-    font-weight: 700;
-    color: #000;
+    font-weight: 300;
     line-height: 1;
-    margin-bottom: 0.5rem;
+}
+
+/* Individual number colors */
+.stat-item:nth-child(1) .stat-number {
+    color: var(--forest-green);
+}
+
+.stat-item:nth-child(2) .stat-number {
+    color: var(--sage-green);
+}
+
+.stat-item:nth-child(3) .stat-number {
+    color: var(--warm-brown);
 }
 
 .stat-label {
-    font-family: "Gill Sans", Verdana, sans-serif;
-    font-size: 0.85rem;
-    color: rgba(0, 0, 0, 0.6);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
+    color: var(--moss-green);
+    text-align: center;
+    line-height: 1.4;
 }
 
 .visual-cta {
