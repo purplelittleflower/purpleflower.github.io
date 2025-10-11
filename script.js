@@ -765,3 +765,135 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* ========== END 3D GALLERY ========== */
+
+/* ========================================== */
+/* COPYRIGHT PROTECTION */
+/* ========================================== */
+
+// Disable right-click on images
+document.addEventListener('DOMContentLoaded', function() {
+    // Disable right-click on all images
+    const images = document.querySelectorAll('img, .gallery-img, .gallery-item');
+    images.forEach(img => {
+        img.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        });
+        
+        // Prevent dragging
+        img.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+    
+    // Disable keyboard shortcuts for saving
+    document.addEventListener('keydown', function(e) {
+        // Disable Ctrl+S (Save)
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+            e.preventDefault();
+            showCopyrightNotice();
+            return false;
+        }
+        
+        // Disable Ctrl+Shift+I (DevTools)
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') {
+            e.preventDefault();
+            return false;
+        }
+        
+        // Disable F12 (DevTools)
+        if (e.key === 'F12') {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // Add subtle watermark overlay dynamically
+    addWatermarkToImages();
+});
+
+// Show copyright notice when someone tries to save
+function showCopyrightNotice() {
+    // Create or show notice
+    let notice = document.getElementById('copyright-notice');
+    
+    if (!notice) {
+        notice = document.createElement('div');
+        notice.id = 'copyright-notice';
+        notice.innerHTML = `
+            <div class="copyright-notice-content">
+                <h3>© All Rights Reserved</h3>
+                <p>This content is protected by copyright.</p>
+                <p>For licensing inquiries, please <a href="copyright.html#licensing">contact us</a>.</p>
+            </div>
+        `;
+        document.body.appendChild(notice);
+    }
+    
+    notice.classList.add('show');
+    
+    setTimeout(() => {
+        notice.classList.remove('show');
+    }, 3000);
+}
+
+// Add subtle watermark to gallery images
+function addWatermarkToImages() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        // Skip if watermark already exists
+        if (item.querySelector('.image-watermark')) return;
+        
+        const watermark = document.createElement('div');
+        watermark.className = 'image-watermark';
+        watermark.innerHTML = '© 2025';
+        item.appendChild(watermark);
+    });
+}
+
+// Licensing Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const licensingForm = document.getElementById('licensingForm');
+    
+    if (licensingForm) {
+        licensingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                inquiryType: document.getElementById('inquiry-type').value,
+                artworkInterest: document.getElementById('artwork-interest').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Create mailto link (since this is a static site)
+            const subject = encodeURIComponent(`Licensing Inquiry: ${formData.inquiryType}`);
+            const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Inquiry Type: ${formData.inquiryType}
+Artwork Interest: ${formData.artworkInterest || 'N/A'}
+
+Message:
+${formData.message}
+            `);
+            
+            // Open email client
+            window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+            
+            // Show success message
+            alert('Thank you! Your email client will open. Please send the pre-filled email, and I will respond within 2-3 business days.');
+            
+            // Reset form
+            licensingForm.reset();
+        });
+    }
+});
+
+/* ========== END COPYRIGHT PROTECTION ========== */
+

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protection Test Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .test-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--cream), var(--sage-green));
+            padding: 4rem 2rem;
+        }
+        
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(74, 90, 63, 0.15);
+        }
+        
+        .test-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .test-header h1 {
+            font-family: Times, "Times New Roman", Georgia, serif;
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--forest-green), var(--warm-brown));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(138, 155, 124, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid var(--forest-green);
+        }
+        
+        .test-section h2 {
+            font-family: Times, "Times New Roman", Georgia, serif;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+        }
+        
+        .test-section p {
+            font-family: Georgia, serif;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: "Gill Sans", Verdana, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .status-active {
+            background: rgba(74, 144, 63, 0.15);
+            color: #2d5a1f;
+        }
+        
+        .test-action {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-family: "Gill Sans", Verdana, sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .test-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 90, 63, 0.3);
+        }
+        
+        .test-image {
+            width: 200px;
+            height: 200px;
+            background: url('images/IMG_0913 2.JPG') center/cover;
+            border-radius: 10px;
+            position: relative;
+            margin: 1rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            font-family: Georgia, serif;
+            border-left: 3px solid var(--sage-green);
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: var(--forest-green);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-page">
+        <div class="test-container">
+            <div class="test-header">
+                <h1>🛡️ Protection System Test Page</h1>
+                <p style="font-family: 'Gill Sans', Verdana, sans-serif; color: var(--moss-green); font-size: 1.1rem;">
+                    Test all copyright protections in one place
+                </p>
+            </div>
+
+            <!-- Test 1: Watermarks -->
+            <div class="test-section">
+                <h2>1. Image Watermarks</h2>
+                <span class="status-badge status-active">✓ ACTIVE</span>
+                <p>All gallery images now have automatic watermarks. Try viewing the gallery to see <code>© 2025</code> in the bottom-right corner.</p>
+                <a href="index.html#visuals" class="test-action">View Gallery</a>
+            </div>
+
+            <!-- Test 2: Right-Click Protection -->
+            <div class="test-section">
+                <h2>2. Right-Click Protection</h2>
+                <span class="status-badge status-active">✓ ACTIVE</span>
+                <p><strong>Try these actions on the image below:</strong></p>
+                <div class="test-image"></div>
+                <ul class="checklist">
+                    <li>Right-click on the image → Should show copyright popup</li>
+                    <li>Try to drag the image → Should be prevented</li>
+                    <li>Press Ctrl+S (or Cmd+S) → Should show copyright popup</li>
+                    <li>Try to select the image → Selection disabled</li>
+                </ul>
+            </div>
+
+            <!-- Test 3: Contact Form -->
+            <div class="test-section">
+                <h2>3. Licensing Contact Form</h2>
+                <span class="status-badge status-active">✓ ACTIVE</span>
+                <p>Professional contact form for licensing inquiries with pre-filled email integration.</p>
+                <a href="copyright.html#licensing" class="test-action">Test Contact Form</a>
+            </div>
+
+            <!-- Test 4: Legal Pages -->
+            <div class="test-section">
+                <h2>4. Copyright & Terms Pages</h2>
+                <span class="status-badge status-active">✓ ACTIVE</span>
+                <p>Comprehensive legal protection with specific clauses for each work type:</p>
+                <ul class="checklist">
+                    <li>Visual Artwork protections (paintings, drawings, digital art)</li>
+                    <li>Photography rights (editorial, commercial, social media)</li>
+                    <li>Written work protections (citation, translation, republication)</li>
+                    <li>Website design & code restrictions</li>
+                </ul>
+                <a href="copyright.html" class="test-action" style="margin-right: 1rem;">View Copyright Page</a>
+                <a href="terms.html" class="test-action">View Terms Page</a>
+            </div>
+
+            <!-- Test 5: Footer Design -->
+            <div class="test-section">
+                <h2>5. Beautiful Footer Integration</h2>
+                <span class="status-badge status-active">✓ ACTIVE</span>
+                <p>Footer redesigned with your color palette, gradient backgrounds, and elegant hover effects.</p>
+                <a href="index.html#footer" class="test-action">View Footer</a>
+            </div>
+
+            <!-- Summary -->
+            <div class="test-section" style="border-left-color: var(--warm-brown); background: rgba(109, 76, 61, 0.05);">
+                <h2>📊 Protection Summary</h2>
+                <p><strong>All 5 requested features implemented successfully!</strong></p>
+                <ul class="checklist">
+                    <li>Automatic watermarks on gallery images</li>
+                    <li>Professional licensing contact form</li>
+                    <li>Specific protections for each work type</li>
+                    <li>Multi-layer right-click protection</li>
+                    <li>Beautiful design matching your aesthetic</li>
+                </ul>
+                <p style="margin-top: 2rem; padding: 1rem; background: white; border-radius: 8px; border: 1px solid var(--sage-green);">
+                    <strong>⚠️ Action Required:</strong> Update your email address in <code>script.js</code> line ~830 to receive licensing inquiries!
+                </p>
+                <a href="index.html" class="test-action" style="margin-top: 1.5rem;">Return to Main Site</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
