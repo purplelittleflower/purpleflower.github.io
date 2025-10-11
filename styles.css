@@ -8234,6 +8234,13 @@ html {
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
+/* Hide bottom watermark on desktop/computer only (keep it on tablets and phones) */
+@media (min-width: 1025px) {
+    .image-watermark {
+        display: none;
+    }
+}
+
 .hover-zone {
     position: absolute;
     inset: 0;
