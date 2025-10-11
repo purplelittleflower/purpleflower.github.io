@@ -7546,20 +7546,21 @@ html {
     background: linear-gradient(135deg, var(--forest-green) 0%, var(--moss-green) 100%);
     color: var(--cream);
     padding: 20px 45px;
-    border-radius: 50px;
+    border-radius: 8px;
     font-size: 1.15em;
     font-weight: 600;
     border: none;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
     box-shadow: 0 6px 20px rgba(74, 90, 63, 0.3);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
 }
 
 .cta-contact-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(74, 90, 63, 0.4);
-    background: linear-gradient(135deg, var(--moss-green) 0%, var(--sage-green) 100%);
+    box-shadow: 0 8px 25px rgba(74, 90, 63, 0.4);
+    background: linear-gradient(135deg, var(--warm-brown), var(--muted-purple));
 }
 
 .cta-contact-button:active {
